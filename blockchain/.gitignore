@@ -1,4 +1,4 @@
-﻿# Ignore node stuff
+# Ignore node stuff
 node_modules/
 yarn-error.log
 
@@ -17,8 +17,6 @@ bin/
 .env
 .DS_Store
 .vscode
-.idea
 
 # Reports
 /reports
-chainwallet-client-js/src/utils/constants.json
