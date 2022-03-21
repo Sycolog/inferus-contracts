@@ -1,0 +1,1 @@
+export { InferusClient } from './client'
