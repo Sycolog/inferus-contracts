@@ -1,13 +1,14 @@
 {
-  "name": "inferus-client",
-  "version": "0.0.1",
+  "name": "inferus-js",
+  "version": "0.0.2",
   "description": "",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "engines": {
     "node": ">=16"
   },
   "scripts": {
     "start": "ts-node src/dev/sample.ts",
+    "build": "tsc -p .",
     "lint": "npx eslint \"src/**/*.{js,ts}\"",
     "lint-fix": "npx eslint \"src/**/*.{js,ts}\" --fix"
   },
