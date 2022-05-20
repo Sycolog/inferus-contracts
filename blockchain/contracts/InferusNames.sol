@@ -36,7 +36,7 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         // set names
         totalNames++;
         _setNameOwner(msg.sender, name);
-        
+
         emit NameRegistered(msg.sender, name);
     }
 
@@ -65,7 +65,7 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         require(names[name] == msg.sender, "PERMISSION_DENIED");
         metadataURIs[msg.sender][name] = uri;
     }
-    
+
     function getMetadataURI(address addr, bytes32 name) external view returns(bytes memory) {
         return metadataURIs[addr][name];
     }
@@ -88,7 +88,7 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         (bool sent, ) = msg.sender.call{ value: amount }("");
         require(sent, "WITHDRAWAL_FAILED");
     }
-    
+
     function _setNameOwner(address newOwner, bytes32 name) private {
         names[name] = newOwner;
         linkingPrices[newOwner] += basePrice;
