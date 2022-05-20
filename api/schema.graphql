@@ -1,0 +1,20 @@
+type NameEntity @entity {
+  id: ID!
+  name: String!
+  owner: NameOwnerEntity
+}
+
+type NameOwnerEntity @entity {
+  id: ID!
+  address: Bytes!
+  names: [NameEntity!]! @derivedFrom(field: "owner")
+}
+
+type NameTransferEntity @entity {
+  "concatenation of name|from|to"
+  id: ID!
+  name: String!
+  from: Bytes!
+  to: Bytes!
+  isCompleted: Boolean!
+}

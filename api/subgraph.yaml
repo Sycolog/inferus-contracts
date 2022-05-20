@@ -1,0 +1,33 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: InferusNames
+    network: rinkeby
+    source:
+      address: "0xcB62C9857810f97e853BA80FABd7Aef4f61735A5"
+      abi: InferusNames
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - NameRegistered
+        - NameReleased
+        - NameTransferCompleted
+        - NameTransferInitiated
+      abis:
+        - name: InferusNames
+          file: ./abis/InferusNames.json
+      eventHandlers:
+        - event: NameRegistered(indexed address,bytes32)
+          handler: handleNameRegistered
+        - event: NameReleased(indexed address,bytes32)
+          handler: handleNameReleased
+        - event: NameTransferCompleted(indexed address,indexed address,bytes32)
+          handler: handleNameTransferCompleted
+        - event: NameTransferInitiated(indexed address,indexed address,bytes32)
+          handler: handleNameTransferInitiated
+      file: ./src/mapping.ts
+    
