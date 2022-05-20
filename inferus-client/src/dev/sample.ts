@@ -35,7 +35,7 @@ async function main() {
 
   await Promise.all([waitForFunding(wallet1), waitForFunding(wallet2)])
 
-  const wallet1Client = new InferusClient(wallet1)
+  /* const wallet1Client = new InferusClient(wallet1)
   const wallet2Client = new InferusClient(wallet2)
 
   let price = await wallet1Client.getLinkingPrice()
@@ -72,7 +72,20 @@ async function main() {
 
   price = await wallet1Client.getLinkingPrice()
   console.log('Claiming staa99 for', formatEther(price))
-  await wallet1Client.claim('staa99')
+  await wallet1Client.claim('staa99') */
+
+  const resolverClient = new InferusClient(
+    wallet1.connect(new providers.JsonRpcProvider('https://polygon-rpc.com')),
+    {}
+  )
+  const staa99 = await resolverClient.resolveInferusName('@staa99')
+  console.log('@staa99 is owned by:', staa99)
+
+  try {
+    await resolverClient.resolveInferusName('@staa994')
+  } catch (e) {
+    console.log('@staa994 is owned by nobody:')
+  }
 }
 
 main().catch((e) => {
