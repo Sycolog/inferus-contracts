@@ -82,7 +82,18 @@ export function handleNameTransferCompleted(
   }
 
   let transferEntity = NameTransferEntity.load(getTransferId(event.params.name, event.params.from, event.params.to).toHex())!
+  let nameEntity = NameEntity.load(event.params.name.toHex())
+  
+  if (!nameEntity) {
+    log.error('Name entity not found for transfer entity for name {}', [name])
+    return;
+  }
+
+  nameEntity.owner = event.params.to.toHex()
   transferEntity.isCompleted = true
+  log.info('Transfer of name \'@{}\' from {} to {} is completed', [name, event.params.from.toHex(), event.params.to.toHex()])
+
+  nameEntity.save()
   transferEntity.save()
 }
 
@@ -95,7 +106,7 @@ export function handleNameTransferInitiated(
   }
 
   let transferEntity = new NameTransferEntity(getTransferId(event.params.name, event.params.from, event.params.to).toHex())
-  transferEntity.name = String.UTF8.decode(event.params.name.buffer)
+  transferEntity.name = name
   transferEntity.from = event.params.from
   transferEntity.to = event.params.to
   transferEntity.isCompleted = false
