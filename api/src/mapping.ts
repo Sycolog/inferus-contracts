@@ -96,12 +96,13 @@ export function handleNameTransferCompleted(
     newOwnerEntity = new NameOwnerEntity(newOwnerAddress.toHex())
     newOwnerEntity.address = newOwnerAddress
     log.info('Creating name owner: {}', [newOwnerAddress.toHex()])
+    newOwnerEntity.save()
   }
 
   nameEntity.owner = newOwnerAddress.toHex()
   transferEntity.isCompleted = true
   log.info('Transfer of name \'@{}\' from {} to {} is completed', [name, event.params.from.toHex(), event.params.to.toHex()])
-
+  
   nameEntity.save()
   transferEntity.save()
 }
