@@ -1,6 +1,6 @@
 {
   "name": "inferus-js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/index.js",
   "engines": {
@@ -10,7 +10,7 @@
     "start": "ts-node src/dev/sample.ts",
     "build": "tsc -p .",
     "lint": "npx eslint \"src/**/*.{js,ts}\"",
-    "lint-fix": "npx eslint \"src/**/*.{js,ts}\" --fix"
+    "lint:fix": "npx eslint \"src/**/*.{js,ts}\" --fix"
   },
   "keywords": [],
   "author": "",
