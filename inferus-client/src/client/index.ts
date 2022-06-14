@@ -132,7 +132,7 @@ export class InferusClient {
 
   async getLinkedNames(address: string): Promise<string[]> {
     const response = await this.graphClient.request<LinkedNamesQueryResult>(getLinkedNamesQuery, {
-      address,
+      address: address.toLowerCase(), // The subgraph always indexes lower case addresses
     })
 
     if (!response.nameOwnerEntity) {
