@@ -88,6 +88,11 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         (bool sent, ) = msg.sender.call{ value: amount }("");
         require(sent, "WITHDRAWAL_FAILED");
     }
+    
+    function setBasePrice(uint256 _basePrice) external onlyOwner {
+        require(_basePrice > 0, "INVALID_AMOUNT");
+        basePrice = _basePrice;
+    }
 
     function _setNameOwner(address newOwner, bytes32 name) private {
         names[name] = newOwner;

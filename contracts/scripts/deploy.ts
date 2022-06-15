@@ -5,7 +5,7 @@ import { ethers, upgrades } from 'hardhat'
 async function main() {
   const factory = await ethers.getContractFactory('InferusNames')
 
-  const basePrice = ethers.utils.parseEther('1').div(600)
+  const basePrice = ethers.utils.parseEther('0.5') // 0.5 MATIC <~0.2-0.8 USD>
 
   // If we had constructor arguments, they would be passed into deploy()
   const contract = await upgrades.deployProxy(factory, [basePrice], {
