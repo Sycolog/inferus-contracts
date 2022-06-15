@@ -15,7 +15,7 @@ export class InferusClient {
   signer: Signer
   contract: InferusNames
   graphClient: GraphQLClient
-  static readonly CHAIN_ID = 4
+  static readonly CHAIN_ID = 137
 
   constructor(signer: Signer, config?: InferusConfig) {
     if (!signer.provider) {
@@ -107,9 +107,6 @@ export class InferusClient {
    * @param inferusName The name to be resolved
    */
   async resolveInferusName(inferusName: string): Promise<string> {
-    if (inferusName[0] === '@') {
-      inferusName = inferusName.substring(1)
-    }
     inferusName = this.normalizeName(inferusName)
 
     const network = await this.contract.provider.getNetwork()
