@@ -25,7 +25,7 @@ async function waitForFunding(wallet: Wallet) {
 async function main() {
   console.log('Starting Inferus Sample')
   const provider = new providers.InfuraProvider(
-    { chainId: 4, name: 'rinkeby' },
+    { chainId: 1, name: 'polygon-mainnet' },
     process.env.INFURA_KEY
   )
   const wallet1 = Wallet.fromMnemonic(process.env.MNEMONIC_A!).connect(provider)
