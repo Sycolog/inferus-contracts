@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum
     name: InferusNames
-    network: rinkeby
+    network: matic
     source:
-      address: "0xcB62C9857810f97e853BA80FABd7Aef4f61735A5"
+      address: "0x7e9174D86E615af58bccb8b8f368D817c3A6537A"
       abi: InferusNames
     mapping:
       kind: ethereum/events
