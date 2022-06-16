@@ -1,4 +1,4 @@
 {
   "CONTRACT_ADDRESS": "0xBA094A741B8B99A4E42a7d99473320Bd3989E363",
-  "SUBGRAPH_URL": "https://api.studio.thegraph.com/query/21452/inferus/0.1.0"
+  "SUBGRAPH_URL": "https://api.thegraph.com/subgraphs/name/staa99/inferus"
 }
