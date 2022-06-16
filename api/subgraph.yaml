@@ -6,7 +6,7 @@ dataSources:
     name: InferusNames
     network: matic
     source:
-      address: "0x7e9174D86E615af58bccb8b8f368D817c3A6537A"
+      address: "0xBA094A741B8B99A4E42a7d99473320Bd3989E363"
       abi: InferusNames
     mapping:
       kind: ethereum/events
@@ -30,4 +30,3 @@ dataSources:
         - event: NameTransferInitiated(indexed address,indexed address,bytes32)
           handler: handleNameTransferInitiated
       file: ./src/mapping.ts
-    

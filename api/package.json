@@ -1,17 +1,17 @@
 {
-  "name": "inferus-tryouts",
+  "name": "inferus-subgraph",
+  "version": "0.1.0",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ inferus-tryouts",
-    "create-local": "graph create --node http://localhost:8020/ inferus-tryouts",
-    "remove-local": "graph remove --node http://localhost:8020/ inferus-tryouts",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 inferus-tryouts"
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ inferus",
+    "create-local": "graph create --node http://localhost:8020/ inferus",
+    "remove-local": "graph remove --node http://localhost:8020/ inferus",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 inferus"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "^0.30.0",
     "@graphprotocol/graph-ts": "^0.27.0"
-  },
-  "version": "0.0.7"
+  }
 }
