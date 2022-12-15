@@ -75,7 +75,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: '0.8.7',
+        version: '0.8.17',
         settings: {
           optimizer: {
             enabled: true,
@@ -99,7 +99,8 @@ const config: HardhatUserConfig = {
       gasPrice: 'auto',
       blockGasLimit: 12000000,
       accounts: {
-        mnemonic: 'myth like bonus scare over problem client lizard pioneer submit female collect',
+        mnemonic:
+          process.env.MNEMONIC,
       },
     },
     ganache: {
