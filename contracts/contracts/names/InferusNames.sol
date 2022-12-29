@@ -16,10 +16,11 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     mapping(address => uint256) public linkingPrices;
     mapping(bytes32 => bytes) public metadataURIs;
 
-    event NameRegistered(address indexed registrant, bytes32 name);
-    event NameReleased(address indexed registrant, bytes32 name);
+    event NameRegistered(address indexed registrant, bytes32 indexed name, bytes metadataURI);
+    event NameReleased(address indexed registrant, bytes32 indexed name);
     event NameTransferInitiated(address indexed from, address indexed to, bytes32 name);
     event NameTransferCompleted(address indexed from, address indexed to, bytes32 name);
+    event MetadataUpdated(bytes32 indexed name, bytes metadataURI);
 
     function initialize(uint256 _basePrice) public initializer {
         __Ownable_init();
@@ -40,13 +41,20 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         bytes calldata _signature
     ) external payable {
         require(
-            keccak256(abi.encodePacked("register(bytes32,bytes,address)", _name, _metadataURI, _owner)).recover(
-                _signature
-            ) == _owner,
+            getHashForRegisterBySignature(_name, _owner, _metadataURI).toEthSignedMessageHash().recover(_signature) ==
+                _owner,
             "INVALID_SIGNATURE"
         );
 
         _register(_name, _owner, _metadataURI);
+    }
+
+    function getHashForRegisterBySignature(
+        bytes32 _name,
+        address _owner,
+        bytes calldata _metadataURI
+    ) public view returns (bytes32) {
+        return keccak256(abi.encodePacked("register(bytes32,bytes,address)", _name, _metadataURI, _owner));
     }
 
     function release(bytes32 _name) external {
@@ -73,6 +81,7 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     function setMetadataURI(bytes32 _name, bytes calldata _uri) public {
         require(names[_name] == msg.sender, "PERMISSION_DENIED");
         metadataURIs[_name] = _uri;
+        emit MetadataUpdated(_name, _uri);
     }
 
     function getMetadataURI(bytes32 _name) external view returns (bytes memory) {
@@ -94,7 +103,6 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     function withdraw(uint256 _amount) external payable onlyOwner {
         require(address(this).balance >= _amount, "INSUFFICIENT_BALANCE");
 
-        /* solium-disable-next-line */
         (bool sent, ) = msg.sender.call{ value: _amount }("");
         require(sent, "WITHDRAWAL_FAILED");
     }
@@ -109,9 +117,7 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         address _owner,
         bytes memory _metadataURI
     ) private {
-        if (names[_name] == _owner) {
-            return;
-        }
+        require(_name != hex"00", "INVALID_NAME");
         require(names[_name] == address(0), "NAME_NOT_AVAILABLE");
         require(msg.value == linkingPrices[_owner], "REGISTRATION_FEES_REQUIRED");
 
@@ -120,7 +126,7 @@ contract InferusNames is Initializable, OwnableUpgradeable, UUPSUpgradeable {
         _setNameOwner(_owner, _name);
         metadataURIs[_name] = _metadataURI;
 
-        emit NameRegistered(msg.sender, _name);
+        emit NameRegistered(_owner, _name, _metadataURI);
     }
 
     function _setNameOwner(address _newOwner, bytes32 _name) private {
