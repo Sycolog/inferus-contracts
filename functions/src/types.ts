@@ -30,8 +30,3 @@ export interface AWSLambdaHTTPEvent {
   body: string
   isBase64Encoded: boolean
 }
-
-// only holds fields we use - we can add any other fields of the object that we need
-export interface AWSContext {
-  awsRequestId: string
-}
