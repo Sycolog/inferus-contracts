@@ -25,11 +25,19 @@ export function parseTransactionData(data: TransactionDataSpec): string | undefi
   ])
 }
 
+function createJsonRpcProvider(data: string) {
+  try {
+    return new providers.JsonRpcProvider(JSON.parse(data))
+  } catch {
+    return new providers.JsonRpcProvider(data)
+  }
+}
+
 let provider: providers.Provider
 export function getProvider(): providers.Provider {
   if (!provider) {
-    provider = process.env.JSON_RPC_URL
-      ? new providers.JsonRpcProvider(process.env.JSON_RPC_URL)
+    provider = process.env.JSON_RPC_CONNECTION_INFO
+      ? createJsonRpcProvider(process.env.JSON_RPC_CONNECTION_INFO)
       : new providers.InfuraWebSocketProvider(
           {
             name: process.env.INFURA_NETWORK_NAME!,
