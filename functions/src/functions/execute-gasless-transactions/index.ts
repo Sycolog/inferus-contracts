@@ -7,40 +7,58 @@ import {
 import { BigNumber } from 'ethers'
 import { formatEther } from 'ethers/lib/utils'
 
-const transactionTypes = {
-  register: {
-    contractAddress: process.env.NAMES_CONTRACT_ADDRESS!,
-    signature:
-      'registerBySignature(bytes32 _name,address _owner,bytes _metadataURI,bytes _signature)',
-    parameters: [
-      hexStringValidator(32),
-      hexStringValidator(20),
-      hexStringValidator(),
-      hexStringValidator(),
-    ],
-  },
-  subscribe: {
-    contractAddress: process.env.SUBSCRIPTIONS_CONTRACT_ADDRESS!,
-    signature:
-      'subscribeWithPermit(uint256 _planId,address _subscriber,uint8 v,bytes32 r,bytes32 s)',
-    parameters: [
-      isNumber,
-      hexStringValidator(20),
-      isNumber,
-      hexStringValidator(32),
-      hexStringValidator(32),
-    ],
-  },
+type TransactionType = 'register' | 'subscribe'
+
+type ITransactionTypeSpecification = {
+  [key in TransactionType]: {
+    contractAddress: string
+    signature: string
+    parameters: Array<(s: any) => boolean>
+  }
 }
 
 export interface ITransactionSpecification {
-  transactionType: keyof typeof transactionTypes
+  transactionType: TransactionType
   arguments: TransactionDataPrimitive[]
 }
 
 export interface ITransactionResponse {
   status: boolean
   message: string
+}
+
+let transactionTypes: ITransactionTypeSpecification
+function loadTransactionTypes(): ITransactionTypeSpecification {
+  if (transactionTypes) {
+    return transactionTypes
+  }
+
+  transactionTypes = {
+    register: {
+      contractAddress: process.env.NAMES_CONTRACT_ADDRESS!,
+      signature:
+        'registerBySignature(bytes32 _name,address _owner,bytes _metadataURI,bytes _signature)',
+      parameters: [
+        hexStringValidator(32),
+        hexStringValidator(20),
+        hexStringValidator(),
+        hexStringValidator(),
+      ],
+    },
+    subscribe: {
+      contractAddress: process.env.SUBSCRIPTIONS_CONTRACT_ADDRESS!,
+      signature:
+        'subscribeWithPermit(uint256 _planId,address _subscriber,uint8 v,bytes32 r,bytes32 s)',
+      parameters: [
+        isNumber,
+        hexStringValidator(20),
+        isNumber,
+        hexStringValidator(32),
+        hexStringValidator(32),
+      ],
+    },
+  }
+  return transactionTypes
 }
 
 function validateSpec(spec: ITransactionSpecification, context: RequestContext) {
@@ -88,6 +106,7 @@ export async function executeGaslessTransaction(
   context: RequestContext
 ): Promise<ITransactionResponse> {
   context.logger.info(`executeGaslessTransaction:started`)
+  loadTransactionTypes()
   const validationErrorResponse = validateSpec(spec, context)
 
   if (validationErrorResponse) {
