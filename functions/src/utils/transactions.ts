@@ -59,7 +59,7 @@ export async function generatePermitSignature(
   tokenWithPermit: TestTokenWithPermit,
   signer: Wallet,
   planId: BigNumber
-) {
+): Promise<[string, string, string]> {
   const network = await tokenWithPermit.provider.getNetwork()
   const plan = await subscriptionManager.plans(planId)
   const nonce = await tokenWithPermit.nonces(signer.address)
