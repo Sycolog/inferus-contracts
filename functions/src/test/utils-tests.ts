@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-expressions,node/no-unpublished-import */
 import { describe } from 'mocha'
 import { expect } from 'chai'
 import { hexStringValidator, isNumber } from '../utils'

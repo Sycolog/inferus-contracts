@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-expressions,node/no-unpublished-import */
 import { before, describe } from 'mocha'
 import { expect } from 'chai'
-import * as dotenv from 'dotenv'
 import pino from 'pino'
-import { arrayify, hexlify, parseEther, randomBytes } from 'ethers/lib/utils'
-import { Contract, Wallet } from 'ethers'
+import dotenv from 'dotenv'
+import { Contract, Wallet, utils as ethersUtils } from 'ethers'
 import { generatePermitSignature, getExecutor, getProvider } from '../../utils/transactions'
 import { executeGaslessTransaction } from '../../functions/execute-gasless-transactions'
 import {
@@ -16,6 +15,7 @@ import {
   TestTokenWithPermitABI,
 } from '../../abi'
 
+const { arrayify, hexlify, parseEther, randomBytes } = ethersUtils
 const logger = pino()
 dotenv.config()
 
