@@ -78,11 +78,23 @@ contract SubscriptionManager is Initializable, OwnableUpgradeable, UUPSUpgradeab
     );
 
     /**
+     * @dev Emitted when a plan owner withdraws from the plan balance
+     */
+    event Withdraw(
+        uint256 indexed planId,
+        address indexed withdrawer,
+        address withdrawnTo,
+        address indexed token,
+        uint256 amount
+    );
+
+    /**
      * @dev Stores the value of the last generated id.
      */
     uint256 public lastId;
 
     mapping(uint256 => SubscriptionPlan) public plans;
+    mapping(uint256 => uint256) public planBalances;
     mapping(address => mapping(uint256 => Subscription)) public subscriptions;
 
     function initialize() public initializer {
@@ -134,14 +146,7 @@ contract SubscriptionManager is Initializable, OwnableUpgradeable, UUPSUpgradeab
 
     function subscribe(uint256 _planId) public payable {
         SubscriptionPlan storage plan = _subscribeToPlan(_planId, msg.sender);
-
-        if (plan.token == COIN_ADDRESS) {
-            require(msg.value == plan.tokenAmount, "INCORRECT_AMOUNT_PAID");
-            return;
-        }
-
-        IERC20Upgradeable token = IERC20Upgradeable(plan.token);
-        token.safeTransferFrom(msg.sender, address(this), plan.tokenAmount);
+        _chargeSubscriptionForPlan(plan, msg.sender);
     }
 
     function subscribeWithPermit(
@@ -152,14 +157,48 @@ contract SubscriptionManager is Initializable, OwnableUpgradeable, UUPSUpgradeab
         bytes32 s
     ) public {
         SubscriptionPlan storage plan = _subscribeToPlan(_planId, _subscriber);
+        require(plan.token != COIN_ADDRESS, "");
 
         // execute permit
         IERC20PermitUpgradeable tokenPermit = IERC20PermitUpgradeable(plan.token);
         tokenPermit.permit(_subscriber, address(this), plan.tokenAmount, type(uint256).max, v, r, s);
 
         // execute transfer from
+        _chargeSubscriptionForPlan(plan, _subscriber);
+    }
+
+    function withdrawPlanBalance(
+        uint256 _planId,
+        address _withdrawTo,
+        uint256 _amount
+    ) public payable {
+        SubscriptionPlan storage plan = plans[_planId];
+        require(plan.id == _planId, "INVALID_PLAN");
+        require(plan.owner == msg.sender, "UNAUTHORIZED");
+        require(planBalances[_planId] >= _amount, "INSUFFICIENT_PLAN_BALANCE");
+
+        planBalances[_planId] -= _amount;
+        emit Withdraw(_planId, msg.sender, _withdrawTo, plan.token, _amount);
+
+        if (plan.token == COIN_ADDRESS) {
+            (bool sent, ) = _withdrawTo.call{ value: _amount }("");
+            require(sent, "COIN_TRANSFER_FAILED");
+            return;
+        }
+
         IERC20Upgradeable token = IERC20Upgradeable(plan.token);
-        token.safeTransferFrom(_subscriber, address(this), plan.tokenAmount);
+        token.safeTransfer(_withdrawTo, _amount);
+    }
+
+    function _chargeSubscriptionForPlan(SubscriptionPlan storage _plan, address _subscriber) private {
+        planBalances[_plan.id] += _plan.tokenAmount;
+        if (_plan.token == COIN_ADDRESS) {
+            require(msg.value == _plan.tokenAmount, "INCORRECT_AMOUNT_PAID");
+            return;
+        }
+
+        IERC20Upgradeable token = IERC20Upgradeable(_plan.token);
+        token.safeTransferFrom(_subscriber, address(this), _plan.tokenAmount);
     }
 
     function _subscribeToPlan(uint256 _planId, address _subscriber) private returns (SubscriptionPlan storage) {
