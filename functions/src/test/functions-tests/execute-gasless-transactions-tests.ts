@@ -2,7 +2,7 @@
 import { before, describe } from 'mocha'
 import { expect } from 'chai'
 import pino from 'pino'
-// import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 import { Contract, Wallet, utils as ethersUtils } from 'ethers'
 import { generatePermitSignature, getExecutor, getProvider } from '../../utils/transactions'
 import { executeGaslessTransaction } from '../../functions/execute-gasless-transactions'
@@ -14,12 +14,10 @@ import {
   TestTokenWithPermit,
   TestTokenWithPermitABI,
 } from '../../abi'
-import { loadEnvironmentVariables } from '../../execute-gasless-transactions'
 
 const { arrayify, hexlify, parseEther, randomBytes, formatBytes32String } = ethersUtils
 const logger = pino()
-loadEnvironmentVariables({ logger, requestId: 'test' })
-// dotenv.config()
+dotenv.config()
 
 describe('execute-gasless-transactions tests', () => {
   let inferusNames: InferusNames

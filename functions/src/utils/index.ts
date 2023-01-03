@@ -57,7 +57,9 @@ export function hexStringValidator(bytesLength?: number) {
 }
 
 export function createLogger(context: Record<string, any>): pino.Logger {
-  return pino().child({
+  return pino({
+    level: process.env.LOG_LEVEL?.trim().toLowerCase() || 'info',
+  }).child({
     context,
   })
 }
