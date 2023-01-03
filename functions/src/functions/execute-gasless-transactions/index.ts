@@ -157,7 +157,7 @@ async function loadGasPriceFromGasStationService() {
 
   return {
     maxFeePerGas: parseUnits(Math.ceil(maxFee).toString(), 'gwei'),
-    maxPriorityFeePerGas: parseUnits(Math.ceil(maxPriorityFee``).toString(), 'gwei'),
+    maxPriorityFeePerGas: parseUnits(Math.ceil(maxPriorityFee).toString(), 'gwei'),
   }
 }
 
@@ -171,10 +171,14 @@ async function loadGasPriceFromRecentBlockTransactions() {
   }
 }
 
-async function loadGasPrice() {
+async function loadGasPrice(context: RequestContext) {
   try {
+    context.logger.trace('executeGaslessTransaction:loadGasPrice:started')
     return await loadGasPriceFromGasStationService()
   } catch (e) {
+    context.logger.warn(
+      'executeGaslessTransaction:loadGasPrice:failed to load from gas station service'
+    )
     return await loadGasPriceFromRecentBlockTransactions()
   }
 }
@@ -188,9 +192,9 @@ export async function executeGaslessTransaction(
   validateSpec(spec, context)
   const executor = getExecutor()
   const { gasEstimate, transaction } = await estimateGas(executor, spec, context)
-  context.logger.info(`executeGaslessTransaction:specValidatedSuccessfully`)
+  context.logger.info(`executeGaslessTransaction:spec validated successfully`)
 
-  const { maxFeePerGas, maxPriorityFeePerGas } = await loadGasPrice()
+  const { maxFeePerGas, maxPriorityFeePerGas } = await loadGasPrice(context)
   for (let i = 0; i < 30; i++) {
     const nonce = await executor.getTransactionCount('pending')
     context.logger.info({

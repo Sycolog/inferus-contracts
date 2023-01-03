@@ -30,6 +30,7 @@ async function validateRecaptchaToken(event: AWSLambdaHTTPEvent, context: Reques
 
 function loadEnvironmentVariables(context: RequestContext) {
   try {
+    context.logger.trace('handler:loading env vars')
     const envVars = JSON.parse(process.env.ENV_VARS!)
     for (const key of Object.keys(envVars)) {
       process.env[key] = envVars[key]
