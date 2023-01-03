@@ -1,11 +1,14 @@
-import { hexStringValidator, isNumber, RequestContext } from '../../utils'
+/* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment */
+import { ApplicationError, hexStringValidator, isNumber, RequestContext } from '../../utils'
 import {
   getExecutor,
+  getProvider,
   parseTransactionData,
   TransactionDataPrimitive,
 } from '../../utils/transactions'
-import { BigNumber } from 'ethers'
-import { formatEther } from 'ethers/lib/utils'
+import { BigNumber, Signer } from 'ethers'
+import { formatEther, formatUnits, parseUnits } from 'ethers/lib/utils'
+import axios from 'axios'
 
 type TransactionType = 'register' | 'subscribe'
 
@@ -61,61 +64,56 @@ function loadTransactionTypes(): ITransactionTypeSpecification {
   return transactionTypes
 }
 
-function validateSpec(spec: ITransactionSpecification, context: RequestContext) {
-  const type = spec.transactionType
+function validateTransactionType(type: string, context: RequestContext) {
   const validTypes = Object.keys(transactionTypes)
   if (!validTypes.includes(type)) {
-    context.logger.error(
-      `executeGaslessTransaction:validateSpec:invalid transaction type:found ${type}:expected any of ${validTypes}`
-    )
-    return {
-      status: false,
-      message: `Invalid transaction type: ${type}. Available options are: ${validTypes}`,
-    }
+    throw new ApplicationError({
+      context,
+      message: `executeGaslessTransaction:validateSpec:INVALID_TRANSACTION_TYPE:found ${type}:expected any of ${validTypes}`,
+      errorCode: 'INVALID_TRANSACTION_TYPE',
+      userFriendlyMessage: `Invalid transaction type: ${type}. Available options are: ${validTypes}`,
+    })
   }
+}
 
-  const typeData = transactionTypes[type]
+function validateTransactionArguments(spec: ITransactionSpecification, context: RequestContext) {
+  const typeData = transactionTypes[spec.transactionType]
   if (!spec.arguments || spec.arguments.length !== typeData.parameters.length) {
-    context.logger.error(
-      `executeGaslessTransaction:validateSpec:incorrect parameter count:found ${spec.arguments?.length} but expected ${typeData.parameters.length}`
-    )
-    return {
-      status: false,
-      message: `Incorrect parameter count. Expected ${typeData.parameters.length}`,
-    }
+    throw new ApplicationError({
+      context,
+      message: `executeGaslessTransaction:validateSpec:INCORRECT_ARGUMENT_COUNT:found ${spec.arguments?.length} but expected ${typeData.parameters.length}`,
+      errorCode: 'INCORRECT_ARGUMENT_COUNT',
+      userFriendlyMessage: `Incorrect argument count. Expected ${typeData.parameters.length}`,
+    })
   }
 
   for (let i = 0; i < spec.arguments.length; i++) {
-    const parameter = spec.arguments[i]
+    const argument = spec.arguments[i]
     const validator = typeData.parameters[i]
 
-    if (!validator(parameter)) {
-      context.logger.error(
-        `executeGaslessTransaction:validateSpec:invalid parameter value at index ${i}`
-      )
-      return {
-        status: false,
-        message: `Invalid parameter value at index ${i}`,
-      }
+    if (!validator(argument)) {
+      throw new ApplicationError({
+        context,
+        message: `executeGaslessTransaction:validateSpec:INVALID_ARGUMENT:value at index ${i} does not match the transaction spec`,
+        errorCode: 'INVALID_ARGUMENT',
+        userFriendlyMessage: `Invalid argument at index ${i}`,
+      })
     }
   }
 }
 
-export async function executeGaslessTransaction(
+function validateSpec(spec: ITransactionSpecification, context: RequestContext) {
+  const type = spec.transactionType
+  validateTransactionType(type, context)
+  validateTransactionArguments(spec, context)
+}
+
+async function estimateGas(
+  executor: Signer,
   spec: ITransactionSpecification,
   context: RequestContext
-): Promise<ITransactionResponse> {
-  context.logger.info(`executeGaslessTransaction:started`)
-  loadTransactionTypes()
-  const validationErrorResponse = validateSpec(spec, context)
-
-  if (validationErrorResponse) {
-    return validationErrorResponse
-  }
-
-  context.logger.info(`executeGaslessTransaction:specValidatedSuccessfully`)
+) {
   const typeData = transactionTypes[spec.transactionType]
-  const executor = getExecutor()
   let gasEstimate: BigNumber
   const transaction = {
     to: typeData.contractAddress,
@@ -133,30 +131,85 @@ export async function executeGaslessTransaction(
       typeData: typeData,
     })
   } catch (e) {
-    context.logger.error({
-      msg: 'executeGaslessTransaction:gas estimation failed',
-      error: e,
-      spec: spec,
-      typeData: typeData,
+    throw new ApplicationError({
+      context,
+      message: 'executeGaslessTransaction:gas estimation failed',
+      userFriendlyMessage:
+        'The transaction could not be executed. Check the parameters and try again.',
+      data: {
+        error: e,
+        spec: spec,
+        typeData: typeData,
+      },
     })
-    return {
-      status: false,
-      message: 'The transaction could not be executed. Check the parameters and try again.',
-    }
   }
 
+  return { gasEstimate, transaction }
+}
+
+async function loadGasPriceFromGasStationService() {
+  const gasPriceResponse = await axios('https://gasstation-mainnet.matic.network/v2')
+  const maxFee = gasPriceResponse.data?.standard?.maxFee
+  const maxPriorityFee = gasPriceResponse.data?.standard?.maxPriorityFee
+  if (!maxFee || !maxPriorityFee) {
+    throw Error('Failed to load gas price from gas station service')
+  }
+
+  return {
+    maxFeePerGas: parseUnits(Math.ceil(maxFee).toString(), 'gwei'),
+    maxPriorityFeePerGas: parseUnits(Math.ceil(maxPriorityFee``).toString(), 'gwei'),
+  }
+}
+
+// fallback for when we can't send transactions
+async function loadGasPriceFromRecentBlockTransactions() {
+  throw Error('Not implemented yet')
+  const lastBlock = await getProvider().getBlock('latest')
+  return {
+    maxFeePerGas: lastBlock.baseFeePerGas!.mul(125).div(100),
+    maxPriorityFeePerGas: lastBlock.baseFeePerGas!.mul(12).div(10),
+  }
+}
+
+async function loadGasPrice() {
+  try {
+    return await loadGasPriceFromGasStationService()
+  } catch (e) {
+    return await loadGasPriceFromRecentBlockTransactions()
+  }
+}
+
+export async function executeGaslessTransaction(
+  spec: ITransactionSpecification,
+  context: RequestContext
+): Promise<ITransactionResponse> {
+  context.logger.info(`executeGaslessTransaction:started`)
+  loadTransactionTypes()
+  validateSpec(spec, context)
+  const executor = getExecutor()
+  const { gasEstimate, transaction } = await estimateGas(executor, spec, context)
+  context.logger.info(`executeGaslessTransaction:specValidatedSuccessfully`)
+
+  const { maxFeePerGas, maxPriorityFeePerGas } = await loadGasPrice()
   for (let i = 0; i < 30; i++) {
     const nonce = await executor.getTransactionCount('pending')
+    context.logger.info({
+      msg: `Executing transaction from ${executor.address}`,
+      nonce: nonce,
+      maxFeePerGas: `${formatUnits(maxFeePerGas, 'gwei')} gwei`,
+      maxPriorityFeePerGas: `${formatUnits(maxPriorityFeePerGas, 'gwei')} gwei`,
+    })
+    context.logger.trace(
+      `executeGaslessTransaction:sending transaction to mempool. Nonce: ${nonce}`
+    )
     try {
-      context.logger.trace(
-        `executeGaslessTransaction:sending transaction to mempool. Nonce: ${nonce}`
-      )
       const tx = await executor.sendTransaction({
         ...transaction,
         gasLimit: gasEstimate,
         nonce: nonce,
+        maxFeePerGas: maxFeePerGas,
+        maxPriorityFeePerGas: maxPriorityFeePerGas,
       })
-      await tx.wait()
       context.logger.info(
         `executeGaslessTransaction:transaction sent to mempool. tx hash: ${tx.hash}`
       )
@@ -173,8 +226,8 @@ export async function executeGaslessTransaction(
     }
   }
 
-  return Promise.resolve({
+  return {
     status: false,
     message: 'Failed to execute transaction. Please try again later.',
-  })
+  }
 }

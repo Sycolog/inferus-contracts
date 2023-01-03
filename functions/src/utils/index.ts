@@ -7,6 +7,25 @@ export interface RequestContext {
   requestId: string
 }
 
+export class ApplicationError {
+  errorCode?: string
+  userFriendlyMessage?: string
+  constructor(args: {
+    context: RequestContext
+    message: string
+    data?: Record<string, unknown>
+    errorCode?: string
+    userFriendlyMessage?: string
+  }) {
+    args.context.logger.error({
+      msg: args.message,
+      ...(args.data || {}),
+    })
+    this.errorCode = args.errorCode
+    this.userFriendlyMessage = args.userFriendlyMessage
+  }
+}
+
 export async function verifyCaptchaToken(token: string, logger: pino.Logger): Promise<boolean> {
   logger.warn('Token not verified:', token)
   return Promise.resolve(true)

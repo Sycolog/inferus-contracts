@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return */
 import { AWSLambdaHTTPEvent } from './types'
-import { createLogger, RequestContext, verifyCaptchaToken } from './utils'
+import { ApplicationError, createLogger, RequestContext, verifyCaptchaToken } from './utils'
 import { executeGaslessTransaction } from './functions/execute-gasless-transactions'
 
 async function validateRecaptchaToken(event: AWSLambdaHTTPEvent, context: RequestContext) {
@@ -8,31 +8,27 @@ async function validateRecaptchaToken(event: AWSLambdaHTTPEvent, context: Reques
 
   context.logger.trace('validateRecaptchaToken:started')
   if (!token) {
-    context.logger.error('validateRecaptchaToken:MISSING_RECAPTCHA_TOKEN')
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        error: 'MISSING_RECAPTCHA_TOKEN',
-        message: 'The request could not be validated as the Recaptcha token is missing',
-      }),
-    }
+    throw new ApplicationError({
+      context,
+      message: 'validateRecaptchaToken:MISSING_RECAPTCHA_TOKEN',
+      errorCode: 'MISSING_RECAPTCHA_TOKEN',
+      userFriendlyMessage: 'The request could not be validated as the Recaptcha token is missing',
+    })
   }
 
   context.logger.trace('validateRecaptchaToken:token found')
   const isValid = await verifyCaptchaToken(token, context.logger)
   if (!isValid) {
-    context.logger.error('validateRecaptchaToken:INVALID_RECAPTCHA_TOKEN')
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        error: 'INVALID_RECAPTCHA_TOKEN',
-        message: 'The request could not be validated as the Recaptcha token is invalid',
-      }),
-    }
+    throw new ApplicationError({
+      context,
+      message: 'validateRecaptchaToken:INVALID_RECAPTCHA_TOKEN',
+      errorCode: 'INVALID_RECAPTCHA_TOKEN',
+      userFriendlyMessage: 'The request could not be validated as the Recaptcha token is invalid',
+    })
   }
 }
 
-function loadEnvironmentVariables(context: RequestContext) {
+export function loadEnvironmentVariables(context: RequestContext) {
   try {
     const envVars = JSON.parse(process.env.ENV_VARS!)
     for (const key of Object.keys(envVars)) {
@@ -47,6 +43,48 @@ function loadEnvironmentVariables(context: RequestContext) {
   }
 }
 
+function parseBody(stringBody: string, context: RequestContext) {
+  if (!stringBody) {
+    throw new ApplicationError({
+      context,
+      message: 'handler:INVALID_BODY:empty body',
+      errorCode: 'INVALID_BODY',
+      userFriendlyMessage: 'The request body must not be empty',
+    })
+  }
+
+  let body
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    body = JSON.parse(stringBody)
+  } catch (e) {
+    throw new ApplicationError({
+      context,
+      message: 'handler:INVALID_BODY:invalid json data',
+      errorCode: 'INVALID_BODY',
+      userFriendlyMessage: 'The request body must be a valid JSON',
+      data: {
+        error: e,
+      },
+    })
+  }
+
+  return body
+}
+
+function getErrorResponse(e: any) {
+  const errorCode = e.errorCode || 'EXECUTION_ERROR'
+  const errorMessage =
+    e.userFriendlyMessage || 'Failed to execute transaction. Please try again later.'
+  return {
+    statusCode: 400,
+    body: JSON.stringify({
+      error: errorCode,
+      message: errorMessage,
+    }),
+  }
+}
+
 export async function handler(
   event: AWSLambdaHTTPEvent
 ): Promise<{ statusCode: number; body: string }> {
@@ -58,64 +96,22 @@ export async function handler(
   }
   context.logger.trace('handler:started')
   loadEnvironmentVariables(context)
-  const tokenValidationError = await validateRecaptchaToken(event, context)
-  if (tokenValidationError) {
-    return tokenValidationError
-  }
-
-  context.logger.info('handler:token validation successful')
-  if (!event.body) {
-    context.logger.error('handler:INVALID_BODY:EMPTY_BODY')
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        error: 'INVALID_BODY',
-        message: 'The request body must not be empty',
-      }),
-    }
-  }
-
-  let body
   try {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    body = JSON.parse(event.body)
-  } catch (e) {
-    context.logger.error({
-      msg: 'handler:INVALID_BODY:INVALID_JSON_DATA',
-      error: e,
-    })
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        error: 'INVALID_BODY',
-        message: 'The request body must be a valid JSON',
-      }),
-    }
-  }
-
-  try {
+    await validateRecaptchaToken(event, context)
+    context.logger.info('handler:token validation successful')
+    const body = parseBody(event.body, context)
     const result = await executeGaslessTransaction(body, context)
-    const response = result.status
-      ? result
-      : {
-          error: 'EXECUTION_ERROR',
-          message: result.message,
-        }
     return {
       statusCode: result.status ? 200 : 400,
-      body: JSON.stringify(response),
+      body: JSON.stringify(result),
     }
   } catch (e) {
-    context.logger.error({
-      msg: 'handler:executeGaslessTransaction:UNKNOWN_ERROR_OCCURRED',
-      error: e,
-    })
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: 'INTERNAL_SERVER_ERROR',
-        message: 'An internal error occurred. We are investigating the cause of the problem.',
-      }),
+    if (!(e instanceof ApplicationError)) {
+      context.logger.error({
+        msg: 'handler:executeGaslessTransaction:UNKNOWN_ERROR_OCCURRED',
+        error: e,
+      })
     }
+    return getErrorResponse(e)
   }
 }

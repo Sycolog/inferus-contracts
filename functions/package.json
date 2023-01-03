@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "ethers": "^5.7.2",
+    "axios": "^1.2.2",
     "pino": "^8.8.0"
   }
 }

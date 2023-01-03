@@ -2,7 +2,7 @@
 import { before, describe } from 'mocha'
 import { expect } from 'chai'
 import pino from 'pino'
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import { Contract, Wallet, utils as ethersUtils } from 'ethers'
 import { generatePermitSignature, getExecutor, getProvider } from '../../utils/transactions'
 import { executeGaslessTransaction } from '../../functions/execute-gasless-transactions'
@@ -14,10 +14,12 @@ import {
   TestTokenWithPermit,
   TestTokenWithPermitABI,
 } from '../../abi'
+import { loadEnvironmentVariables } from '../../execute-gasless-transactions'
 
-const { arrayify, hexlify, parseEther, randomBytes } = ethersUtils
+const { arrayify, hexlify, parseEther, randomBytes, formatBytes32String } = ethersUtils
 const logger = pino()
-dotenv.config()
+loadEnvironmentVariables({ logger, requestId: 'test' })
+// dotenv.config()
 
 describe('execute-gasless-transactions tests', () => {
   let inferusNames: InferusNames
@@ -47,7 +49,7 @@ describe('execute-gasless-transactions tests', () => {
 
   describe('executeGaslessTransaction', () => {
     it('should register name successfully', async () => {
-      const name = randomBytes(32)
+      const name = formatBytes32String('test0002')
       const metadataUri = randomBytes(50)
       const hash = await inferusNames.getHashForRegisterBySignature(
         name,
