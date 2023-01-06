@@ -47,10 +47,8 @@ export class InferusClient {
    */
   async register(name: string, metadata: NameMetadata): Promise<void> {
     name = formatBytes32String(normalizeName(name))
-    await this.validateMetadata(metadata)
-    const utf8MetadataUri = await this.ipfs.send(JSON.stringify(metadata))
+    const metadataUri = await this.getMetadataUri(metadata)
     const signerAddress = await this.signer.getAddress()
-    const metadataUri = hexlify(Buffer.from(utf8MetadataUri))
 
     const network = await this.namesContract.provider.getNetwork()
     let linkingPrice: BigNumber | undefined
@@ -75,6 +73,14 @@ export class InferusClient {
     const tx = await this.namesContract.register(name, toUtf8Bytes(metadataUri), {
       value: linkingPrice,
     })
+    await tx.wait()
+  }
+
+  async updateMetadata(name: string, metadata: NameMetadata): Promise<void> {
+    await this.verifyChainId()
+    name = normalizeName(name)
+    const metadataUri = await this.getMetadataUri(metadata)
+    const tx = await this.namesContract.setMetadataURI(formatBytes32String(name), metadataUri)
     await tx.wait()
   }
 
@@ -184,6 +190,12 @@ export class InferusClient {
     if (errors.length) {
       throw Error(errors.join('\n'))
     }
+  }
+
+  private async getMetadataUri(metadata: NameMetadata) {
+    await this.validateMetadata(metadata)
+    const utf8MetadataUri = await this.ipfs.send(JSON.stringify(metadata))
+    return hexlify(Buffer.from(utf8MetadataUri))
   }
 
   private async verifyChainId() {
