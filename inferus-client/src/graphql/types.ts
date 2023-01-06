@@ -1,6 +1,7 @@
 export interface ResolveNameQueryResult {
   nameEntities: Array<{
     name: string
+    metadataUri: string
     owner: {
       address: string
     }

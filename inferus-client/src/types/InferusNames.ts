@@ -23,14 +23,20 @@ export interface InferusNamesInterface extends utils.Interface {
   functions: {
     "basePrice()": FunctionFragment;
     "claim(bytes32)": FunctionFragment;
+    "getHashForRegisterBySignature(bytes32,address,bytes)": FunctionFragment;
+    "getMetadataURI(bytes32)": FunctionFragment;
     "initialize(uint256)": FunctionFragment;
     "linkingPrices(address)": FunctionFragment;
+    "metadataURIs(bytes32)": FunctionFragment;
     "names(bytes32)": FunctionFragment;
     "owner()": FunctionFragment;
     "proxiableUUID()": FunctionFragment;
-    "register(bytes32)": FunctionFragment;
+    "register(bytes32,bytes)": FunctionFragment;
+    "registerBySignature(bytes32,address,bytes,bytes)": FunctionFragment;
     "release(bytes32)": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
+    "setBasePrice(uint256)": FunctionFragment;
+    "setMetadataURI(bytes32,bytes)": FunctionFragment;
     "totalNames()": FunctionFragment;
     "transfer(bytes32,address)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
@@ -43,6 +49,14 @@ export interface InferusNamesInterface extends utils.Interface {
   encodeFunctionData(functionFragment: "basePrice", values?: undefined): string;
   encodeFunctionData(functionFragment: "claim", values: [BytesLike]): string;
   encodeFunctionData(
+    functionFragment: "getHashForRegisterBySignature",
+    values: [BytesLike, string, BytesLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getMetadataURI",
+    values: [BytesLike]
+  ): string;
+  encodeFunctionData(
     functionFragment: "initialize",
     values: [BigNumberish]
   ): string;
@@ -50,17 +64,36 @@ export interface InferusNamesInterface extends utils.Interface {
     functionFragment: "linkingPrices",
     values: [string]
   ): string;
+  encodeFunctionData(
+    functionFragment: "metadataURIs",
+    values: [BytesLike]
+  ): string;
   encodeFunctionData(functionFragment: "names", values: [BytesLike]): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "proxiableUUID",
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: "register", values: [BytesLike]): string;
+  encodeFunctionData(
+    functionFragment: "register",
+    values: [BytesLike, BytesLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "registerBySignature",
+    values: [BytesLike, string, BytesLike, BytesLike]
+  ): string;
   encodeFunctionData(functionFragment: "release", values: [BytesLike]): string;
   encodeFunctionData(
     functionFragment: "renounceOwnership",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setBasePrice",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setMetadataURI",
+    values: [BytesLike, BytesLike]
   ): string;
   encodeFunctionData(
     functionFragment: "totalNames",
@@ -90,9 +123,21 @@ export interface InferusNamesInterface extends utils.Interface {
 
   decodeFunctionResult(functionFragment: "basePrice", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "claim", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getHashForRegisterBySignature",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getMetadataURI",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "linkingPrices",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "metadataURIs",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "names", data: BytesLike): Result;
@@ -102,9 +147,21 @@ export interface InferusNamesInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "register", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "registerBySignature",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "release", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "renounceOwnership",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setBasePrice",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setMetadataURI",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "totalNames", data: BytesLike): Result;
@@ -124,7 +181,9 @@ export interface InferusNamesInterface extends utils.Interface {
   events: {
     "AdminChanged(address,address)": EventFragment;
     "BeaconUpgraded(address)": EventFragment;
-    "NameRegistered(address,bytes32)": EventFragment;
+    "Initialized(uint8)": EventFragment;
+    "MetadataUpdated(bytes32,bytes)": EventFragment;
+    "NameRegistered(address,bytes32,bytes)": EventFragment;
     "NameReleased(address,bytes32)": EventFragment;
     "NameTransferCompleted(address,address,bytes32)": EventFragment;
     "NameTransferInitiated(address,address,bytes32)": EventFragment;
@@ -134,6 +193,8 @@ export interface InferusNamesInterface extends utils.Interface {
 
   getEvent(nameOrSignatureOrTopic: "AdminChanged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "BeaconUpgraded"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "MetadataUpdated"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "NameRegistered"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "NameReleased"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "NameTransferCompleted"): EventFragment;
@@ -153,9 +214,20 @@ export type BeaconUpgradedEvent = TypedEvent<[string], { beacon: string }>;
 
 export type BeaconUpgradedEventFilter = TypedEventFilter<BeaconUpgradedEvent>;
 
-export type NameRegisteredEvent = TypedEvent<
+export type InitializedEvent = TypedEvent<[number], { version: number }>;
+
+export type InitializedEventFilter = TypedEventFilter<InitializedEvent>;
+
+export type MetadataUpdatedEvent = TypedEvent<
   [string, string],
-  { registrant: string; name: string }
+  { name: string; metadataURI: string }
+>;
+
+export type MetadataUpdatedEventFilter = TypedEventFilter<MetadataUpdatedEvent>;
+
+export type NameRegisteredEvent = TypedEvent<
+  [string, string, string],
+  { registrant: string; name: string; metadataURI: string }
 >;
 
 export type NameRegisteredEventFilter = TypedEventFilter<NameRegisteredEvent>;
@@ -226,9 +298,21 @@ export interface InferusNames extends BaseContract {
     basePrice(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     claim(
-      name: BytesLike,
+      _name: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
+
+    getHashForRegisterBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
+
+    getMetadataURI(
+      _name: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
 
     initialize(
       _basePrice: BigNumberish,
@@ -240,6 +324,8 @@ export interface InferusNames extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
+    metadataURIs(arg0: BytesLike, overrides?: CallOverrides): Promise<[string]>;
+
     names(arg0: BytesLike, overrides?: CallOverrides): Promise<[string]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
@@ -247,12 +333,21 @@ export interface InferusNames extends BaseContract {
     proxiableUUID(overrides?: CallOverrides): Promise<[string]>;
 
     register(
-      name: BytesLike,
+      _name: BytesLike,
+      _metadataURI: BytesLike,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    registerBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      _signature: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
     release(
-      name: BytesLike,
+      _name: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -260,11 +355,22 @@ export interface InferusNames extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    setBasePrice(
+      _basePrice: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    setMetadataURI(
+      _name: BytesLike,
+      _uri: BytesLike,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     totalNames(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     transfer(
-      name: BytesLike,
-      recipient: string,
+      _name: BytesLike,
+      _recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -287,7 +393,7 @@ export interface InferusNames extends BaseContract {
     ): Promise<ContractTransaction>;
 
     withdraw(
-      amount: BigNumberish,
+      _amount: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
@@ -295,9 +401,18 @@ export interface InferusNames extends BaseContract {
   basePrice(overrides?: CallOverrides): Promise<BigNumber>;
 
   claim(
-    name: BytesLike,
+    _name: BytesLike,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
+
+  getHashForRegisterBySignature(
+    _name: BytesLike,
+    _owner: string,
+    _metadataURI: BytesLike,
+    overrides?: CallOverrides
+  ): Promise<string>;
+
+  getMetadataURI(_name: BytesLike, overrides?: CallOverrides): Promise<string>;
 
   initialize(
     _basePrice: BigNumberish,
@@ -306,6 +421,8 @@ export interface InferusNames extends BaseContract {
 
   linkingPrices(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+  metadataURIs(arg0: BytesLike, overrides?: CallOverrides): Promise<string>;
+
   names(arg0: BytesLike, overrides?: CallOverrides): Promise<string>;
 
   owner(overrides?: CallOverrides): Promise<string>;
@@ -313,12 +430,21 @@ export interface InferusNames extends BaseContract {
   proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
   register(
-    name: BytesLike,
+    _name: BytesLike,
+    _metadataURI: BytesLike,
+    overrides?: PayableOverrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  registerBySignature(
+    _name: BytesLike,
+    _owner: string,
+    _metadataURI: BytesLike,
+    _signature: BytesLike,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   release(
-    name: BytesLike,
+    _name: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -326,11 +452,22 @@ export interface InferusNames extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  setBasePrice(
+    _basePrice: BigNumberish,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  setMetadataURI(
+    _name: BytesLike,
+    _uri: BytesLike,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   totalNames(overrides?: CallOverrides): Promise<BigNumber>;
 
   transfer(
-    name: BytesLike,
-    recipient: string,
+    _name: BytesLike,
+    _recipient: string,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -353,14 +490,26 @@ export interface InferusNames extends BaseContract {
   ): Promise<ContractTransaction>;
 
   withdraw(
-    amount: BigNumberish,
+    _amount: BigNumberish,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
     basePrice(overrides?: CallOverrides): Promise<BigNumber>;
 
-    claim(name: BytesLike, overrides?: CallOverrides): Promise<void>;
+    claim(_name: BytesLike, overrides?: CallOverrides): Promise<void>;
+
+    getHashForRegisterBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<string>;
+
+    getMetadataURI(
+      _name: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<string>;
 
     initialize(
       _basePrice: BigNumberish,
@@ -369,23 +518,48 @@ export interface InferusNames extends BaseContract {
 
     linkingPrices(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+    metadataURIs(arg0: BytesLike, overrides?: CallOverrides): Promise<string>;
+
     names(arg0: BytesLike, overrides?: CallOverrides): Promise<string>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
     proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
-    register(name: BytesLike, overrides?: CallOverrides): Promise<void>;
+    register(
+      _name: BytesLike,
+      _metadataURI: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
-    release(name: BytesLike, overrides?: CallOverrides): Promise<void>;
+    registerBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      _signature: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    release(_name: BytesLike, overrides?: CallOverrides): Promise<void>;
 
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
+
+    setBasePrice(
+      _basePrice: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    setMetadataURI(
+      _name: BytesLike,
+      _uri: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
     totalNames(overrides?: CallOverrides): Promise<BigNumber>;
 
     transfer(
-      name: BytesLike,
-      recipient: string,
+      _name: BytesLike,
+      _recipient: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -407,7 +581,7 @@ export interface InferusNames extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    withdraw(amount: BigNumberish, overrides?: CallOverrides): Promise<void>;
+    withdraw(_amount: BigNumberish, overrides?: CallOverrides): Promise<void>;
   };
 
   filters: {
@@ -425,22 +599,36 @@ export interface InferusNames extends BaseContract {
     ): BeaconUpgradedEventFilter;
     BeaconUpgraded(beacon?: string | null): BeaconUpgradedEventFilter;
 
-    "NameRegistered(address,bytes32)"(
+    "Initialized(uint8)"(version?: null): InitializedEventFilter;
+    Initialized(version?: null): InitializedEventFilter;
+
+    "MetadataUpdated(bytes32,bytes)"(
+      name?: BytesLike | null,
+      metadataURI?: null
+    ): MetadataUpdatedEventFilter;
+    MetadataUpdated(
+      name?: BytesLike | null,
+      metadataURI?: null
+    ): MetadataUpdatedEventFilter;
+
+    "NameRegistered(address,bytes32,bytes)"(
       registrant?: string | null,
-      name?: null
+      name?: BytesLike | null,
+      metadataURI?: null
     ): NameRegisteredEventFilter;
     NameRegistered(
       registrant?: string | null,
-      name?: null
+      name?: BytesLike | null,
+      metadataURI?: null
     ): NameRegisteredEventFilter;
 
     "NameReleased(address,bytes32)"(
       registrant?: string | null,
-      name?: null
+      name?: BytesLike | null
     ): NameReleasedEventFilter;
     NameReleased(
       registrant?: string | null,
-      name?: null
+      name?: BytesLike | null
     ): NameReleasedEventFilter;
 
     "NameTransferCompleted(address,address,bytes32)"(
@@ -482,8 +670,20 @@ export interface InferusNames extends BaseContract {
     basePrice(overrides?: CallOverrides): Promise<BigNumber>;
 
     claim(
-      name: BytesLike,
+      _name: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    getHashForRegisterBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    getMetadataURI(
+      _name: BytesLike,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     initialize(
@@ -493,6 +693,11 @@ export interface InferusNames extends BaseContract {
 
     linkingPrices(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+    metadataURIs(
+      arg0: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     names(arg0: BytesLike, overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
@@ -500,12 +705,21 @@ export interface InferusNames extends BaseContract {
     proxiableUUID(overrides?: CallOverrides): Promise<BigNumber>;
 
     register(
-      name: BytesLike,
+      _name: BytesLike,
+      _metadataURI: BytesLike,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    registerBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      _signature: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
     release(
-      name: BytesLike,
+      _name: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -513,11 +727,22 @@ export interface InferusNames extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    setBasePrice(
+      _basePrice: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    setMetadataURI(
+      _name: BytesLike,
+      _uri: BytesLike,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     totalNames(overrides?: CallOverrides): Promise<BigNumber>;
 
     transfer(
-      name: BytesLike,
-      recipient: string,
+      _name: BytesLike,
+      _recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -540,7 +765,7 @@ export interface InferusNames extends BaseContract {
     ): Promise<BigNumber>;
 
     withdraw(
-      amount: BigNumberish,
+      _amount: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
@@ -549,8 +774,20 @@ export interface InferusNames extends BaseContract {
     basePrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     claim(
-      name: BytesLike,
+      _name: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    getHashForRegisterBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    getMetadataURI(
+      _name: BytesLike,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     initialize(
@@ -560,6 +797,11 @@ export interface InferusNames extends BaseContract {
 
     linkingPrices(
       arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    metadataURIs(
+      arg0: BytesLike,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -573,12 +815,21 @@ export interface InferusNames extends BaseContract {
     proxiableUUID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     register(
-      name: BytesLike,
+      _name: BytesLike,
+      _metadataURI: BytesLike,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    registerBySignature(
+      _name: BytesLike,
+      _owner: string,
+      _metadataURI: BytesLike,
+      _signature: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
     release(
-      name: BytesLike,
+      _name: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -586,11 +837,22 @@ export interface InferusNames extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
+    setBasePrice(
+      _basePrice: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    setMetadataURI(
+      _name: BytesLike,
+      _uri: BytesLike,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
     totalNames(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     transfer(
-      name: BytesLike,
-      recipient: string,
+      _name: BytesLike,
+      _recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -616,7 +878,7 @@ export interface InferusNames extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     withdraw(
-      amount: BigNumberish,
+      _amount: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };

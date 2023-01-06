@@ -1,44 +1,85 @@
-import { BigNumber, constants as ethersConstants, Contract, Signer } from 'ethers'
-import { formatBytes32String } from 'ethers/lib/utils'
+/* eslint-disable @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access */
+import { BigNumber, Contract, Signer } from 'ethers'
+import { arrayify, formatBytes32String, hexlify, toUtf8Bytes } from 'ethers/lib/utils'
 import { GraphQLClient } from 'graphql-request'
 import { InferusNames } from '../types/InferusNames'
 import { InferusConfig, loadConfig } from '../config'
 import abi from '../abis/InferusNames.json'
-import {
-  LinkedNamesQueryResult,
-  getLinkedNamesQuery,
-  resolveNameQuery,
-  ResolveNameQueryResult,
-} from '../graphql'
+import { LinkedNamesQueryResult, getLinkedNamesQuery } from '../graphql'
+import { IPFS } from '../ipfs'
+import { NameMetadata } from '../engine/types'
+import { validateNameMetadata } from '../engine/validation'
+import { GaslessTransactionExecutor, RecaptchaHandler } from '../engine/gasless'
+import { NameResolver } from '../engine/resolution'
+import { normalizeName } from '../engine/utils'
 
 export class InferusClient {
   signer: Signer
-  contract: InferusNames
+  namesContract: InferusNames
   graphClient: GraphQLClient
-  static readonly CHAIN_ID = 137
+  nameResolver: NameResolver
+  gaslessTransactionsExecutor?: GaslessTransactionExecutor
+  ipfs: IPFS
 
-  constructor(signer: Signer, config?: InferusConfig) {
+  constructor(signer: Signer, config?: InferusConfig, grecaptcha?: any) {
     if (!signer.provider) {
       throw Error('signer must be connected to a provider')
     }
 
     this.signer = signer
     const strictCfg = loadConfig(config)
-    this.contract = new Contract(strictCfg.contractAddress, abi, signer) as InferusNames
+    this.namesContract = new Contract(strictCfg.namesContractAddress, abi, signer) as InferusNames
     this.graphClient = new GraphQLClient(strictCfg.subgraphUrl)
+    this.nameResolver = new NameResolver(signer, config)
+    this.ipfs = new IPFS({ nftStorageApiKey: strictCfg.defaultNFTStorageKey })
+    if (grecaptcha) {
+      this.gaslessTransactionsExecutor = new GaslessTransactionExecutor(
+        strictCfg.gaslessTransactionsUrl,
+        new RecaptchaHandler(grecaptcha, strictCfg.recaptchaKey)
+      )
+    }
   }
 
   /**
    * Register `name` for current signer
    * @param name
+   * @param metadata
    */
-  async register(name: string): Promise<void> {
+  async register(name: string, metadata: NameMetadata): Promise<void> {
+    name = formatBytes32String(normalizeName(name))
+    await this.validateMetadata(metadata)
+    const utf8MetadataUri = await this.ipfs.send(JSON.stringify(metadata))
+    const signerAddress = await this.signer.getAddress()
+    const metadataUri = hexlify(Buffer.from(utf8MetadataUri))
+
+    const network = await this.namesContract.provider.getNetwork()
+    let linkingPrice: BigNumber | undefined
+    if (network.chainId === NameResolver.CHAIN_ID) {
+      linkingPrice = await this.getLinkingPrice()
+    }
+    if (this.gaslessTransactionsExecutor && (!linkingPrice || linkingPrice.eq(0))) {
+      const hash = await this.namesContract.getHashForRegisterBySignature(
+        name,
+        signerAddress,
+        metadataUri
+      )
+      const signature = await this.signer.signMessage(arrayify(hash))
+      await this.gaslessTransactionsExecutor.queueGaslessTransaction({
+        transactionType: 'register',
+        arguments: [name, signerAddress, metadataUri, signature],
+      })
+      return
+    }
+
     await this.verifyChainId()
-    name = this.normalizeName(name)
-    const tx = await this.contract.register(formatBytes32String(name), {
-      value: await this.getLinkingPrice(),
+    const tx = await this.namesContract.register(name, toUtf8Bytes(metadataUri), {
+      value: linkingPrice,
     })
     await tx.wait()
+  }
+
+  async resolveName(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
+    return await this.nameResolver.resolve(name, chain, token, tag)
   }
 
   /**
@@ -47,8 +88,8 @@ export class InferusClient {
    */
   async release(name: string): Promise<void> {
     await this.verifyChainId()
-    name = this.normalizeName(name)
-    const tx = await this.contract.release(formatBytes32String(name))
+    name = normalizeName(name)
+    const tx = await this.namesContract.release(formatBytes32String(name))
     await tx.wait()
   }
 
@@ -59,9 +100,9 @@ export class InferusClient {
    */
   async transfer(name: string, recipient: string): Promise<void> {
     await this.verifyChainId()
-    name = this.normalizeName(name)
+    name = normalizeName(name)
     const recipientAddress = await this.getAddress(recipient)
-    const tx = await this.contract.transfer(formatBytes32String(name), recipientAddress, {
+    const tx = await this.namesContract.transfer(formatBytes32String(name), recipientAddress, {
       value: await this.getTransferPrice(),
     })
     await tx.wait()
@@ -73,8 +114,8 @@ export class InferusClient {
    */
   async claim(name: string): Promise<void> {
     await this.verifyChainId()
-    name = this.normalizeName(name)
-    const tx = await this.contract.claim(formatBytes32String(name), {
+    name = normalizeName(name)
+    const tx = await this.namesContract.claim(formatBytes32String(name), {
       value: await this.getLinkingPrice(),
     })
     await tx.wait()
@@ -85,7 +126,7 @@ export class InferusClient {
    */
   async getLinkingPrice(): Promise<BigNumber> {
     await this.verifyChainId()
-    return await this.contract.linkingPrices(await this.signer.getAddress())
+    return await this.namesContract.linkingPrices(await this.signer.getAddress())
   }
 
   /**
@@ -93,38 +134,13 @@ export class InferusClient {
    */
   async getTransferPrice(): Promise<BigNumber> {
     await this.verifyChainId()
-    return await this.contract.basePrice()
+    return await this.namesContract.basePrice()
   }
 
   async getTransferOwner(name: string): Promise<string> {
     await this.verifyChainId()
-    name = this.normalizeName(name)
-    return await this.contract.transfers(formatBytes32String(name))
-  }
-
-  /**
-   * Resolves the name from the best available network.
-   * @param inferusName The name to be resolved
-   */
-  async resolveInferusName(inferusName: string): Promise<string> {
-    inferusName = this.normalizeName(inferusName)
-
-    const network = await this.contract.provider.getNetwork()
-    let owner: string | null
-    try {
-      if (network.chainId === InferusClient.CHAIN_ID) {
-        owner = await this.contract.names(formatBytes32String(inferusName))
-      } else {
-        owner = await this.resolveInferusNameFromGraphNetwork(inferusName)
-      }
-    } catch (e) {
-      throw Error(`Invalid name: ${inferusName}\n${e}`)
-    }
-
-    if (!!owner && owner !== ethersConstants.AddressZero) {
-      return owner
-    }
-    throw Error(`Invalid name: ${inferusName}\nName not linked with an address`)
+    name = normalizeName(name)
+    return await this.namesContract.transfers(formatBytes32String(name))
   }
 
   async getLinkedNames(address: string): Promise<string[]> {
@@ -138,62 +154,42 @@ export class InferusClient {
     return response.nameOwnerEntity.names.map((n) => n.name)
   }
 
-  /**
-   * Converts a valid name to a standard form including only lowercase letters, numbers and underscore.
-   * @param name
-   */
-  public normalizeName(name: string): string {
-    if (name[0] === '@') {
-      name = name.substring(1)
-    }
-
-    if (!/^\w{2,32}$/.test(name)) {
-      throw Error(
-        'Valid inferus names have a minimum of 2 and a maximum of 32 characters including letters, numbers, and underscore.'
-      )
-    }
-
-    return name.toLowerCase()
-  }
-
-  public isNormalized(name: string): boolean {
-    return /^[a-z0-9_]{2,32}$/.test(name)
-  }
-
-  public convertToPresentationForm(name: string): string {
-    const namePart = name[0] === '@' ? name.substring(1) : name
-    return `@${this.normalizeName(namePart)}`
-  }
-
-  public isPresentationForm(name: string): boolean {
-    return name[0] === '@' && this.isNormalized(name.substring(1))
-  }
-
-  private async resolveInferusNameFromGraphNetwork(inferusName: string): Promise<string | null> {
-    const response = await this.graphClient.request<ResolveNameQueryResult>(resolveNameQuery, {
-      name: inferusName,
-    })
-
-    if (response.nameEntities.length !== 1) {
-      return null
-    }
-
-    return response.nameEntities[0].owner.address
-  }
-
   private async getAddress(addressOrName: string) {
     if (addressOrName[0] === '@') {
-      return this.resolveInferusName(addressOrName)
+      return this.nameResolver.resolve(addressOrName)
     }
 
     // fallback to ethers default handling (with ENS support)
     return addressOrName
   }
 
+  private async validateMetadata(metadata: NameMetadata) {
+    const validationResult = await validateNameMetadata(metadata)
+    const keys = Object.keys(validationResult.records)
+    const errors = []
+    const warnings = []
+    for (const key of keys) {
+      for (const record of validationResult.records[key]) {
+        const message = `${key}: ${record.message}`
+        if (record.type === 'error') {
+          errors.push(message)
+        } else if (record.type === 'warning') {
+          warnings.push(message)
+        }
+      }
+    }
+    console.log(errors)
+    console.log(warnings)
+
+    if (errors.length) {
+      throw Error(errors.join('\n'))
+    }
+  }
+
   private async verifyChainId() {
-    const network = await this.contract.provider.getNetwork()
-    if (network.chainId !== InferusClient.CHAIN_ID) {
-      throw Error(`Invalid chain '${network.chainId}'. Switch to '${InferusClient.CHAIN_ID}'`)
+    const network = await this.namesContract.provider.getNetwork()
+    if (network.chainId !== NameResolver.CHAIN_ID) {
+      throw Error(`Invalid chain '${network.chainId}'. Switch to '${NameResolver.CHAIN_ID}'`)
     }
   }
 }

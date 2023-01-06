@@ -35,16 +35,54 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "name",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "metadataURI",
+        "type": "bytes"
+      }
+    ],
+    "name": "MetadataUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "registrant",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "bytes32",
         "name": "name",
         "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "metadataURI",
+        "type": "bytes"
       }
     ],
     "name": "NameRegistered",
@@ -60,7 +98,7 @@
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "bytes32",
         "name": "name",
         "type": "bytes32"
@@ -168,7 +206,7 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "name",
+        "name": "_name",
         "type": "bytes32"
       }
     ],
@@ -180,13 +218,37 @@
   {
     "inputs": [
       {
+        "internalType": "bytes32",
+        "name": "_name",
+        "type": "bytes32"
+      },
+      {
         "internalType": "address",
-        "name": "addr",
+        "name": "_owner",
         "type": "address"
       },
       {
+        "internalType": "bytes",
+        "name": "_metadataURI",
+        "type": "bytes"
+      }
+    ],
+    "name": "getHashForRegisterBySignature",
+    "outputs": [
+      {
         "internalType": "bytes32",
-        "name": "name",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_name",
         "type": "bytes32"
       }
     ],
@@ -235,11 +297,6 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
       {
         "internalType": "bytes32",
         "name": "",
@@ -306,8 +363,13 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "name",
+        "name": "_name",
         "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_metadataURI",
+        "type": "bytes"
       }
     ],
     "name": "register",
@@ -319,7 +381,35 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "name",
+        "name": "_name",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_metadataURI",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_signature",
+        "type": "bytes"
+      }
+    ],
+    "name": "registerBySignature",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_name",
         "type": "bytes32"
       }
     ],
@@ -352,12 +442,12 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "name",
+        "name": "_name",
         "type": "bytes32"
       },
       {
         "internalType": "bytes",
-        "name": "uri",
+        "name": "_uri",
         "type": "bytes"
       }
     ],
@@ -383,12 +473,12 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "name",
+        "name": "_name",
         "type": "bytes32"
       },
       {
         "internalType": "address",
-        "name": "recipient",
+        "name": "_recipient",
         "type": "address"
       }
     ],
@@ -464,7 +554,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "amount",
+        "name": "_amount",
         "type": "uint256"
       }
     ],

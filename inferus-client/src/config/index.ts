@@ -2,18 +2,34 @@
 import defaultConfigs from './defaults.json'
 
 export interface InferusConfig {
-  contractAddress?: string
+  namesContractAddress?: string
+  subscriptionsContractAddress?: string
   subgraphUrl?: string
+  gaslessTransactionsUrl?: string
+  defaultNFTStorageKey?: string
+  recaptchaKey?: string
+  ipfsGateway?: string
 }
 
 interface StrictInferusConfig extends InferusConfig {
-  contractAddress: string
+  namesContractAddress: string
+  subscriptionsContractAddress: string
   subgraphUrl: string
+  gaslessTransactionsUrl: string
+  defaultNFTStorageKey: string
+  recaptchaKey: string
+  ipfsGateway: string
 }
 
 export function loadConfig(cfg?: InferusConfig): StrictInferusConfig {
   return {
-    contractAddress: cfg?.contractAddress || defaultConfigs.CONTRACT_ADDRESS,
+    namesContractAddress: cfg?.namesContractAddress || defaultConfigs.NAMES_CONTRACT_ADDRESS,
+    subscriptionsContractAddress:
+      cfg?.subscriptionsContractAddress || defaultConfigs.SUBSCRIPTIONS_CONTRACT_ADDRESS,
     subgraphUrl: cfg?.subgraphUrl || defaultConfigs.SUBGRAPH_URL,
+    gaslessTransactionsUrl: cfg?.gaslessTransactionsUrl || defaultConfigs.GASLESS_TRANSACTIONS_URL,
+    defaultNFTStorageKey: cfg?.defaultNFTStorageKey || defaultConfigs['DEFAULT_NFT.STORAGE_KEY'],
+    recaptchaKey: cfg?.recaptchaKey || defaultConfigs.RECAPTCHA_KEY,
+    ipfsGateway: cfg?.ipfsGateway || defaultConfigs.IPFS_GATEWAY,
   }
 }

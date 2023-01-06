@@ -4,6 +4,7 @@ export const resolveNameQuery = gql`
   query resolveName($name: String!) {
     nameEntities(where: { name: $name }) {
       name
+      metadataUri
       owner {
         address
       }
