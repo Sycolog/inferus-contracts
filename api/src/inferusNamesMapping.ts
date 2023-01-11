@@ -1,19 +1,17 @@
 import {Address, Bytes, log} from "@graphprotocol/graph-ts"
 import {
+  MetadataUpdated,
   NameRegistered,
   NameReleased,
   NameTransferCompleted,
   NameTransferInitiated,
 } from "../generated/InferusNames/InferusNames"
 import { NameEntity, NameOwnerEntity, NameTransferEntity } from "../generated/schema"
+import {concatenateBytes} from "./utils";
 
 const validNameChars = 'abcdefghijklmnopqrstuvwxyz0123456789_'
 function getTransferId(name: Bytes, from: Address, to: Address): Bytes {
-  const idArray = new Bytes(name.length + from.length + to.length)
-  idArray.set(name, 0)
-  idArray.set(from, name.length)
-  idArray.set(to, name.length + from.length)
-  return idArray;
+  return concatenateBytes([name, from, to])
 }
 
 function isNormalized(name: string): boolean {
@@ -28,15 +26,26 @@ function isNormalized(name: string): boolean {
       return false
     }
   }
-  
+
   log.info('{} is normalized', [name])
   return true
+}
+
+function isValidIpfsUri(uri: string): boolean {
+  return !!uri.startsWith('ipfs://')
 }
 
 export function handleNameRegistered(event: NameRegistered): void {
   const name = String.UTF8.decode(event.params.name.buffer, true)
   if (!isNormalized(name)) {
     log.error('Skipping - Not normalized: {}', [name])
+    return
+  }
+
+  const metadataURI = String.UTF8.decode(event.params.metadataURI.buffer, true)
+  if (!isValidIpfsUri(metadataURI))
+  {
+    log.error('Skipping - Invalid metadata: {}', [event.params.metadataURI.toHex()])
     return
   }
 
@@ -58,6 +67,7 @@ export function handleNameRegistered(event: NameRegistered): void {
 
   nameEntity.name = name
   nameEntity.owner = nameOwnerEntity.id
+  nameEntity.metadataUri = metadataURI
   log.info('Creating name: {}', [name])
   nameEntity.save()
 }
@@ -73,6 +83,23 @@ export function handleNameReleased(event: NameReleased): void {
   nameEntity.save()
 }
 
+export function handleMetadataUpdated(event: MetadataUpdated): void {
+  const name = String.UTF8.decode(event.params.name.buffer, true)
+  if (!isNormalized(name)) {
+    return
+  }
+  const metadataURI = String.UTF8.decode(event.params.metadataURI.buffer, true)
+  if (!isValidIpfsUri(metadataURI))
+  {
+    log.error('Skipping - Invalid metadata: {}', [event.params.metadataURI.toHex()])
+    return
+  }
+
+  let nameEntity = NameEntity.load(event.params.name.toHex())!
+  nameEntity.metadataUri = metadataURI
+  nameEntity.save()
+}
+
 export function handleNameTransferCompleted(
   event: NameTransferCompleted
 ): void {
@@ -85,7 +112,7 @@ export function handleNameTransferCompleted(
   let transferEntity = NameTransferEntity.load(getTransferId(event.params.name, event.params.from, event.params.to).toHex())!
   let nameEntity = NameEntity.load(event.params.name.toHex())
   let newOwnerEntity = NameOwnerEntity.load(newOwnerAddress.toHex())
-  
+
   if (!nameEntity) {
     log.error('Name entity not found for transfer entity for name {}', [name])
     return;
@@ -102,7 +129,7 @@ export function handleNameTransferCompleted(
   nameEntity.owner = newOwnerAddress.toHex()
   transferEntity.isCompleted = true
   log.info('Transfer of name \'@{}\' from {} to {} is completed', [name, event.params.from.toHex(), event.params.to.toHex()])
-  
+
   nameEntity.save()
   transferEntity.save()
 }

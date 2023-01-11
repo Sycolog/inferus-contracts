@@ -6,27 +6,58 @@ dataSources:
     name: InferusNames
     network: matic
     source:
-      address: "0xBA094A741B8B99A4E42a7d99473320Bd3989E363"
+      address: "0xdD3eb922C1022Dc12296cC09470c2a3d0d65f695"
       abi: InferusNames
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - NameRegistered
-        - NameReleased
-        - NameTransferCompleted
-        - NameTransferInitiated
+        - NameEntity
+        - NameOwnerEntity
+        - NameTransferEntity
       abis:
         - name: InferusNames
           file: ./abis/InferusNames.json
       eventHandlers:
-        - event: NameRegistered(indexed address,bytes32)
+        - event: NameRegistered(indexed address,indexed bytes32,bytes)
           handler: handleNameRegistered
-        - event: NameReleased(indexed address,bytes32)
+        - event: NameReleased(indexed address,indexed bytes32)
           handler: handleNameReleased
-        - event: NameTransferCompleted(indexed address,indexed address,bytes32)
-          handler: handleNameTransferCompleted
         - event: NameTransferInitiated(indexed address,indexed address,bytes32)
           handler: handleNameTransferInitiated
-      file: ./src/mapping.ts
+        - event: NameTransferCompleted(indexed address,indexed address,bytes32)
+          handler: handleNameTransferCompleted
+        - event: MetadataUpdated(indexed bytes32,bytes)
+          handler: handleMetadataUpdated
+      file: ./src/inferusNamesMapping.ts
+
+  - kind: ethereum
+    name: SubscriptionManager
+    network: matic
+    source:
+      address: "0xfEF461dDba7Ce13cafdB8FB6047B9F7D8cc9390A"
+      abi: SubscriptionManager
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - SubscriptionPlanEntity
+        - SubscriptionEntity
+        - WithdrawalEntity
+      abis:
+        - name: SubscriptionManager
+          file: ./abis/SubscriptionManager.json
+      eventHandlers:
+        - event: CreatePlan(indexed uint256,indexed address,indexed address,uint256,uint256,uint8)
+          handler: handleCreatePlan
+        - event: UpdatePlanProperties(indexed uint256,indexed address,uint256,uint256,uint8)
+          handler: handleUpdatePlanProperties
+        - event: TransferPlanOwnership(indexed uint256,indexed address,indexed address)
+          handler: handleTransferPlanOwnership
+        - event: CreateSubscription(indexed uint256,indexed uint256,indexed address,address,uint256)
+          handler: handleCreateSubscription
+        - event: Withdraw(indexed uint256,indexed address,address,indexed address,uint256)
+          handler: handleWithdraw
+      file: ./src/subscriptionManagerMapping.ts

@@ -1,6 +1,7 @@
 type NameEntity @entity {
   id: ID!
   name: String!
+  metadataUri: String!
   owner: NameOwnerEntity
 }
 
@@ -17,4 +18,39 @@ type NameTransferEntity @entity {
   from: Bytes!
   to: Bytes!
   isCompleted: Boolean!
+}
+
+type SubscriptionPlanEntity @entity {
+  id: ID!
+  "The address that manages the plan"
+  owner: Bytes!
+  "null indicates coin"
+  token: Bytes
+  price: BigInt!
+  duration: BigInt!
+  active: Boolean!
+  subscriptions: [SubscriptionEntity!]! @derivedFrom(field: "plan")
+  withdrawals: [WithdrawalEntity!]! @derivedFrom(field: "plan")
+}
+
+type SubscriptionEntity @entity {
+  id: ID!
+  expiry: BigInt!
+  subscriber: SubscriberEntity!
+  plan: SubscriptionPlanEntity!
+}
+
+type SubscriberEntity @entity {
+  id: ID!
+  address: Bytes!
+  subscriptions: [SubscriptionEntity!]! @derivedFrom(field: "subscriber")
+}
+
+type WithdrawalEntity @entity {
+  id: ID!
+  token: Bytes!
+  amount: BigInt!
+  withdrawer: Bytes!
+  receiver: Bytes!
+  plan: SubscriptionPlanEntity!
 }
