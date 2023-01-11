@@ -35,8 +35,7 @@ export class NameResolver {
   }
 
   async resolve(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
-    const hexMetadataUri = await this.resolveInferusNameToMetadataURI(name)
-    const metadataUri = toUtf8String(hexMetadataUri)
+    const metadataUri = await this.resolveInferusNameToMetadataURI(name)
     if (!validateIpfsUri(metadataUri)) {
       console.error('Invalid IPFS URI:', metadataUri)
       throw Error('Invalid IPFS URI')
@@ -102,6 +101,7 @@ export class NameResolver {
     try {
       if (network.chainId === NameResolver.CHAIN_ID) {
         metadataUri = await this.namesContract.metadataURIs(formatBytes32String(inferusName))
+        metadataUri = toUtf8String(metadataUri)
       } else {
         metadataUri = await this.resolveMetadataFromGraphNetwork(inferusName)
       }
@@ -124,6 +124,6 @@ export class NameResolver {
       return null
     }
 
-    return response.nameEntities[0].owner.address
+    return response.nameEntities[0].metadataUri
   }
 }

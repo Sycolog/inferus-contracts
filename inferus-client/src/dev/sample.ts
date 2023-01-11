@@ -163,13 +163,15 @@ async function main() {
     wallet1.connect(new providers.JsonRpcProvider('https://matic-mumbai.chainstacklabs.com')), // different chain
     {}
   )
+  // wait 1 minute for the name to get indexed
+  await new Promise((resolve) => setTimeout(resolve, 60000))
   const bitcoinAddress = await resolverClient.resolveName(`@${name1}`, 'otc:bitcoin')
   console.log(`@${name1}'s bitcoin address is:`, bitcoinAddress)
 
   try {
     await resolverClient.resolveName('@sfkifjavdlkgak')
   } catch (e) {
-    console.log('@sfkifjavdlkgak is owned by nobody:')
+    console.log(e)
   }
 }
 
