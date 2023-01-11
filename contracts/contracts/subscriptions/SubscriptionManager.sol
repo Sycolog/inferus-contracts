@@ -74,7 +74,8 @@ contract SubscriptionManager is Initializable, OwnableUpgradeable, UUPSUpgradeab
         uint256 indexed planId,
         uint256 indexed subscriptionId,
         address indexed subscriber,
-        address subscribedBy
+        address subscribedBy,
+        uint256 expiry
     );
 
     /**
@@ -218,7 +219,7 @@ contract SubscriptionManager is Initializable, OwnableUpgradeable, UUPSUpgradeab
             block.timestamp + duration,
             _subscriber
         );
-        emit CreateSubscription(_planId, subscriptionId, _subscriber, msg.sender);
+        emit CreateSubscription(_planId, subscriptionId, _subscriber, msg.sender, block.timestamp + duration);
 
         return plan;
     }
