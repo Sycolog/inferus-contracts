@@ -76,6 +76,11 @@ export class InferusClient {
     await tx.wait()
   }
 
+  /**
+   * Register `name` for current signer
+   * @param name The name for which the metadata should be updated
+   * @param metadata The new metadata to be set. Will override any existing data
+   */
   async updateMetadata(name: string, metadata: NameMetadata): Promise<void> {
     await this.verifyChainId()
     name = normalizeName(name)
@@ -84,6 +89,13 @@ export class InferusClient {
     await tx.wait()
   }
 
+  /**
+   * Register `name` for current signer
+   * @param name The name to be resolved
+   * @param chain The chain for which the address should be resolved. Format is evm:<chainId> for evm chains and otc:<coingeckoId> for non-evm chains.
+   * @param token The token address to be resolved. `coin` to resolve the address mapped to the network coin.
+   * @param tag   A tag to distinguish between multiple addresses for the same token on the same chain
+   */
   async resolveName(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
     return await this.nameResolver.resolve(name, chain, token, tag)
   }
