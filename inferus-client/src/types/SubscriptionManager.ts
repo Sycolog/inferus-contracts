@@ -26,6 +26,7 @@ export interface SubscriptionManagerInterface extends utils.Interface {
     "initialize()": FunctionFragment;
     "lastId()": FunctionFragment;
     "owner()": FunctionFragment;
+    "planBalances(uint256)": FunctionFragment;
     "plans(uint256)": FunctionFragment;
     "proxiableUUID()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
@@ -37,6 +38,7 @@ export interface SubscriptionManagerInterface extends utils.Interface {
     "updatePlanProperties(uint256,uint256,uint256,uint8)": FunctionFragment;
     "upgradeTo(address)": FunctionFragment;
     "upgradeToAndCall(address,bytes)": FunctionFragment;
+    "withdrawPlanBalance(uint256,address,uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -53,6 +55,10 @@ export interface SubscriptionManagerInterface extends utils.Interface {
   ): string;
   encodeFunctionData(functionFragment: "lastId", values?: undefined): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "planBalances",
+    values: [BigNumberish]
+  ): string;
   encodeFunctionData(functionFragment: "plans", values: [BigNumberish]): string;
   encodeFunctionData(
     functionFragment: "proxiableUUID",
@@ -91,6 +97,10 @@ export interface SubscriptionManagerInterface extends utils.Interface {
     functionFragment: "upgradeToAndCall",
     values: [string, BytesLike]
   ): string;
+  encodeFunctionData(
+    functionFragment: "withdrawPlanBalance",
+    values: [BigNumberish, string, BigNumberish]
+  ): string;
 
   decodeFunctionResult(
     functionFragment: "COIN_ADDRESS",
@@ -100,6 +110,10 @@ export interface SubscriptionManagerInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "lastId", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "planBalances",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "plans", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "proxiableUUID",
@@ -135,17 +149,22 @@ export interface SubscriptionManagerInterface extends utils.Interface {
     functionFragment: "upgradeToAndCall",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "withdrawPlanBalance",
+    data: BytesLike
+  ): Result;
 
   events: {
     "AdminChanged(address,address)": EventFragment;
     "BeaconUpgraded(address)": EventFragment;
     "CreatePlan(uint256,address,address,uint256,uint256,uint8)": EventFragment;
-    "CreateSubscription(uint256,uint256,address,address)": EventFragment;
+    "CreateSubscription(uint256,uint256,address,address,uint256)": EventFragment;
     "Initialized(uint8)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
     "TransferPlanOwnership(uint256,address,address)": EventFragment;
     "UpdatePlanProperties(uint256,address,uint256,uint256,uint8)": EventFragment;
     "Upgraded(address)": EventFragment;
+    "Withdraw(uint256,address,address,address,uint256)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "AdminChanged"): EventFragment;
@@ -157,6 +176,7 @@ export interface SubscriptionManagerInterface extends utils.Interface {
   getEvent(nameOrSignatureOrTopic: "TransferPlanOwnership"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "UpdatePlanProperties"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Upgraded"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Withdraw"): EventFragment;
 }
 
 export type AdminChangedEvent = TypedEvent<
@@ -185,12 +205,13 @@ export type CreatePlanEvent = TypedEvent<
 export type CreatePlanEventFilter = TypedEventFilter<CreatePlanEvent>;
 
 export type CreateSubscriptionEvent = TypedEvent<
-  [BigNumber, BigNumber, string, string],
+  [BigNumber, BigNumber, string, string, BigNumber],
   {
     planId: BigNumber;
     subscriptionId: BigNumber;
     subscriber: string;
     subscribedBy: string;
+    expiry: BigNumber;
   }
 >;
 
@@ -234,6 +255,19 @@ export type UpdatePlanPropertiesEventFilter =
 export type UpgradedEvent = TypedEvent<[string], { implementation: string }>;
 
 export type UpgradedEventFilter = TypedEventFilter<UpgradedEvent>;
+
+export type WithdrawEvent = TypedEvent<
+  [BigNumber, string, string, string, BigNumber],
+  {
+    planId: BigNumber;
+    withdrawer: string;
+    withdrawnTo: string;
+    token: string;
+    amount: BigNumber;
+  }
+>;
+
+export type WithdrawEventFilter = TypedEventFilter<WithdrawEvent>;
 
 export interface SubscriptionManager extends BaseContract {
   contractName: "SubscriptionManager";
@@ -280,6 +314,11 @@ export interface SubscriptionManager extends BaseContract {
     lastId(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
+
+    planBalances(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
 
     plans(
       arg0: BigNumberish,
@@ -358,6 +397,13 @@ export interface SubscriptionManager extends BaseContract {
       data: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
+
+    withdrawPlanBalance(
+      _planId: BigNumberish,
+      _withdrawTo: string,
+      _amount: BigNumberish,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
   };
 
   COIN_ADDRESS(overrides?: CallOverrides): Promise<string>;
@@ -377,6 +423,11 @@ export interface SubscriptionManager extends BaseContract {
   lastId(overrides?: CallOverrides): Promise<BigNumber>;
 
   owner(overrides?: CallOverrides): Promise<string>;
+
+  planBalances(
+    arg0: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
 
   plans(
     arg0: BigNumberish,
@@ -456,6 +507,13 @@ export interface SubscriptionManager extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  withdrawPlanBalance(
+    _planId: BigNumberish,
+    _withdrawTo: string,
+    _amount: BigNumberish,
+    overrides?: PayableOverrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   callStatic: {
     COIN_ADDRESS(overrides?: CallOverrides): Promise<string>;
 
@@ -472,6 +530,11 @@ export interface SubscriptionManager extends BaseContract {
     lastId(overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<string>;
+
+    planBalances(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     plans(
       arg0: BigNumberish,
@@ -545,6 +608,13 @@ export interface SubscriptionManager extends BaseContract {
       data: BytesLike,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    withdrawPlanBalance(
+      _planId: BigNumberish,
+      _withdrawTo: string,
+      _amount: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
   };
 
   filters: {
@@ -579,17 +649,19 @@ export interface SubscriptionManager extends BaseContract {
       status?: null
     ): CreatePlanEventFilter;
 
-    "CreateSubscription(uint256,uint256,address,address)"(
+    "CreateSubscription(uint256,uint256,address,address,uint256)"(
       planId?: BigNumberish | null,
       subscriptionId?: BigNumberish | null,
       subscriber?: string | null,
-      subscribedBy?: null
+      subscribedBy?: null,
+      expiry?: null
     ): CreateSubscriptionEventFilter;
     CreateSubscription(
       planId?: BigNumberish | null,
       subscriptionId?: BigNumberish | null,
       subscriber?: string | null,
-      subscribedBy?: null
+      subscribedBy?: null,
+      expiry?: null
     ): CreateSubscriptionEventFilter;
 
     "Initialized(uint8)"(version?: null): InitializedEventFilter;
@@ -632,6 +704,21 @@ export interface SubscriptionManager extends BaseContract {
 
     "Upgraded(address)"(implementation?: string | null): UpgradedEventFilter;
     Upgraded(implementation?: string | null): UpgradedEventFilter;
+
+    "Withdraw(uint256,address,address,address,uint256)"(
+      planId?: BigNumberish | null,
+      withdrawer?: string | null,
+      withdrawnTo?: null,
+      token?: string | null,
+      amount?: null
+    ): WithdrawEventFilter;
+    Withdraw(
+      planId?: BigNumberish | null,
+      withdrawer?: string | null,
+      withdrawnTo?: null,
+      token?: string | null,
+      amount?: null
+    ): WithdrawEventFilter;
   };
 
   estimateGas: {
@@ -652,6 +739,11 @@ export interface SubscriptionManager extends BaseContract {
     lastId(overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
+
+    planBalances(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     plans(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -710,6 +802,13 @@ export interface SubscriptionManager extends BaseContract {
       data: BytesLike,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
+
+    withdrawPlanBalance(
+      _planId: BigNumberish,
+      _withdrawTo: string,
+      _amount: BigNumberish,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -730,6 +829,11 @@ export interface SubscriptionManager extends BaseContract {
     lastId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    planBalances(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
 
     plans(
       arg0: BigNumberish,
@@ -789,6 +893,13 @@ export interface SubscriptionManager extends BaseContract {
     upgradeToAndCall(
       newImplementation: string,
       data: BytesLike,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    withdrawPlanBalance(
+      _planId: BigNumberish,
+      _withdrawTo: string,
+      _amount: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };
