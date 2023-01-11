@@ -75,9 +75,7 @@ export function handleWithdraw(event: Withdraw): void {
     return
   }
 
-  let random = Math.floor(1000000000000 * Math.random()) as i32
-  const withdrawalId = concatenateBytes([Bytes.fromBigInt(event.params.planId), Bytes.fromI32(random)])
-  const withdrawal = new WithdrawalEntity(withdrawalId.toHex())
+  const withdrawal = new WithdrawalEntity(event.transaction.hash.toHex())
   withdrawal.token = event.params.token
   withdrawal.amount = event.params.amount
   withdrawal.withdrawer = event.params.withdrawer
