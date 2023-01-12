@@ -1,6 +1,6 @@
 {
   "name": "inferus-js",
-  "version": "0.2.0-alpha.3",
+  "version": "0.2.0-alpha.4",
   "description": "",
   "main": "dist/index.js",
   "engines": {
@@ -37,7 +37,7 @@
     "axios": "^1.2.2",
     "dotenv": "^10.0.0",
     "ethers": "^5.7.2",
-    "nft.storage": "^7.0.0",
-    "graphql-request": "^4.2.0"
+    "graphql-request": "^4.2.0",
+    "nft.storage": "^7.0.0"
   }
 }

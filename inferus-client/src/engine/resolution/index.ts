@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return */
 import { Contract, Signer } from 'ethers'
 import { InferusConfig, loadConfig } from '../../config'
 import { InferusNames } from '../../types/InferusNames'
@@ -34,7 +34,7 @@ export class NameResolver {
     this.ipfsGatewayClient = axios.create()
   }
 
-  async resolve(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
+  async getMetadata(name: string): Promise<NameMetadata> {
     const metadataUri = await this.resolveInferusNameToMetadataURI(name)
     if (!validateIpfsUri(metadataUri)) {
       console.error('Invalid IPFS URI:', metadataUri)
@@ -45,7 +45,11 @@ export class NameResolver {
     const response = await this.ipfsGatewayClient.get(
       this.ipfsGatewayUrlTemplate.replace('{{cid}}', cid)
     )
-    const metadata = response.data as NameMetadata
+    return response.data
+  }
+
+  async resolve(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
+    const metadata = await this.getMetadata(name)
     if (!metadata?.paymentLink?.chains) {
       console.error('Invalid metadata:', metadata)
       throw Error('Invalid metadata content')

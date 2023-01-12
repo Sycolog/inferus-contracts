@@ -77,7 +77,7 @@ export class InferusClient {
   }
 
   /**
-   * Register `name` for current signer
+   * Update the metadata overriding existing data with new metadata.
    * @param name The name for which the metadata should be updated
    * @param metadata The new metadata to be set. Will override any existing data
    */
@@ -90,7 +90,7 @@ export class InferusClient {
   }
 
   /**
-   * Register `name` for current signer
+   * Resolve the address for the name given the optional parameters
    * @param name The name to be resolved
    * @param chain The chain for which the address should be resolved. Format is evm:<chainId> for evm chains and otc:<coingeckoId> for non-evm chains.
    * @param token The token address to be resolved. `coin` to resolve the address mapped to the network coin.
@@ -98,6 +98,10 @@ export class InferusClient {
    */
   async resolveName(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
     return await this.nameResolver.resolve(name, chain, token, tag)
+  }
+
+  async getMetadata(name: string): Promise<NameMetadata> {
+    return await this.nameResolver.getMetadata(name)
   }
 
   /**
