@@ -1,0 +1,7213 @@
+[
+  {
+    "id": "evm:1",
+    "name": "Ethereum",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 1,
+      "networkId": 1,
+      "chainSlug": "ethereum",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://eth.llamarpc.com",
+        "https://rpc.ankr.com/eth",
+        "https://ethereum.publicnode.com",
+        "https://rpc.flashbots.net",
+        "https://virginia.rpc.blxrbdn.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:56",
+    "name": "Binance Smart Chain",
+    "evmMeta": {
+      "chain": "BSC",
+      "chainId": 56,
+      "networkId": 56,
+      "chainSlug": "binance",
+      "nativeCurrency": {
+        "name": "Binance Chain Native Token",
+        "symbol": "BNB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ankr.com/bsc",
+        "https://bscrpc.com",
+        "https://binance.nodereal.io",
+        "https://nodes.vefinetwork.org/smartchain",
+        "https://bsc.rpc.blxrbdn.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:137",
+    "name": "Polygon",
+    "evmMeta": {
+      "chain": "Polygon",
+      "chainId": 137,
+      "networkId": 137,
+      "chainSlug": "polygon",
+      "nativeCurrency": {
+        "name": "MATIC",
+        "symbol": "MATIC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://polygon.llamarpc.com",
+        "https://rpc.ankr.com/polygon",
+        "https://polygonapi.terminet.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:42161",
+    "name": "Arbitrum One",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 42161,
+      "networkId": 42161,
+      "chainSlug": "arbitrum",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ankr.com/arbitrum"
+      ]
+    }
+  },
+  {
+    "id": "evm:43114",
+    "name": "Avalanche C-Chain",
+    "evmMeta": {
+      "chain": "AVAX",
+      "chainId": 43114,
+      "networkId": 43114,
+      "chainSlug": "avalanche",
+      "nativeCurrency": {
+        "name": "Avalanche",
+        "symbol": "AVAX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ankr.com/avalanche"
+      ]
+    }
+  },
+  {
+    "id": "evm:10",
+    "name": "Optimism",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 10,
+      "networkId": 10,
+      "chainSlug": "optimism",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.optimism.io",
+        "https://rpc.ankr.com/optimism"
+      ]
+    }
+  },
+  {
+    "id": "evm:250",
+    "name": "Fantom Opera",
+    "evmMeta": {
+      "chain": "FTM",
+      "chainId": 250,
+      "networkId": 250,
+      "chainSlug": "fantom",
+      "nativeCurrency": {
+        "name": "Fantom",
+        "symbol": "FTM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ftm.tools",
+        "https://rpc.ankr.com/fantom",
+        "https://rpc.fantom.network",
+        "https://rpcapi.fantom.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:25",
+    "name": "Cronos Beta",
+    "evmMeta": {
+      "chain": "CRO",
+      "chainId": 25,
+      "networkId": 25,
+      "chainSlug": "cronos",
+      "nativeCurrency": {
+        "name": "Cronos",
+        "symbol": "CRO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://evm.cronos.org",
+        "https://node.croswap.com/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:2222",
+    "name": "Kava EVM",
+    "evmMeta": {
+      "chain": "KAVA",
+      "chainId": 2222,
+      "networkId": 2222,
+      "chainSlug": "kava",
+      "nativeCurrency": {
+        "name": "Kava",
+        "symbol": "KAVA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://evm.kava.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:8217",
+    "name": "Klaytn Cypress",
+    "evmMeta": {
+      "chain": "KLAY",
+      "chainId": 8217,
+      "networkId": 8217,
+      "chainSlug": "klaytn",
+      "nativeCurrency": {
+        "name": "KLAY",
+        "symbol": "KLAY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://cypress.fandom.finance/archive"
+      ]
+    }
+  },
+  {
+    "id": "evm:32659",
+    "name": "Fusion",
+    "evmMeta": {
+      "chain": "FSN",
+      "chainId": 32659,
+      "networkId": 32659,
+      "chainSlug": "fusion",
+      "nativeCurrency": {
+        "name": "Fusion",
+        "symbol": "FSN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.anyswap.exchange",
+        "https://mainway.freemoon.xyz/gate",
+        "https://fsn.dev/api",
+        "https://mainnet.fusionnetwork.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:100",
+    "name": "Gnosis",
+    "evmMeta": {
+      "chain": "GNO",
+      "chainId": 100,
+      "networkId": 100,
+      "chainSlug": "xdai",
+      "nativeCurrency": {
+        "name": "xDAI",
+        "symbol": "xDAI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.gnosischain.com",
+        "https://rpc.gnosis.gateway.fm",
+        "https://rpc.ankr.com/gnosis"
+      ]
+    }
+  },
+  {
+    "id": "evm:42220",
+    "name": "Celo",
+    "evmMeta": {
+      "chain": "CELO",
+      "chainId": 42220,
+      "networkId": 42220,
+      "chainSlug": "celo",
+      "nativeCurrency": {
+        "name": "CELO",
+        "symbol": "CELO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://forno.celo.org",
+        "https://rpc.ankr.com/celo"
+      ]
+    }
+  },
+  {
+    "id": "evm:1284",
+    "name": "Moonbeam",
+    "evmMeta": {
+      "chain": "MOON",
+      "chainId": 1284,
+      "networkId": 1284,
+      "chainSlug": "moonbeam",
+      "nativeCurrency": {
+        "name": "Glimmer",
+        "symbol": "GLMR",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.api.moonbeam.network",
+        "https://moonbeam.public.blastapi.io",
+        "https://rpc.ankr.com/moonbeam"
+      ]
+    }
+  },
+  {
+    "id": "evm:7700",
+    "name": "Canto",
+    "evmMeta": {
+      "chain": "Canto",
+      "chainId": 7700,
+      "networkId": 7700,
+      "chainSlug": "canto",
+      "nativeCurrency": {
+        "name": "Canto",
+        "symbol": "CANTO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://canto.slingshot.finance"
+      ]
+    }
+  },
+  {
+    "id": "evm:128",
+    "name": "Huobi ECO Chain",
+    "evmMeta": {
+      "chain": "Heco",
+      "chainId": 128,
+      "networkId": 128,
+      "chainSlug": "heco",
+      "nativeCurrency": {
+        "name": "Huobi ECO Chain Native Token",
+        "symbol": "HT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://hecoapi.terminet.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:1313161554",
+    "name": "Aurora",
+    "evmMeta": {
+      "chain": "NEAR",
+      "chainId": 1313161554,
+      "networkId": 1313161554,
+      "chainSlug": "aurora",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.aurora.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:66",
+    "name": "OKXChain",
+    "evmMeta": {
+      "chain": "okxchain",
+      "chainId": 66,
+      "networkId": 66,
+      "chainSlug": "okexchain",
+      "nativeCurrency": {
+        "name": "OKXChain Global Utility Token",
+        "symbol": "OKT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://exchainrpc.okex.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:30",
+    "name": "RSK",
+    "evmMeta": {
+      "chain": "RSK",
+      "chainId": 30,
+      "networkId": 30,
+      "chainSlug": "rsk",
+      "nativeCurrency": {
+        "name": "Smart Bitcoin",
+        "symbol": "RBTC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mycrypto.rsk.co"
+      ]
+    }
+  },
+  {
+    "id": "evm:321",
+    "name": "KCC",
+    "evmMeta": {
+      "chain": "KCC",
+      "chainId": 321,
+      "networkId": 321,
+      "chainSlug": "kucoin",
+      "nativeCurrency": {
+        "name": "KuCoin Token",
+        "symbol": "KCS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://kcc.mytokenpocket.vip"
+      ]
+    }
+  },
+  {
+    "id": "evm:592",
+    "name": "Astar",
+    "evmMeta": {
+      "chain": "ASTR",
+      "chainId": 592,
+      "networkId": 592,
+      "chainSlug": "astar",
+      "nativeCurrency": {
+        "name": "Astar",
+        "symbol": "ASTR",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://astar.public.blastapi.io",
+        "https://evm.astar.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1285",
+    "name": "Moonriver",
+    "evmMeta": {
+      "chain": "MOON",
+      "chainId": 1285,
+      "networkId": 1285,
+      "chainSlug": "moonriver",
+      "nativeCurrency": {
+        "name": "Moonriver",
+        "symbol": "MOVR",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://moonriver.api.onfinality.io/public",
+        "https://moonriver.public.blastapi.io",
+        "https://rpc.api.moonriver.moonbeam.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1088",
+    "name": "Metis Andromeda",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 1088,
+      "networkId": 1088,
+      "chainSlug": "metis",
+      "nativeCurrency": {
+        "name": "Metis",
+        "symbol": "METIS",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:40",
+    "name": "Telos EVM",
+    "evmMeta": {
+      "chain": "TLOS",
+      "chainId": 40,
+      "networkId": 40,
+      "chainSlug": "telos",
+      "nativeCurrency": {
+        "name": "Telos",
+        "symbol": "TLOS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.telos.net/evm",
+        "https://api.kainosbp.com/evm",
+        "https://evm.teloskorea.com/evm"
+      ]
+    }
+  },
+  {
+    "id": "evm:4689",
+    "name": "IoTeX Network",
+    "evmMeta": {
+      "chain": "iotex.io",
+      "chainId": 4689,
+      "networkId": 4689,
+      "chainSlug": "iotex",
+      "nativeCurrency": {
+        "name": "IoTeX",
+        "symbol": "IOTX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ankr.com/iotex"
+      ]
+    }
+  },
+  {
+    "id": "evm:42262",
+    "name": "Oasis Emerald",
+    "evmMeta": {
+      "chain": "Emerald",
+      "chainId": 42262,
+      "networkId": 42262,
+      "chainSlug": "oasis",
+      "nativeCurrency": {
+        "name": "Emerald Rose",
+        "symbol": "ROSE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://emerald.oasis.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:888",
+    "name": "Wanchain",
+    "evmMeta": {
+      "chain": "WAN",
+      "chainId": 888,
+      "networkId": 888,
+      "chainSlug": "wanchain",
+      "nativeCurrency": {
+        "name": "Wancoin",
+        "symbol": "WAN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:361",
+    "name": "Theta",
+    "evmMeta": {
+      "chain": "Theta",
+      "chainId": 361,
+      "networkId": 361,
+      "chainSlug": "theta",
+      "nativeCurrency": {
+        "name": "Theta Fuel",
+        "symbol": "TFUEL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1231",
+    "name": "Ultron",
+    "evmMeta": {
+      "chain": "Ultron",
+      "chainId": 1231,
+      "networkId": 1231,
+      "chainSlug": "ultron",
+      "nativeCurrency": {
+        "name": "Ultron",
+        "symbol": "ULX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:888888",
+    "name": "Vision -",
+    "evmMeta": {
+      "chain": "Vision",
+      "chainId": 888888,
+      "networkId": 888888,
+      "chainSlug": "vision",
+      "nativeCurrency": {
+        "name": "VS",
+        "symbol": "VS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://infragrid.v.network/ethereum/compatible"
+      ]
+    }
+  },
+  {
+    "id": "evm:1234",
+    "name": "Step Network",
+    "evmMeta": {
+      "chain": "STEP",
+      "chainId": 1234,
+      "networkId": 1234,
+      "chainSlug": "step",
+      "nativeCurrency": {
+        "name": "FITFI",
+        "symbol": "FITFI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.step.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:2000",
+    "name": "Dogechain",
+    "evmMeta": {
+      "chain": "DC",
+      "chainId": 2000,
+      "networkId": 2000,
+      "chainSlug": "dogechain",
+      "nativeCurrency": {
+        "name": "Dogecoin",
+        "symbol": "DOGE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.dogechain.dog",
+        "https://rpc.dogechain.dog",
+        "https://dogechain.ankr.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1666600000",
+    "name": "Harmony Shard 0",
+    "evmMeta": {
+      "chain": "Harmony",
+      "chainId": 1666600000,
+      "networkId": 1666600000,
+      "chainSlug": "harmony",
+      "nativeCurrency": {
+        "name": "ONE",
+        "symbol": "ONE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.harmony.one",
+        "https://rpc.ankr.com/harmony"
+      ]
+    }
+  },
+  {
+    "id": "evm:106",
+    "name": "Velas EVM",
+    "evmMeta": {
+      "chain": "Velas",
+      "chainId": 106,
+      "networkId": 106,
+      "chainSlug": "velas",
+      "nativeCurrency": {
+        "name": "Velas",
+        "symbol": "VLX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://evmexplorer.velas.com/rpc",
+        "https://explorer.velas.com/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:19",
+    "name": "Songbird Canary-Network",
+    "evmMeta": {
+      "chain": "SGB",
+      "chainId": 19,
+      "networkId": 19,
+      "chainSlug": "songbird",
+      "nativeCurrency": {
+        "name": "Songbird",
+        "symbol": "SGB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://songbird.towolabs.com/rpc",
+        "https://sgb.lightft.so/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:288",
+    "name": "Boba Network",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 288,
+      "networkId": 288,
+      "chainSlug": "boba",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.boba.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:10000",
+    "name": "Smart Bitcoin Cash",
+    "evmMeta": {
+      "chain": "smartBCH",
+      "chainId": 10000,
+      "networkId": 10000,
+      "chainSlug": "smartbch",
+      "nativeCurrency": {
+        "name": "Bitcoin Cash",
+        "symbol": "BCH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://smartbch.fountainhead.cash/mainnet",
+        "https://global.uat.cash",
+        "https://rpc.uatvo.com",
+        "https://smartbch.greyh.at",
+        "https://smartbch.devops.cash/mainnet"
+      ]
+    }
+  },
+  {
+    "id": "evm:9001",
+    "name": "Evmos",
+    "evmMeta": {
+      "chain": "Evmos",
+      "chainId": 9001,
+      "networkId": 9001,
+      "chainSlug": "evmos",
+      "nativeCurrency": {
+        "name": "Evmos",
+        "symbol": "EVMOS",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:32520",
+    "name": "Bitgert",
+    "evmMeta": {
+      "chain": "Brise",
+      "chainId": 32520,
+      "networkId": 32520,
+      "chainSlug": "bitgert",
+      "nativeCurrency": {
+        "name": "Bitrise Token",
+        "symbol": "Brise",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.icecreamswap.com",
+        "https://nodes.vefinetwork.org/bitgert",
+        "https://chainrpc.com",
+        "https://serverrpc.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:52",
+    "name": "CoinEx Smart Chain",
+    "evmMeta": {
+      "chain": "CSC",
+      "chainId": 52,
+      "networkId": 52,
+      "chainSlug": "csc",
+      "nativeCurrency": {
+        "name": "CoinEx Chain Native Token",
+        "symbol": "cet",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.coinex.net"
+      ]
+    }
+  },
+  {
+    "id": "evm:82",
+    "name": "Meter",
+    "evmMeta": {
+      "chain": "METER",
+      "chainId": 82,
+      "networkId": 82,
+      "chainSlug": "meter",
+      "nativeCurrency": {
+        "name": "Meter",
+        "symbol": "MTR",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.meter.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:108",
+    "name": "ThunderCore",
+    "evmMeta": {
+      "chain": "TT",
+      "chainId": 108,
+      "networkId": 108,
+      "chainSlug": "thundercore",
+      "nativeCurrency": {
+        "name": "ThunderCore Token",
+        "symbol": "TT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:50",
+    "name": "XinFin XDC Network",
+    "evmMeta": {
+      "chain": "XDC",
+      "chainId": 50,
+      "networkId": 50,
+      "chainSlug": "xdc",
+      "nativeCurrency": {
+        "name": "XinFin",
+        "symbol": "XDC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.xdcrpc.com",
+        "https://erpc.xinfin.network",
+        "https://rpc.xinfin.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:122",
+    "name": "Fuse",
+    "evmMeta": {
+      "chain": "FUSE",
+      "chainId": 122,
+      "networkId": 122,
+      "chainSlug": "fuse",
+      "nativeCurrency": {
+        "name": "Fuse",
+        "symbol": "FUSE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.fuse.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:20",
+    "name": "Elastos Smart Chain",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 20,
+      "networkId": 20,
+      "chainSlug": "elastos",
+      "nativeCurrency": {
+        "name": "Elastos",
+        "symbol": "ELA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.elastos.io/esc",
+        "https://api.elastos.io/eth"
+      ]
+    }
+  },
+  {
+    "id": "evm:71402",
+    "name": "Godwoken",
+    "evmMeta": {
+      "chain": "GWT",
+      "chainId": 71402,
+      "networkId": 71402,
+      "chainSlug": "godwoken",
+      "nativeCurrency": {
+        "name": "pCKB",
+        "symbol": "pCKB",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:57",
+    "name": "Syscoin",
+    "evmMeta": {
+      "chain": "SYS",
+      "chainId": 57,
+      "networkId": 57,
+      "chainSlug": "syscoin",
+      "nativeCurrency": {
+        "name": "Syscoin",
+        "symbol": "SYS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.syscoin.org",
+        "https://rpc.ankr.com/syscoin"
+      ]
+    }
+  },
+  {
+    "id": "evm:820",
+    "name": "Callisto",
+    "evmMeta": {
+      "chain": "CLO",
+      "chainId": 820,
+      "networkId": 1,
+      "chainSlug": "callisto",
+      "nativeCurrency": {
+        "name": "Callisto",
+        "symbol": "CLO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.callisto.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:5551",
+    "name": "Nahmii",
+    "evmMeta": {
+      "chain": "Nahmii",
+      "chainId": 5551,
+      "networkId": 5551,
+      "chainSlug": "nahmii",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:6969",
+    "name": "Tomb Chain",
+    "evmMeta": {
+      "chain": "Tomb Chain",
+      "chainId": 6969,
+      "networkId": 6969,
+      "chainSlug": "tombchain",
+      "nativeCurrency": {
+        "name": "Tomb",
+        "symbol": "TOMB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.tombchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:246",
+    "name": "Energy Web Chain",
+    "evmMeta": {
+      "chain": "Energy Web Chain",
+      "chainId": 246,
+      "networkId": 246,
+      "chainSlug": "energyweb",
+      "nativeCurrency": {
+        "name": "Energy Web Token",
+        "symbol": "EWT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.energyweb.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:87",
+    "name": "Nova Network",
+    "evmMeta": {
+      "chain": "NNW",
+      "chainId": 87,
+      "networkId": 87,
+      "chainSlug": "nova network",
+      "nativeCurrency": {
+        "name": "Supernova",
+        "symbol": "SNT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://dev.rpc.novanetwork.io",
+        "https://connect.novanetwork.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:88",
+    "name": "TomoChain",
+    "evmMeta": {
+      "chain": "TOMO",
+      "chainId": 88,
+      "networkId": 88,
+      "chainSlug": "tomochain",
+      "nativeCurrency": {
+        "name": "TomoChain",
+        "symbol": "TOMO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.tomochain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:61",
+    "name": "Ethereum Classic",
+    "evmMeta": {
+      "chain": "ETC",
+      "chainId": 61,
+      "networkId": 1,
+      "chainSlug": "ethereumclassic",
+      "nativeCurrency": {
+        "name": "Ethereum Classic Ether",
+        "symbol": "ETC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://etc.rivet.link",
+        "https://etc.etcdesktop.com",
+        "https://etc.mytokenpocket.vip",
+        "https://rpc.etcplanets.com",
+        "https://www.ethercluster.com/etc"
+      ]
+    }
+  },
+  {
+    "id": "evm:336",
+    "name": "Shiden",
+    "evmMeta": {
+      "chain": "SDN",
+      "chainId": 336,
+      "networkId": 336,
+      "chainSlug": "shiden",
+      "nativeCurrency": {
+        "name": "Shiden",
+        "symbol": "SDN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://shiden.public.blastapi.io",
+        "https://shiden.api.onfinality.io/public"
+      ]
+    }
+  },
+  {
+    "id": "evm:8",
+    "name": "Ubiq",
+    "evmMeta": {
+      "chain": "UBQ",
+      "chainId": 8,
+      "networkId": 8,
+      "chainSlug": "ubiq",
+      "nativeCurrency": {
+        "name": "Ubiq Ether",
+        "symbol": "UBQ",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.octano.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:70",
+    "name": "Hoo Smart Chain",
+    "evmMeta": {
+      "chain": "HSC",
+      "chainId": 70,
+      "networkId": 70,
+      "chainSlug": "hoo",
+      "nativeCurrency": {
+        "name": "Hoo Smart Chain Native Token",
+        "symbol": "HOO",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:55",
+    "name": "Zyx",
+    "evmMeta": {
+      "chain": "ZYX",
+      "chainId": 55,
+      "networkId": 55,
+      "chainSlug": "zyx",
+      "nativeCurrency": {
+        "name": "Zyx",
+        "symbol": "ZYX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:47805",
+    "name": "REI Network",
+    "evmMeta": {
+      "chain": "REI",
+      "chainId": 47805,
+      "networkId": 47805,
+      "chainSlug": "rei",
+      "nativeCurrency": {
+        "name": "REI",
+        "symbol": "REI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.rei.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:269",
+    "name": "High Performance Blockchain",
+    "evmMeta": {
+      "chain": "HPB",
+      "chainId": 269,
+      "networkId": 269,
+      "chainSlug": "hpb",
+      "nativeCurrency": {
+        "name": "High Performance Blockchain Ether",
+        "symbol": "HPB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://hpbnode.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:55555",
+    "name": "REI Chain",
+    "evmMeta": {
+      "chain": "REI",
+      "chainId": 55555,
+      "networkId": 55555,
+      "chainSlug": "reichain",
+      "nativeCurrency": {
+        "name": "Rei",
+        "symbol": "REI",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:60",
+    "name": "GoChain",
+    "evmMeta": {
+      "chain": "GO",
+      "chainId": 60,
+      "networkId": 60,
+      "chainSlug": "gochain",
+      "nativeCurrency": {
+        "name": "GoChain Ether",
+        "symbol": "GO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.gochain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:333999",
+    "name": "Polis",
+    "evmMeta": {
+      "chain": "Olympus",
+      "chainId": 333999,
+      "networkId": 333999,
+      "chainSlug": "polis",
+      "nativeCurrency": {
+        "name": "Polis",
+        "symbol": "POLIS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.polis.tech"
+      ]
+    }
+  },
+  {
+    "id": "evm:11297108109",
+    "name": "Palm",
+    "evmMeta": {
+      "chain": "Palm",
+      "chainId": 11297108109,
+      "networkId": 11297108109,
+      "chainSlug": "palm",
+      "nativeCurrency": {
+        "name": "PALM",
+        "symbol": "PALM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:420420",
+    "name": "Kekchain",
+    "evmMeta": {
+      "chain": "kek",
+      "chainId": 420420,
+      "networkId": 103090,
+      "chainSlug": "kekchain",
+      "nativeCurrency": {
+        "name": "KEK",
+        "symbol": "KEK",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.kekchain.com",
+        "https://kek.interchained.org",
+        "https://kekchain.interchained.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:2",
+    "name": "Expanse Network",
+    "evmMeta": {
+      "chain": "EXP",
+      "chainId": 2,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "Expanse Network Ether",
+        "symbol": "EXP",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://node.eggs.cool",
+        "https://node.expanse.tech"
+      ]
+    }
+  },
+  {
+    "id": "evm:3",
+    "name": "Ropsten",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 3,
+      "networkId": 3,
+      "nativeCurrency": {
+        "name": "Ropsten Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:4",
+    "name": "Rinkeby",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 4,
+      "networkId": 4,
+      "nativeCurrency": {
+        "name": "Rinkeby Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:5",
+    "name": "Goerli",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 5,
+      "networkId": 5,
+      "nativeCurrency": {
+        "name": "Goerli Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.goerli.mudit.blog"
+      ]
+    }
+  },
+  {
+    "id": "evm:7",
+    "name": "ThaiChain",
+    "evmMeta": {
+      "chain": "TCH",
+      "chainId": 7,
+      "networkId": 7,
+      "nativeCurrency": {
+        "name": "ThaiChain Ether",
+        "symbol": "TCH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.dome.cloud",
+        "https://rpc.thaichain.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:11",
+    "name": "Metadium",
+    "evmMeta": {
+      "chain": "META",
+      "chainId": 11,
+      "networkId": 11,
+      "nativeCurrency": {
+        "name": "Metadium Mainnet Ether",
+        "symbol": "META",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.metadium.com/dev",
+        "https://api.metadium.com/prod"
+      ]
+    }
+  },
+  {
+    "id": "evm:14",
+    "name": "Flare",
+    "evmMeta": {
+      "chain": "FLR",
+      "chainId": 14,
+      "networkId": 14,
+      "nativeCurrency": {
+        "name": "Flare",
+        "symbol": "FLR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:15",
+    "name": "Diode Prenet",
+    "evmMeta": {
+      "chain": "DIODE",
+      "chainId": 15,
+      "networkId": 15,
+      "nativeCurrency": {
+        "name": "Diodes",
+        "symbol": "DIODE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:17",
+    "name": "ThaiChain 2.0 ThaiFi",
+    "evmMeta": {
+      "chain": "TCH",
+      "chainId": 17,
+      "networkId": 17,
+      "nativeCurrency": {
+        "name": "Thaifi Ether",
+        "symbol": "TFI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.thaifi.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:22",
+    "name": "ELA-DID-Sidechain",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 22,
+      "networkId": 22,
+      "nativeCurrency": {
+        "name": "Elastos",
+        "symbol": "ELA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.elastos.io/eid"
+      ]
+    }
+  },
+  {
+    "id": "evm:24",
+    "name": "KardiaChain",
+    "evmMeta": {
+      "chain": "KAI",
+      "chainId": 24,
+      "networkId": 0,
+      "nativeCurrency": {
+        "name": "KardiaChain",
+        "symbol": "KAI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.kardiachain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:27",
+    "name": "ShibaChain",
+    "evmMeta": {
+      "chain": "SHIB",
+      "chainId": 27,
+      "networkId": 27,
+      "nativeCurrency": {
+        "name": "SHIBA INU COIN",
+        "symbol": "SHIB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.shibachain.net"
+      ]
+    }
+  },
+  {
+    "id": "evm:29",
+    "name": "Genesis L1",
+    "evmMeta": {
+      "chain": "genesis",
+      "chainId": 29,
+      "networkId": 29,
+      "nativeCurrency": {
+        "name": "L1 coin",
+        "symbol": "L1",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:33",
+    "name": "GoodData",
+    "evmMeta": {
+      "chain": "GooD",
+      "chainId": 33,
+      "networkId": 33,
+      "nativeCurrency": {
+        "name": "GoodData Mainnet Ether",
+        "symbol": "GooD",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.goodata.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:35",
+    "name": "TBWG Chain",
+    "evmMeta": {
+      "chain": "TBWG",
+      "chainId": 35,
+      "networkId": 35,
+      "nativeCurrency": {
+        "name": "TBWG Ether",
+        "symbol": "TBG",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.tbwg.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:36",
+    "name": "Dxchain",
+    "evmMeta": {
+      "chain": "Dxchain",
+      "chainId": 36,
+      "networkId": 36,
+      "nativeCurrency": {
+        "name": "Dxchain",
+        "symbol": "DX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.dxchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:37",
+    "name": "SeedCoin-Network",
+    "evmMeta": {
+      "chain": "SeedCoin-Network",
+      "chainId": 37,
+      "networkId": 37,
+      "nativeCurrency": {
+        "name": "SeedCoin",
+        "symbol": "SEED",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://node.seedcoin.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:38",
+    "name": "Valorbit",
+    "evmMeta": {
+      "chain": "VAL",
+      "chainId": 38,
+      "networkId": 38,
+      "nativeCurrency": {
+        "name": "Valorbit",
+        "symbol": "VAL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:42",
+    "name": "Kovan",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 42,
+      "networkId": 42,
+      "nativeCurrency": {
+        "name": "Kovan Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://kovan.poa.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:44",
+    "name": "Darwinia Crab Network",
+    "evmMeta": {
+      "chain": "crab",
+      "chainId": 44,
+      "networkId": 44,
+      "nativeCurrency": {
+        "name": "Crab Network Native Token",
+        "symbol": "CRAB",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:46",
+    "name": "Darwinia Network",
+    "evmMeta": {
+      "chain": "darwinia",
+      "chainId": 46,
+      "networkId": 46,
+      "nativeCurrency": {
+        "name": "Darwinia Network Native Token",
+        "symbol": "RING",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.darwinia.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:48",
+    "name": "Ennothem Proterozoic",
+    "evmMeta": {
+      "chain": "ETMP",
+      "chainId": 48,
+      "networkId": 48,
+      "nativeCurrency": {
+        "name": "Ennothem",
+        "symbol": "ETMP",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.etm.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:51",
+    "name": "XDC Apothem Network",
+    "evmMeta": {
+      "chain": "XDC",
+      "chainId": 51,
+      "networkId": 51,
+      "nativeCurrency": {
+        "name": "XinFin",
+        "symbol": "TXDC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.apothem.network",
+        "https://erpc.apothem.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:54",
+    "name": "Openpiece",
+    "evmMeta": {
+      "chain": "OPENPIECE",
+      "chainId": 54,
+      "networkId": 54,
+      "nativeCurrency": {
+        "name": "Belly",
+        "symbol": "BELLY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.openpiece.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:58",
+    "name": "Ontology",
+    "evmMeta": {
+      "chain": "Ontology",
+      "chainId": 58,
+      "networkId": 58,
+      "nativeCurrency": {
+        "name": "ONG",
+        "symbol": "ONG",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:59",
+    "name": "EOS",
+    "evmMeta": {
+      "chain": "EOS",
+      "chainId": 59,
+      "networkId": 59,
+      "nativeCurrency": {
+        "name": "EOS",
+        "symbol": "EOS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.eosargentina.io",
+        "https://api.metahub.cash"
+      ]
+    }
+  },
+  {
+    "id": "evm:64",
+    "name": "Ellaism",
+    "evmMeta": {
+      "chain": "ELLA",
+      "chainId": 64,
+      "networkId": 64,
+      "nativeCurrency": {
+        "name": "Ellaism Ether",
+        "symbol": "ELLA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://jsonrpc.ellaism.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:68",
+    "name": "SoterOne",
+    "evmMeta": {
+      "chain": "SOTER",
+      "chainId": 68,
+      "networkId": 68,
+      "nativeCurrency": {
+        "name": "SoterOne Mainnet Ether",
+        "symbol": "SOTER",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.soter.one"
+      ]
+    }
+  },
+  {
+    "id": "evm:69",
+    "name": "Optimism Kovan",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 69,
+      "networkId": 69,
+      "nativeCurrency": {
+        "name": "Kovan Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://kovan.optimism.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:73",
+    "name": "FNCY",
+    "evmMeta": {
+      "chain": "FNCY",
+      "chainId": 73,
+      "networkId": 73,
+      "nativeCurrency": {
+        "name": "FNCY",
+        "symbol": "FNCY",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:74",
+    "name": "IDChain",
+    "evmMeta": {
+      "chain": "IDChain",
+      "chainId": 74,
+      "networkId": 74,
+      "nativeCurrency": {
+        "name": "EIDI",
+        "symbol": "EIDI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://idchain.one/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:75",
+    "name": "Decimal Smart Chain",
+    "evmMeta": {
+      "chain": "DSC",
+      "chainId": 75,
+      "networkId": 75,
+      "nativeCurrency": {
+        "name": "Decimal",
+        "symbol": "DEL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:76",
+    "name": "Mix",
+    "evmMeta": {
+      "chain": "MIX",
+      "chainId": 76,
+      "networkId": 76,
+      "nativeCurrency": {
+        "name": "Mix Ether",
+        "symbol": "MIX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:77",
+    "name": "POA Network Sokol",
+    "evmMeta": {
+      "chain": "POA",
+      "chainId": 77,
+      "networkId": 77,
+      "nativeCurrency": {
+        "name": "POA Sokol Ether",
+        "symbol": "SPOA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://sokol.poa.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:78",
+    "name": "PrimusChain",
+    "evmMeta": {
+      "chain": "PC",
+      "chainId": 78,
+      "networkId": 78,
+      "nativeCurrency": {
+        "name": "Primus Ether",
+        "symbol": "PETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://ethnode.primusmoney.com/mainnet"
+      ]
+    }
+  },
+  {
+    "id": "evm:79",
+    "name": "Zenith",
+    "evmMeta": {
+      "chain": "Zenith",
+      "chainId": 79,
+      "networkId": 79,
+      "nativeCurrency": {
+        "name": "ZENITH",
+        "symbol": "ZENITH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:80",
+    "name": "GeneChain",
+    "evmMeta": {
+      "chain": "GeneChain",
+      "chainId": 80,
+      "networkId": 80,
+      "nativeCurrency": {
+        "name": "RNA",
+        "symbol": "RNA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.genechain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:86",
+    "name": "GateChain",
+    "evmMeta": {
+      "chain": "GT",
+      "chainId": 86,
+      "networkId": 86,
+      "nativeCurrency": {
+        "name": "GateToken",
+        "symbol": "GT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://evm.gatenode.cc"
+      ]
+    }
+  },
+  {
+    "id": "evm:90",
+    "name": "Garizon Stage0",
+    "evmMeta": {
+      "chain": "GAR",
+      "chainId": 90,
+      "networkId": 90,
+      "nativeCurrency": {
+        "name": "Garizon",
+        "symbol": "GAR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:91",
+    "name": "Garizon Stage1",
+    "evmMeta": {
+      "chain": "GAR",
+      "chainId": 91,
+      "networkId": 91,
+      "nativeCurrency": {
+        "name": "Garizon",
+        "symbol": "GAR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:92",
+    "name": "Garizon Stage2",
+    "evmMeta": {
+      "chain": "GAR",
+      "chainId": 92,
+      "networkId": 92,
+      "nativeCurrency": {
+        "name": "Garizon",
+        "symbol": "GAR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:93",
+    "name": "Garizon Stage3",
+    "evmMeta": {
+      "chain": "GAR",
+      "chainId": 93,
+      "networkId": 93,
+      "nativeCurrency": {
+        "name": "Garizon",
+        "symbol": "GAR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:96",
+    "name": "NEXT Smart Chain",
+    "evmMeta": {
+      "chain": "NSC",
+      "chainId": 96,
+      "networkId": 96,
+      "nativeCurrency": {
+        "name": "NEXT",
+        "symbol": "NEXT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.nextsmartchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:99",
+    "name": "POA Network Core",
+    "evmMeta": {
+      "chain": "POA",
+      "chainId": 99,
+      "networkId": 99,
+      "nativeCurrency": {
+        "name": "POA Network Core Ether",
+        "symbol": "POA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://core.poanetwork.dev",
+        "https://core.poa.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:101",
+    "name": "EtherInc",
+    "evmMeta": {
+      "chain": "ETI",
+      "chainId": 101,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "EtherInc Ether",
+        "symbol": "ETI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.einc.io/jsonrpc/mainnet"
+      ]
+    }
+  },
+  {
+    "id": "evm:111",
+    "name": "EtherLite Chain",
+    "evmMeta": {
+      "chain": "ETL",
+      "chainId": 111,
+      "networkId": 111,
+      "nativeCurrency": {
+        "name": "EtherLite",
+        "symbol": "ETL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.etherlite.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:113",
+    "name": "Dehvo",
+    "evmMeta": {
+      "chain": "Dehvo",
+      "chainId": 113,
+      "networkId": 113,
+      "nativeCurrency": {
+        "name": "Dehvo",
+        "symbol": "Deh",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://connect.dehvo.com",
+        "https://rpc.dehvo.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:116",
+    "name": "DeBank",
+    "evmMeta": {
+      "chain": "DeBank",
+      "chainId": 116,
+      "networkId": 116,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:123",
+    "name": "Fuse Sparknet",
+    "evmMeta": {
+      "chain": "fuse",
+      "chainId": 123,
+      "networkId": 123,
+      "nativeCurrency": {
+        "name": "Spark",
+        "symbol": "SPARK",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.fusespark.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:124",
+    "name": "Decentralized Web",
+    "evmMeta": {
+      "chain": "DWU",
+      "chainId": 124,
+      "networkId": 124,
+      "nativeCurrency": {
+        "name": "Decentralized Web Utility",
+        "symbol": "DWU",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:126",
+    "name": "OYchain",
+    "evmMeta": {
+      "chain": "OYchain",
+      "chainId": 126,
+      "networkId": 126,
+      "nativeCurrency": {
+        "name": "OYchain Token",
+        "symbol": "OY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mainnet.oychain.io",
+        "https://rpc.oychain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:127",
+    "name": "Factory 127",
+    "evmMeta": {
+      "chain": "FETH",
+      "chainId": 127,
+      "networkId": 127,
+      "nativeCurrency": {
+        "name": "Factory 127 Token",
+        "symbol": "FETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:142",
+    "name": "DAX CHAIN",
+    "evmMeta": {
+      "chain": "DAX",
+      "chainId": 142,
+      "networkId": 142,
+      "nativeCurrency": {
+        "name": "Prodax",
+        "symbol": "DAX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.prodax.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:144",
+    "name": "PHI Network v2",
+    "evmMeta": {
+      "chain": "PHI",
+      "chainId": 144,
+      "networkId": 144,
+      "nativeCurrency": {
+        "name": "PHI",
+        "symbol": "Φ",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://connect.phi.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:163",
+    "name": "Lightstreams",
+    "evmMeta": {
+      "chain": "PHT",
+      "chainId": 163,
+      "networkId": 163,
+      "nativeCurrency": {
+        "name": "Lightstreams PHT",
+        "symbol": "PHT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://node.mainnet.lightstreams.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:168",
+    "name": "AIOZ Network",
+    "evmMeta": {
+      "chain": "AIOZ",
+      "chainId": 168,
+      "networkId": 168,
+      "nativeCurrency": {
+        "name": "AIOZ",
+        "symbol": "AIOZ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:180",
+    "name": "AME Chain",
+    "evmMeta": {
+      "chain": "AME",
+      "chainId": 180,
+      "networkId": 180,
+      "nativeCurrency": {
+        "name": "AME",
+        "symbol": "AME",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:186",
+    "name": "Seele",
+    "evmMeta": {
+      "chain": "Seele",
+      "chainId": 186,
+      "networkId": 186,
+      "nativeCurrency": {
+        "name": "Seele",
+        "symbol": "Seele",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.seelen.pro"
+      ]
+    }
+  },
+  {
+    "id": "evm:188",
+    "name": "BMC",
+    "evmMeta": {
+      "chain": "BMC",
+      "chainId": 188,
+      "networkId": 188,
+      "nativeCurrency": {
+        "name": "BTM",
+        "symbol": "BTM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.bmcchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:193",
+    "name": "Crypto Emergency",
+    "evmMeta": {
+      "chain": "CEM",
+      "chainId": 193,
+      "networkId": 193,
+      "nativeCurrency": {
+        "name": "Crypto Emergency",
+        "symbol": "CEM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://cemchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:199",
+    "name": "BitTorrent Chain",
+    "evmMeta": {
+      "chain": "BTTC",
+      "chainId": 199,
+      "networkId": 199,
+      "nativeCurrency": {
+        "name": "BitTorrent",
+        "symbol": "BTT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.bittorrentchain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:200",
+    "name": "Arbitrum on xDai",
+    "evmMeta": {
+      "chain": "AOX",
+      "chainId": 200,
+      "networkId": 200,
+      "nativeCurrency": {
+        "name": "xDAI",
+        "symbol": "xDAI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://arbitrum.xdaichain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:211",
+    "name": "Freight Trust Network",
+    "evmMeta": {
+      "chain": "EDI",
+      "chainId": 211,
+      "networkId": 0,
+      "nativeCurrency": {
+        "name": "Freight Trust Native",
+        "symbol": "0xF",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:212",
+    "name": "MAP Makalu",
+    "evmMeta": {
+      "chain": "MAP",
+      "chainId": 212,
+      "networkId": 212,
+      "nativeCurrency": {
+        "name": "Makalu MAP",
+        "symbol": "MAP",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:217",
+    "name": "SiriusNet V2",
+    "evmMeta": {
+      "chain": "SIN2",
+      "chainId": 217,
+      "networkId": 217,
+      "nativeCurrency": {
+        "name": "MCD",
+        "symbol": "MCD",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:218",
+    "name": "SoterOne old",
+    "evmMeta": {
+      "chain": "SOTER",
+      "chainId": 218,
+      "networkId": 218,
+      "nativeCurrency": {
+        "name": "SoterOne Mainnet Ether",
+        "symbol": "SOTER",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.soter.one"
+      ]
+    }
+  },
+  {
+    "id": "evm:222",
+    "name": "Permission",
+    "evmMeta": {
+      "chain": "ASK",
+      "chainId": 222,
+      "networkId": 2221,
+      "nativeCurrency": {
+        "name": "ASK",
+        "symbol": "ASK",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:225",
+    "name": "LACHAIN",
+    "evmMeta": {
+      "chain": "LA",
+      "chainId": 225,
+      "networkId": 225,
+      "nativeCurrency": {
+        "name": "LA",
+        "symbol": "LA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:248",
+    "name": "Oasys",
+    "evmMeta": {
+      "chain": "Oasys",
+      "chainId": 248,
+      "networkId": 248,
+      "nativeCurrency": {
+        "name": "OAS",
+        "symbol": "OAS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mainnet.oasys.games"
+      ]
+    }
+  },
+  {
+    "id": "evm:258",
+    "name": "Setheum",
+    "evmMeta": {
+      "chain": "Setheum",
+      "chainId": 258,
+      "networkId": 258,
+      "nativeCurrency": {
+        "name": "Setheum",
+        "symbol": "SETM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:262",
+    "name": "SUR Blockchain Network",
+    "evmMeta": {
+      "chain": "SUR",
+      "chainId": 262,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "Suren",
+        "symbol": "SRN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://sur.nilin.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:300",
+    "name": "Optimism on Gnosis",
+    "evmMeta": {
+      "chain": "OGC",
+      "chainId": 300,
+      "networkId": 300,
+      "nativeCurrency": {
+        "name": "xDAI",
+        "symbol": "xDAI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://optimism.gnosischain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:301",
+    "name": "Bobaopera",
+    "evmMeta": {
+      "chain": "Bobaopera",
+      "chainId": 301,
+      "networkId": 301,
+      "nativeCurrency": {
+        "name": "Boba Token",
+        "symbol": "BOBA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://bobaopera.boba.network",
+        "https://replica.bobaopera.boba.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:314",
+    "name": "Filecoin -",
+    "evmMeta": {
+      "chain": "FIL",
+      "chainId": 314,
+      "networkId": 314,
+      "nativeCurrency": {
+        "name": "filecoin",
+        "symbol": "FIL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.node.glif.io",
+        "https://rpc.ankr.com/filecoin"
+      ]
+    }
+  },
+  {
+    "id": "evm:324",
+    "name": "zkSync v2",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 324,
+      "networkId": 324,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:333",
+    "name": "Web3Q",
+    "evmMeta": {
+      "chain": "Web3Q",
+      "chainId": 333,
+      "networkId": 333,
+      "nativeCurrency": {
+        "name": "Web3Q",
+        "symbol": "W3Q",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:369",
+    "name": "PulseChain",
+    "evmMeta": {
+      "chain": "PLS",
+      "chainId": 369,
+      "networkId": 369,
+      "nativeCurrency": {
+        "name": "Pulse",
+        "symbol": "PLS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mainnet.pulsechain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:385",
+    "name": "Lisinski",
+    "evmMeta": {
+      "chain": "CRO",
+      "chainId": 385,
+      "networkId": 385,
+      "nativeCurrency": {
+        "name": "Lisinski Ether",
+        "symbol": "LISINS",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:416",
+    "name": "SX Network",
+    "evmMeta": {
+      "chain": "SX",
+      "chainId": 416,
+      "networkId": 416,
+      "nativeCurrency": {
+        "name": "SX Network",
+        "symbol": "SX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.sx.technology"
+      ]
+    }
+  },
+  {
+    "id": "evm:427",
+    "name": "Zeeth Chain",
+    "evmMeta": {
+      "chain": "ZeethChain",
+      "chainId": 427,
+      "networkId": 427,
+      "nativeCurrency": {
+        "name": "Zeeth Token",
+        "symbol": "ZTH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.zeeth.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:499",
+    "name": "Rupaya",
+    "evmMeta": {
+      "chain": "RUPX",
+      "chainId": 499,
+      "networkId": 499,
+      "nativeCurrency": {
+        "name": "Rupaya",
+        "symbol": "RUPX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:500",
+    "name": "Camino C-Chain",
+    "evmMeta": {
+      "chain": "CAM",
+      "chainId": 500,
+      "networkId": 1000,
+      "nativeCurrency": {
+        "name": "Camino",
+        "symbol": "CAM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:512",
+    "name": "Double-A Chain",
+    "evmMeta": {
+      "chain": "AAC",
+      "chainId": 512,
+      "networkId": 512,
+      "nativeCurrency": {
+        "name": "Acuteangle Native Token",
+        "symbol": "AAC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.acuteangle.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:516",
+    "name": "Gear Zero Network",
+    "evmMeta": {
+      "chain": "GearZero",
+      "chainId": 516,
+      "networkId": 516,
+      "nativeCurrency": {
+        "name": "Gear Zero Network Native Token",
+        "symbol": "GZN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://gzn.linksme.info"
+      ]
+    }
+  },
+  {
+    "id": "evm:520",
+    "name": "XT Smart Chain",
+    "evmMeta": {
+      "chain": "XSC",
+      "chainId": 520,
+      "networkId": 1024,
+      "nativeCurrency": {
+        "name": "XT Smart Chain Native Token",
+        "symbol": "XT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:529",
+    "name": "Firechain",
+    "evmMeta": {
+      "chain": "FIRE",
+      "chainId": 529,
+      "networkId": 529,
+      "nativeCurrency": {
+        "name": "Firechain",
+        "symbol": "FIRE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:530",
+    "name": "F(x)Core Network",
+    "evmMeta": {
+      "chain": "Fxcore",
+      "chainId": 530,
+      "networkId": 530,
+      "nativeCurrency": {
+        "name": "Function X",
+        "symbol": "FX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:534",
+    "name": "Candle",
+    "evmMeta": {
+      "chain": "Candle",
+      "chainId": 534,
+      "networkId": 534,
+      "nativeCurrency": {
+        "name": "CANDLE",
+        "symbol": "CNDL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.cndlchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:555",
+    "name": "Vela1 Chain",
+    "evmMeta": {
+      "chain": "VELA1",
+      "chainId": 555,
+      "networkId": 555,
+      "nativeCurrency": {
+        "name": "CLASS COIN",
+        "symbol": "CLASS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.velaverse.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:558",
+    "name": "Tao Network",
+    "evmMeta": {
+      "chain": "TAO",
+      "chainId": 558,
+      "networkId": 558,
+      "nativeCurrency": {
+        "name": "Tao",
+        "symbol": "TAO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.tao.network",
+        "https://rpc.testnet.tao.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:686",
+    "name": "Karura Network",
+    "evmMeta": {
+      "chain": "KAR",
+      "chainId": 686,
+      "networkId": 686,
+      "nativeCurrency": {
+        "name": "Karura Token",
+        "symbol": "KAR",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.evm.karura.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:707",
+    "name": "BlockChain Station",
+    "evmMeta": {
+      "chain": "BCS",
+      "chainId": 707,
+      "networkId": 707,
+      "nativeCurrency": {
+        "name": "BCS Token",
+        "symbol": "BCS",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:721",
+    "name": "Lycan Chain",
+    "evmMeta": {
+      "chain": "LYC",
+      "chainId": 721,
+      "networkId": 721,
+      "nativeCurrency": {
+        "name": "Lycan",
+        "symbol": "LYC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.lycanchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:766",
+    "name": "QL1",
+    "evmMeta": {
+      "chain": "QOM",
+      "chainId": 766,
+      "networkId": 766,
+      "nativeCurrency": {
+        "name": "Shiba Predator",
+        "symbol": "QOM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.qom.one"
+      ]
+    }
+  },
+  {
+    "id": "evm:777",
+    "name": "cheapETH",
+    "evmMeta": {
+      "chain": "cheapETH",
+      "chainId": 777,
+      "networkId": 777,
+      "nativeCurrency": {
+        "name": "cTH",
+        "symbol": "cTH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://node.cheapeth.org/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:787",
+    "name": "Acala Network",
+    "evmMeta": {
+      "chain": "ACA",
+      "chainId": 787,
+      "networkId": 787,
+      "nativeCurrency": {
+        "name": "Acala Token",
+        "symbol": "ACA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.evm.acala.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:800",
+    "name": "Lucid Blockchain",
+    "evmMeta": {
+      "chain": "Lucid Blockchain",
+      "chainId": 800,
+      "networkId": 800,
+      "nativeCurrency": {
+        "name": "LUCID",
+        "symbol": "LUCID",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.lucidcoin.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:803",
+    "name": "Haic",
+    "evmMeta": {
+      "chain": "Haic",
+      "chainId": 803,
+      "networkId": 803,
+      "nativeCurrency": {
+        "name": "Haicoin",
+        "symbol": "HAIC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://orig.haichain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:813",
+    "name": "Qitmeer",
+    "evmMeta": {
+      "chain": "MEER",
+      "chainId": 813,
+      "networkId": 813,
+      "nativeCurrency": {
+        "name": "Qitmeer",
+        "symbol": "MEER",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:841",
+    "name": "Taraxa",
+    "evmMeta": {
+      "chain": "Tara",
+      "chainId": 841,
+      "networkId": 841,
+      "nativeCurrency": {
+        "name": "Tara",
+        "symbol": "TARA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mainnet.taraxa.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:859",
+    "name": "Zeeth Chain Dev",
+    "evmMeta": {
+      "chain": "ZeethChainDev",
+      "chainId": 859,
+      "networkId": 859,
+      "nativeCurrency": {
+        "name": "Zeeth Token",
+        "symbol": "ZTH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.dev.zeeth.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:877",
+    "name": "Dexit Network",
+    "evmMeta": {
+      "chain": "DXT",
+      "chainId": 877,
+      "networkId": 877,
+      "nativeCurrency": {
+        "name": "Dexit network",
+        "symbol": "DXT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://dxt.dexit.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:880",
+    "name": "Ambros Chain",
+    "evmMeta": {
+      "chain": "ambroschain",
+      "chainId": 880,
+      "networkId": 880,
+      "nativeCurrency": {
+        "name": "AMBROS",
+        "symbol": "AMBROS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.ambros.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:909",
+    "name": "Portal Fantasy Chain",
+    "evmMeta": {
+      "chain": "PF",
+      "chainId": 909,
+      "networkId": 909,
+      "nativeCurrency": {
+        "name": "Portal Fantasy Token",
+        "symbol": "PFT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:970",
+    "name": "Oort",
+    "evmMeta": {
+      "chain": "Oort Mainnet",
+      "chainId": 970,
+      "networkId": 970,
+      "nativeCurrency": {
+        "name": "Oort",
+        "symbol": "CCN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mainnet.computecoin.com",
+        "https://rpc.oortech.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:971",
+    "name": "Oort Huygens",
+    "evmMeta": {
+      "chain": "Huygens",
+      "chainId": 971,
+      "networkId": 971,
+      "nativeCurrency": {
+        "name": "Oort",
+        "symbol": "CCN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:972",
+    "name": "Oort Ascraeus",
+    "evmMeta": {
+      "chain": "Ascraeus",
+      "chainId": 972,
+      "networkId": 972,
+      "nativeCurrency": {
+        "name": "Oort",
+        "symbol": "CCNA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:977",
+    "name": "Nepal Blockchain Network",
+    "evmMeta": {
+      "chain": "YETI",
+      "chainId": 977,
+      "networkId": 977,
+      "nativeCurrency": {
+        "name": "Nepal Blockchain Network Ether",
+        "symbol": "YETI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.nepalblockchain.dev",
+        "https://api.nepalblockchain.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:980",
+    "name": "TOP EVM",
+    "evmMeta": {
+      "chain": "TOP",
+      "chainId": 980,
+      "networkId": 0,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://ethapi.topnetwork.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:985",
+    "name": "Memo Smart Chain",
+    "evmMeta": {
+      "chain": "MEMO",
+      "chainId": 985,
+      "networkId": 985,
+      "nativeCurrency": {
+        "name": "Memo",
+        "symbol": "CMEMO",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:989",
+    "name": "TOP",
+    "evmMeta": {
+      "chain": "TOP",
+      "chainId": 989,
+      "networkId": 0,
+      "nativeCurrency": {
+        "name": "TOP",
+        "symbol": "TOP",
+        "decimals": 6
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:998",
+    "name": "Lucky Network",
+    "evmMeta": {
+      "chain": "LN",
+      "chainId": 998,
+      "networkId": 998,
+      "nativeCurrency": {
+        "name": "Lucky",
+        "symbol": "L99",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.luckynetwork.org",
+        "https://rpc.lnscan.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:1000",
+    "name": "GTON",
+    "evmMeta": {
+      "chain": "GTON",
+      "chainId": 1000,
+      "networkId": 1000,
+      "nativeCurrency": {
+        "name": "GCD",
+        "symbol": "GCD",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.gton.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1004",
+    "name": "T-EKTA",
+    "evmMeta": {
+      "chain": "T-EKTA",
+      "chainId": 1004,
+      "networkId": 1004,
+      "nativeCurrency": {
+        "name": "T-EKTA",
+        "symbol": "T-EKTA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1008",
+    "name": "Eurus",
+    "evmMeta": {
+      "chain": "EUN",
+      "chainId": 1008,
+      "networkId": 1008,
+      "nativeCurrency": {
+        "name": "Eurus",
+        "symbol": "EUN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.eurus.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1010",
+    "name": "Evrice Network",
+    "evmMeta": {
+      "chain": "EVC",
+      "chainId": 1010,
+      "networkId": 1010,
+      "nativeCurrency": {
+        "name": "Evrice",
+        "symbol": "EVC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://meta.evrice.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1012",
+    "name": "Newton",
+    "evmMeta": {
+      "chain": "NEW",
+      "chainId": 1012,
+      "networkId": 1012,
+      "nativeCurrency": {
+        "name": "Newton",
+        "symbol": "NEW",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://global.rpc.mainnet.newtonproject.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:1022",
+    "name": "Sakura",
+    "evmMeta": {
+      "chain": "Sakura",
+      "chainId": 1022,
+      "networkId": 1022,
+      "nativeCurrency": {
+        "name": "Sakura",
+        "symbol": "SKU",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1024",
+    "name": "CLV Parachain",
+    "evmMeta": {
+      "chain": "CLV",
+      "chainId": 1024,
+      "networkId": 1024,
+      "nativeCurrency": {
+        "name": "CLV",
+        "symbol": "CLV",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1030",
+    "name": "Conflux eSpace",
+    "evmMeta": {
+      "chain": "Conflux",
+      "chainId": 1030,
+      "networkId": 1030,
+      "nativeCurrency": {
+        "name": "CFX",
+        "symbol": "CFX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://evm.confluxrpc.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1039",
+    "name": "Bronos",
+    "evmMeta": {
+      "chain": "Bronos",
+      "chainId": 1039,
+      "networkId": 1039,
+      "nativeCurrency": {
+        "name": "BRO",
+        "symbol": "BRO",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1099",
+    "name": "MOAC",
+    "evmMeta": {
+      "chain": "MOAC",
+      "chainId": 1099,
+      "networkId": 1099,
+      "nativeCurrency": {
+        "name": "MOAC",
+        "symbol": "mc",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1111",
+    "name": "WEMIX3.0",
+    "evmMeta": {
+      "chain": "WEMIX",
+      "chainId": 1111,
+      "networkId": 1111,
+      "nativeCurrency": {
+        "name": "WEMIX",
+        "symbol": "WEMIX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.wemix.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1130",
+    "name": "DeFiChain EVM Network",
+    "evmMeta": {
+      "chain": "defichain-evm",
+      "chainId": 1130,
+      "networkId": 1130,
+      "nativeCurrency": {
+        "name": "DeFiChain",
+        "symbol": "DFI",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1139",
+    "name": "MathChain",
+    "evmMeta": {
+      "chain": "MATH",
+      "chainId": 1139,
+      "networkId": 1139,
+      "nativeCurrency": {
+        "name": "MathChain",
+        "symbol": "MATH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mathchain.maiziqianbao.net/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:1197",
+    "name": "Iora Chain",
+    "evmMeta": {
+      "chain": "IORA",
+      "chainId": 1197,
+      "networkId": 1197,
+      "nativeCurrency": {
+        "name": "Iora",
+        "symbol": "IORA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://dataseed.iorachain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1202",
+    "name": "World Trade Technical Chain",
+    "evmMeta": {
+      "chain": "WTT",
+      "chainId": 1202,
+      "networkId": 2048,
+      "nativeCurrency": {
+        "name": "World Trade Token",
+        "symbol": "WTT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.cadaut.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1213",
+    "name": "Popcateum",
+    "evmMeta": {
+      "chain": "POPCATEUM",
+      "chainId": 1213,
+      "networkId": 1213,
+      "nativeCurrency": {
+        "name": "Popcat",
+        "symbol": "POP",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://dataseed.popcateum.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:1214",
+    "name": "EnterChain",
+    "evmMeta": {
+      "chain": "ENTER",
+      "chainId": 1214,
+      "networkId": 1214,
+      "nativeCurrency": {
+        "name": "EnterCoin",
+        "symbol": "ENTER",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://tapi.entercoin.net"
+      ]
+    }
+  },
+  {
+    "id": "evm:1229",
+    "name": "Exzo Network",
+    "evmMeta": {
+      "chain": "EXZO",
+      "chainId": 1229,
+      "networkId": 1229,
+      "nativeCurrency": {
+        "name": "Exzo",
+        "symbol": "XZO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.exzo.technology"
+      ]
+    }
+  },
+  {
+    "id": "evm:1246",
+    "name": "OM Platform",
+    "evmMeta": {
+      "chain": "omplatform",
+      "chainId": 1246,
+      "networkId": 1246,
+      "nativeCurrency": {
+        "name": "OMCOIN",
+        "symbol": "OM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1280",
+    "name": "HALO",
+    "evmMeta": {
+      "chain": "HALO",
+      "chainId": 1280,
+      "networkId": 1280,
+      "nativeCurrency": {
+        "name": "HALO",
+        "symbol": "HO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://nodes.halo.land"
+      ]
+    }
+  },
+  {
+    "id": "evm:1286",
+    "name": "Moonrock old",
+    "evmMeta": {
+      "chain": "MOON",
+      "chainId": 1286,
+      "networkId": 1286,
+      "nativeCurrency": {
+        "name": "Rocs",
+        "symbol": "ROC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1287",
+    "name": "Moonbase Alpha",
+    "evmMeta": {
+      "chain": "MOON",
+      "chainId": 1287,
+      "networkId": 1287,
+      "nativeCurrency": {
+        "name": "Dev",
+        "symbol": "DEV",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.testnet.moonbeam.network",
+        "https://rpc.api.moonbase.moonbeam.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1288",
+    "name": "Moonrock",
+    "evmMeta": {
+      "chain": "MOON",
+      "chainId": 1288,
+      "networkId": 1288,
+      "nativeCurrency": {
+        "name": "Rocs",
+        "symbol": "ROC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.api.moonrock.moonbeam.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1294",
+    "name": "Bobabeam",
+    "evmMeta": {
+      "chain": "Bobabeam",
+      "chainId": 1294,
+      "networkId": 1294,
+      "nativeCurrency": {
+        "name": "Boba Token",
+        "symbol": "BOBA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://bobabeam.boba.network",
+        "https://replica.bobabeam.boba.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:1311",
+    "name": "Dos Fuji Subnet",
+    "evmMeta": {
+      "chain": "DOS",
+      "chainId": 1311,
+      "networkId": 1311,
+      "nativeCurrency": {
+        "name": "Dos Native Token",
+        "symbol": "DOS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://test.doschain.com/jsonrpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:1314",
+    "name": "Alyx",
+    "evmMeta": {
+      "chain": "ALYX",
+      "chainId": 1314,
+      "networkId": 1314,
+      "nativeCurrency": {
+        "name": "Alyx Chain Native Token",
+        "symbol": "ALYX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.alyxchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1319",
+    "name": "Aitd",
+    "evmMeta": {
+      "chain": "AITD",
+      "chainId": 1319,
+      "networkId": 1319,
+      "nativeCurrency": {
+        "name": "AITD Mainnet",
+        "symbol": "AITD",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://walletrpc.aitd.io",
+        "https://node.aitd.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:1353",
+    "name": "CIC Chain",
+    "evmMeta": {
+      "chain": "CIC",
+      "chainId": 1353,
+      "networkId": 1353,
+      "nativeCurrency": {
+        "name": "Crazy Internet Coin",
+        "symbol": "CIC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://xapi.cicscan.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1455",
+    "name": "Ctex Scan Blockchain",
+    "evmMeta": {
+      "chain": "Ctex Scan Blockchain",
+      "chainId": 1455,
+      "networkId": 1455,
+      "nativeCurrency": {
+        "name": "CTEX",
+        "symbol": "CTEX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1506",
+    "name": "Sherpax",
+    "evmMeta": {
+      "chain": "Sherpax Mainnet",
+      "chainId": 1506,
+      "networkId": 1506,
+      "nativeCurrency": {
+        "name": "KSX",
+        "symbol": "KSX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.sherpax.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:1515",
+    "name": "Beagle Messaging Chain",
+    "evmMeta": {
+      "chain": "BMC",
+      "chainId": 1515,
+      "networkId": 1515,
+      "nativeCurrency": {
+        "name": "Beagle",
+        "symbol": "BG",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://beagle.chat/eth"
+      ]
+    }
+  },
+  {
+    "id": "evm:1618",
+    "name": "Catecoin Chain",
+    "evmMeta": {
+      "chain": "Catechain",
+      "chainId": 1618,
+      "networkId": 1618,
+      "nativeCurrency": {
+        "name": "Catecoin",
+        "symbol": "CATE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://send.catechain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1620",
+    "name": "Atheios",
+    "evmMeta": {
+      "chain": "ATH",
+      "chainId": 1620,
+      "networkId": 11235813,
+      "nativeCurrency": {
+        "name": "Atheios Ether",
+        "symbol": "ATH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1657",
+    "name": "Btachain",
+    "evmMeta": {
+      "chain": "btachain",
+      "chainId": 1657,
+      "networkId": 1657,
+      "nativeCurrency": {
+        "name": "Bitcoin Asset",
+        "symbol": "BTA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1688",
+    "name": "LUDAN",
+    "evmMeta": {
+      "chain": "LUDAN",
+      "chainId": 1688,
+      "networkId": 1688,
+      "nativeCurrency": {
+        "name": "LUDAN",
+        "symbol": "LUDAN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ludan.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:1701",
+    "name": "Anytype EVM Chain",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 1701,
+      "networkId": 1701,
+      "nativeCurrency": {
+        "name": "ANY",
+        "symbol": "ANY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://geth.anytype.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:1707",
+    "name": "TBSI",
+    "evmMeta": {
+      "chain": "TBSI",
+      "chainId": 1707,
+      "networkId": 1707,
+      "nativeCurrency": {
+        "name": "Jinda",
+        "symbol": "JINDA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.blockchain.or.th"
+      ]
+    }
+  },
+  {
+    "id": "evm:1804",
+    "name": "Kerleano",
+    "evmMeta": {
+      "chain": "CRC",
+      "chainId": 1804,
+      "networkId": 1804,
+      "nativeCurrency": {
+        "name": "Carbon Reduction Coin",
+        "symbol": "CRC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1818",
+    "name": "Cube Chain",
+    "evmMeta": {
+      "chain": "Cube",
+      "chainId": 1818,
+      "networkId": 1818,
+      "nativeCurrency": {
+        "name": "Cube Chain Native Token",
+        "symbol": "CUBE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1856",
+    "name": "Teslafunds",
+    "evmMeta": {
+      "chain": "TSF",
+      "chainId": 1856,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "Teslafunds Ether",
+        "symbol": "TSF",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://tsfapi.europool.me"
+      ]
+    }
+  },
+  {
+    "id": "evm:1898",
+    "name": "BON Network",
+    "evmMeta": {
+      "chain": "BON",
+      "chainId": 1898,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "BOYACoin",
+        "symbol": "BOY",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1951",
+    "name": "D-Chain",
+    "evmMeta": {
+      "chain": "D-Chain",
+      "chainId": 1951,
+      "networkId": 1951,
+      "nativeCurrency": {
+        "name": "DOINX",
+        "symbol": "DOINX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1971",
+    "name": "Atelier",
+    "evmMeta": {
+      "chain": "ALTR",
+      "chainId": 1971,
+      "networkId": 1971,
+      "nativeCurrency": {
+        "name": "ATLR",
+        "symbol": "ATLR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1975",
+    "name": "ONUS Chain",
+    "evmMeta": {
+      "chain": "onus",
+      "chainId": 1975,
+      "networkId": 1975,
+      "nativeCurrency": {
+        "name": "ONUS",
+        "symbol": "ONUS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.onuschain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:1987",
+    "name": "EtherGem",
+    "evmMeta": {
+      "chain": "EGEM",
+      "chainId": 1987,
+      "networkId": 1987,
+      "nativeCurrency": {
+        "name": "EtherGem Ether",
+        "symbol": "EGEM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://jsonrpc.egem.io/custom"
+      ]
+    }
+  },
+  {
+    "id": "evm:1994",
+    "name": "Ekta",
+    "evmMeta": {
+      "chain": "EKTA",
+      "chainId": 1994,
+      "networkId": 1994,
+      "nativeCurrency": {
+        "name": "EKTA",
+        "symbol": "EKTA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://main.ekta.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:2001",
+    "name": "Milkomeda C1",
+    "evmMeta": {
+      "chain": "milkAda",
+      "chainId": 2001,
+      "networkId": 2001,
+      "nativeCurrency": {
+        "name": "milkAda",
+        "symbol": "mADA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2002",
+    "name": "Milkomeda A1",
+    "evmMeta": {
+      "chain": "milkALGO",
+      "chainId": 2002,
+      "networkId": 2002,
+      "nativeCurrency": {
+        "name": "milkALGO",
+        "symbol": "mALGO",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2009",
+    "name": "CloudWalk",
+    "evmMeta": {
+      "chain": "CloudWalk Mainnet",
+      "chainId": 2009,
+      "networkId": 2009,
+      "nativeCurrency": {
+        "name": "CloudWalk Native Token",
+        "symbol": "CWN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2016",
+    "name": "Z Mainnet",
+    "evmMeta": {
+      "chain": "NetZ",
+      "chainId": 2016,
+      "networkId": 2016,
+      "nativeCurrency": {
+        "name": "MainnetZ",
+        "symbol": "NetZ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2020",
+    "name": "PublicMint",
+    "evmMeta": {
+      "chain": "PublicMint",
+      "chainId": 2020,
+      "networkId": 2020,
+      "nativeCurrency": {
+        "name": "USD",
+        "symbol": "USD",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2021",
+    "name": "Edgeware",
+    "evmMeta": {
+      "chain": "EDG",
+      "chainId": 2021,
+      "networkId": 2021,
+      "nativeCurrency": {
+        "name": "Edge",
+        "symbol": "EDG",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2025",
+    "name": "Rangers Protocol",
+    "evmMeta": {
+      "chain": "Rangers",
+      "chainId": 2025,
+      "networkId": 2025,
+      "nativeCurrency": {
+        "name": "Rangers Protocol Gas",
+        "symbol": "RPG",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.rangersprotocol.com/api/jsonrpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:2043",
+    "name": "OriginTrail Parachain",
+    "evmMeta": {
+      "chain": "OTP",
+      "chainId": 2043,
+      "networkId": 2043,
+      "nativeCurrency": {
+        "name": "OriginTrail Parachain Token",
+        "symbol": "OTP",
+        "decimals": 12
+      },
+      "rpc": [
+        "https://astrosat.origintrail.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:2077",
+    "name": "Quokkacoin",
+    "evmMeta": {
+      "chain": "Qkacoin",
+      "chainId": 2077,
+      "networkId": 2077,
+      "nativeCurrency": {
+        "name": "Qkacoin",
+        "symbol": "QKA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.qkacoin.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:2100",
+    "name": "Ecoball",
+    "evmMeta": {
+      "chain": "ECO",
+      "chainId": 2100,
+      "networkId": 2100,
+      "nativeCurrency": {
+        "name": "Ecoball Coin",
+        "symbol": "ECO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.ecoball.org/ecoball"
+      ]
+    }
+  },
+  {
+    "id": "evm:2109",
+    "name": "Exosama Network",
+    "evmMeta": {
+      "chain": "EXN",
+      "chainId": 2109,
+      "networkId": 2109,
+      "nativeCurrency": {
+        "name": "Sama Token",
+        "symbol": "SAMA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.exosama.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:2151",
+    "name": "BOSagora",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 2151,
+      "networkId": 2151,
+      "nativeCurrency": {
+        "name": "BOSAGORA",
+        "symbol": "BOA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.bosagora.org",
+        "https://rpc.bosagora.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:2152",
+    "name": "Findora",
+    "evmMeta": {
+      "chain": "Findora",
+      "chainId": 2152,
+      "networkId": 2152,
+      "nativeCurrency": {
+        "name": "FRA",
+        "symbol": "FRA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2154",
+    "name": "Findora Forge",
+    "evmMeta": {
+      "chain": "Testnet-forge",
+      "chainId": 2154,
+      "networkId": 2154,
+      "nativeCurrency": {
+        "name": "FRA",
+        "symbol": "FRA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2203",
+    "name": "Bitcoin EVM",
+    "evmMeta": {
+      "chain": "Bitcoin EVM",
+      "chainId": 2203,
+      "networkId": 2203,
+      "nativeCurrency": {
+        "name": "Bitcoin",
+        "symbol": "eBTC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://connect.bitcoinevm.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:2213",
+    "name": "Evanesco",
+    "evmMeta": {
+      "chain": "EVA",
+      "chainId": 2213,
+      "networkId": 2213,
+      "nativeCurrency": {
+        "name": "EVA",
+        "symbol": "EVA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2223",
+    "name": "VChain",
+    "evmMeta": {
+      "chain": "VChain",
+      "chainId": 2223,
+      "networkId": 2223,
+      "nativeCurrency": {
+        "name": "VNDT",
+        "symbol": "VNDT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://bc.vcex.xyz"
+      ]
+    }
+  },
+  {
+    "id": "evm:2300",
+    "name": "BOMB Chain",
+    "evmMeta": {
+      "chain": "BOMB",
+      "chainId": 2300,
+      "networkId": 2300,
+      "nativeCurrency": {
+        "name": "BOMB Token",
+        "symbol": "BOMB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.bombchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:2330",
+    "name": "Altcoinchain",
+    "evmMeta": {
+      "chain": "mainnet",
+      "chainId": 2330,
+      "networkId": 2330,
+      "nativeCurrency": {
+        "name": "Altcoin",
+        "symbol": "ALT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2559",
+    "name": "Kortho",
+    "evmMeta": {
+      "chain": "Kortho Chain",
+      "chainId": 2559,
+      "networkId": 2559,
+      "nativeCurrency": {
+        "name": "KorthoChain",
+        "symbol": "KTO",
+        "decimals": 11
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2569",
+    "name": "TechPay",
+    "evmMeta": {
+      "chain": "TPC",
+      "chainId": 2569,
+      "networkId": 2569,
+      "nativeCurrency": {
+        "name": "TechPay",
+        "symbol": "TPC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.techpay.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:2606",
+    "name": "PoCRNet",
+    "evmMeta": {
+      "chain": "CRC",
+      "chainId": 2606,
+      "networkId": 2606,
+      "nativeCurrency": {
+        "name": "Carbon Reduction Coin",
+        "symbol": "CRC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2611",
+    "name": "Redlight Chain",
+    "evmMeta": {
+      "chain": "REDLC",
+      "chainId": 2611,
+      "networkId": 2611,
+      "nativeCurrency": {
+        "name": "Redlight Coin",
+        "symbol": "REDLC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2612",
+    "name": "EZChain C-Chain",
+    "evmMeta": {
+      "chain": "EZC",
+      "chainId": 2612,
+      "networkId": 2612,
+      "nativeCurrency": {
+        "name": "EZChain",
+        "symbol": "EZC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2999",
+    "name": "BitYuan",
+    "evmMeta": {
+      "chain": "BTY",
+      "chainId": 2999,
+      "networkId": 2999,
+      "nativeCurrency": {
+        "name": "BTY",
+        "symbol": "BTY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.bityuan.com/eth"
+      ]
+    }
+  },
+  {
+    "id": "evm:3000",
+    "name": "CENNZnet Rata",
+    "evmMeta": {
+      "chain": "CENNZnet",
+      "chainId": 3000,
+      "networkId": 3000,
+      "nativeCurrency": {
+        "name": "CPAY",
+        "symbol": "CPAY",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3001",
+    "name": "CENNZnet Nikau",
+    "evmMeta": {
+      "chain": "CENNZnet",
+      "chainId": 3001,
+      "networkId": 3001,
+      "nativeCurrency": {
+        "name": "CPAY",
+        "symbol": "CPAY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://nikau.centrality.me/public"
+      ]
+    }
+  },
+  {
+    "id": "evm:3031",
+    "name": "Orlando Chain",
+    "evmMeta": {
+      "chain": "ORL",
+      "chainId": 3031,
+      "networkId": 3031,
+      "nativeCurrency": {
+        "name": "Orlando",
+        "symbol": "ORL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3334",
+    "name": "Web3Q Galileo",
+    "evmMeta": {
+      "chain": "Web3Q",
+      "chainId": 3334,
+      "networkId": 3334,
+      "nativeCurrency": {
+        "name": "Web3Q",
+        "symbol": "W3Q",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3400",
+    "name": "Paribu Net",
+    "evmMeta": {
+      "chain": "PRB",
+      "chainId": 3400,
+      "networkId": 3400,
+      "nativeCurrency": {
+        "name": "PRB",
+        "symbol": "PRB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.paribu.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:3501",
+    "name": "JFIN Chain",
+    "evmMeta": {
+      "chain": "JFIN",
+      "chainId": 3501,
+      "networkId": 3501,
+      "nativeCurrency": {
+        "name": "JFIN Coin",
+        "symbol": "jfin",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.jfinchain.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:3601",
+    "name": "PandoProject",
+    "evmMeta": {
+      "chain": "PandoProject",
+      "chainId": 3601,
+      "networkId": 3601,
+      "nativeCurrency": {
+        "name": "pando-token",
+        "symbol": "PTX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3666",
+    "name": "Metacodechain",
+    "evmMeta": {
+      "chain": "metacode",
+      "chainId": 3666,
+      "networkId": 3666,
+      "nativeCurrency": {
+        "name": "J",
+        "symbol": "J",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3690",
+    "name": "Bittex",
+    "evmMeta": {
+      "chain": "BTX",
+      "chainId": 3690,
+      "networkId": 3690,
+      "nativeCurrency": {
+        "name": "Bittex",
+        "symbol": "BTX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3737",
+    "name": "Crossbell",
+    "evmMeta": {
+      "chain": "Crossbell",
+      "chainId": 3737,
+      "networkId": 3737,
+      "nativeCurrency": {
+        "name": "Crossbell Token",
+        "symbol": "CSB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.crossbell.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:3912",
+    "name": "DRAC Network",
+    "evmMeta": {
+      "chain": "DRAC",
+      "chainId": 3912,
+      "networkId": 3912,
+      "nativeCurrency": {
+        "name": "DRAC",
+        "symbol": "DRAC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://www.dracscan.com/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:3966",
+    "name": "DYNO",
+    "evmMeta": {
+      "chain": "DYNO",
+      "chainId": 3966,
+      "networkId": 3966,
+      "nativeCurrency": {
+        "name": "DYNO Token",
+        "symbol": "DYNO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.dynoprotocol.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:3999",
+    "name": "YuanChain",
+    "evmMeta": {
+      "chain": "YCC",
+      "chainId": 3999,
+      "networkId": 3999,
+      "nativeCurrency": {
+        "name": "YCC",
+        "symbol": "YCC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.yuan.org/eth"
+      ]
+    }
+  },
+  {
+    "id": "evm:4181",
+    "name": "PHI Network V1",
+    "evmMeta": {
+      "chain": "PHI V1",
+      "chainId": 4181,
+      "networkId": 4181,
+      "nativeCurrency": {
+        "name": "PHI",
+        "symbol": "Φ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:4444",
+    "name": "Htmlcoin",
+    "evmMeta": {
+      "chain": "mainnet",
+      "chainId": 4444,
+      "networkId": 4444,
+      "nativeCurrency": {
+        "name": "Htmlcoin",
+        "symbol": "HTML",
+        "decimals": 8
+      },
+      "rpc": [
+        "https://janus.htmlcoin.dev/janus",
+        "https://janus.htmlcoin.com/api"
+      ]
+    }
+  },
+  {
+    "id": "evm:4919",
+    "name": "Venidium",
+    "evmMeta": {
+      "chain": "XVM",
+      "chainId": 4919,
+      "networkId": 4919,
+      "nativeCurrency": {
+        "name": "Venidium",
+        "symbol": "XVM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.venidium.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:5000",
+    "name": "Mantle",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 5000,
+      "networkId": 5000,
+      "nativeCurrency": {
+        "name": "BitDAO",
+        "symbol": "BIT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mantle.xyz"
+      ]
+    }
+  },
+  {
+    "id": "evm:5177",
+    "name": "TLChain Network",
+    "evmMeta": {
+      "chain": "TLC",
+      "chainId": 5177,
+      "networkId": 5177,
+      "nativeCurrency": {
+        "name": "TLChain Network",
+        "symbol": "TLC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:5197",
+    "name": "EraSwap",
+    "evmMeta": {
+      "chain": "ESN",
+      "chainId": 5197,
+      "networkId": 5197,
+      "nativeCurrency": {
+        "name": "EraSwap",
+        "symbol": "ES",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.eraswap.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:5234",
+    "name": "Humanode",
+    "evmMeta": {
+      "chain": "HMND",
+      "chainId": 5234,
+      "networkId": 5234,
+      "nativeCurrency": {
+        "name": "HMND",
+        "symbol": "HMND",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:5290",
+    "name": "Firechain Old",
+    "evmMeta": {
+      "chain": "FIRE",
+      "chainId": 5290,
+      "networkId": 5290,
+      "nativeCurrency": {
+        "name": "Firechain",
+        "symbol": "FIRE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:5315",
+    "name": "Uzmi Network",
+    "evmMeta": {
+      "chain": "UZMI",
+      "chainId": 5315,
+      "networkId": 5315,
+      "nativeCurrency": {
+        "name": "UZMI",
+        "symbol": "UZMI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://network.uzmigames.com.br"
+      ]
+    }
+  },
+  {
+    "id": "evm:5555",
+    "name": "Chain Verse",
+    "evmMeta": {
+      "chain": "CVERSE",
+      "chainId": 5555,
+      "networkId": 5555,
+      "nativeCurrency": {
+        "name": "Oasys",
+        "symbol": "OAS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.chainverse.info"
+      ]
+    }
+  },
+  {
+    "id": "evm:5777",
+    "name": "Ganache",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 5777,
+      "networkId": 5777,
+      "nativeCurrency": {
+        "name": "Ganache Test Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:5869",
+    "name": "Wegochain Rubidium",
+    "evmMeta": {
+      "chain": "RBD",
+      "chainId": 5869,
+      "networkId": 5869,
+      "nativeCurrency": {
+        "name": "Rubid",
+        "symbol": "RBD",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://proxy.wegochain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:6066",
+    "name": "Tres",
+    "evmMeta": {
+      "chain": "TresLeches",
+      "chainId": 6066,
+      "networkId": 6066,
+      "nativeCurrency": {
+        "name": "TRES",
+        "symbol": "TRES",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.tresleches.finance",
+        "https://rpc.treschain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:6626",
+    "name": "Pixie Chain",
+    "evmMeta": {
+      "chain": "PixieChain",
+      "chainId": 6626,
+      "networkId": 6626,
+      "nativeCurrency": {
+        "name": "Pixie Chain Native Token",
+        "symbol": "PIX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:6789",
+    "name": "Gold Smart Chain",
+    "evmMeta": {
+      "chain": "STAND",
+      "chainId": 6789,
+      "networkId": 6789,
+      "nativeCurrency": {
+        "name": "Standard in Gold",
+        "symbol": "STAND",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:6999",
+    "name": "PolySmartChain",
+    "evmMeta": {
+      "chain": "PSC",
+      "chainId": 6999,
+      "networkId": 6999,
+      "nativeCurrency": {
+        "name": "PSC",
+        "symbol": "PSC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:7000",
+    "name": "ZetaChain",
+    "evmMeta": {
+      "chain": "ZetaChain",
+      "chainId": 7000,
+      "networkId": 7000,
+      "nativeCurrency": {
+        "name": "Zeta",
+        "symbol": "ZETA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.mainnet.zetachain.com/evm"
+      ]
+    }
+  },
+  {
+    "id": "evm:7027",
+    "name": "Ella the heart",
+    "evmMeta": {
+      "chain": "ella",
+      "chainId": 7027,
+      "networkId": 7027,
+      "nativeCurrency": {
+        "name": "Ella",
+        "symbol": "ELLA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ella.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:7070",
+    "name": "Planq",
+    "evmMeta": {
+      "chain": "Planq",
+      "chainId": 7070,
+      "networkId": 7070,
+      "nativeCurrency": {
+        "name": "Planq",
+        "symbol": "PLQ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:7341",
+    "name": "Shyft",
+    "evmMeta": {
+      "chain": "SHYFT",
+      "chainId": 7341,
+      "networkId": 7341,
+      "nativeCurrency": {
+        "name": "Shyft",
+        "symbol": "SHYFT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.shyft.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:8000",
+    "name": "Teleport",
+    "evmMeta": {
+      "chain": "Teleport",
+      "chainId": 8000,
+      "networkId": 8000,
+      "nativeCurrency": {
+        "name": "Tele",
+        "symbol": "TELE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://dataseed.testnet.teleport.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:8080",
+    "name": "Shardeum Liberty 1.X",
+    "evmMeta": {
+      "chain": "Shardeum",
+      "chainId": 8080,
+      "networkId": 8080,
+      "nativeCurrency": {
+        "name": "Shardeum SHM",
+        "symbol": "SHM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8081",
+    "name": "Shardeum Liberty 2.X",
+    "evmMeta": {
+      "chain": "Shardeum",
+      "chainId": 8081,
+      "networkId": 8081,
+      "nativeCurrency": {
+        "name": "Shardeum SHM",
+        "symbol": "SHM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8098",
+    "name": "StreamuX Blockchain",
+    "evmMeta": {
+      "chain": "StreamuX",
+      "chainId": 8098,
+      "networkId": 8098,
+      "nativeCurrency": {
+        "name": "StreamuX",
+        "symbol": "SmuX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8654",
+    "name": "Toki Network",
+    "evmMeta": {
+      "chain": "TOKI",
+      "chainId": 8654,
+      "networkId": 8654,
+      "nativeCurrency": {
+        "name": "Toki",
+        "symbol": "TOKI",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8723",
+    "name": "TOOL Global",
+    "evmMeta": {
+      "chain": "OLO",
+      "chainId": 8723,
+      "networkId": 8723,
+      "nativeCurrency": {
+        "name": "TOOL Global",
+        "symbol": "OLO",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8738",
+    "name": "Alph Network",
+    "evmMeta": {
+      "chain": "ALPH",
+      "chainId": 8738,
+      "networkId": 8738,
+      "nativeCurrency": {
+        "name": "Alph Network",
+        "symbol": "ALPH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.alph.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:8880",
+    "name": "Unique",
+    "evmMeta": {
+      "chain": "UNQ",
+      "chainId": 8880,
+      "networkId": 8880,
+      "nativeCurrency": {
+        "name": "Unique",
+        "symbol": "UNQ",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.unique.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:8881",
+    "name": "Quartz by Unique",
+    "evmMeta": {
+      "chain": "UNQ",
+      "chainId": 8881,
+      "networkId": 8881,
+      "nativeCurrency": {
+        "name": "Quartz",
+        "symbol": "QTZ",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://quartz.api.onfinality.io/public-ws"
+      ]
+    }
+  },
+  {
+    "id": "evm:8883",
+    "name": "Sapphire by Unique",
+    "evmMeta": {
+      "chain": "UNQ",
+      "chainId": 8883,
+      "networkId": 8883,
+      "nativeCurrency": {
+        "name": "Quartz",
+        "symbol": "QTZ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8888",
+    "name": "XANAChain",
+    "evmMeta": {
+      "chain": "XANAChain",
+      "chainId": 8888,
+      "networkId": 8888,
+      "nativeCurrency": {
+        "name": "XETA",
+        "symbol": "XETA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.xana.net/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:8889",
+    "name": "Vyvo Smart Chain",
+    "evmMeta": {
+      "chain": "VSC",
+      "chainId": 8889,
+      "networkId": 8889,
+      "nativeCurrency": {
+        "name": "VSC",
+        "symbol": "VSC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8898",
+    "name": "Mammoth",
+    "evmMeta": {
+      "chain": "MMT",
+      "chainId": 8898,
+      "networkId": 8898,
+      "nativeCurrency": {
+        "name": "Mammoth Token",
+        "symbol": "MMT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://dataseed.mmtscan.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:8899",
+    "name": "JIBCHAIN L1",
+    "evmMeta": {
+      "chain": "JBC",
+      "chainId": 8899,
+      "networkId": 8899,
+      "nativeCurrency": {
+        "name": "JIBCOIN",
+        "symbol": "JBC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8989",
+    "name": "Giant Mammoth",
+    "evmMeta": {
+      "chain": "GMMT",
+      "chainId": 8989,
+      "networkId": 8989,
+      "nativeCurrency": {
+        "name": "Giant Mammoth Coin",
+        "symbol": "GMMT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:8995",
+    "name": "bloxberg",
+    "evmMeta": {
+      "chain": "bloxberg",
+      "chainId": 8995,
+      "networkId": 8995,
+      "nativeCurrency": {
+        "name": "BERG",
+        "symbol": "U+25B3",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://core.bloxberg.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:9012",
+    "name": "BerylBit",
+    "evmMeta": {
+      "chain": "BRB",
+      "chainId": 9012,
+      "networkId": 9012,
+      "nativeCurrency": {
+        "name": "BerylBit Chain Native Token",
+        "symbol": "BRB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.berylbit.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:9100",
+    "name": "Genesis Coin",
+    "evmMeta": {
+      "chain": "Genesis",
+      "chainId": 9100,
+      "networkId": 9100,
+      "nativeCurrency": {
+        "name": "GN Coin",
+        "symbol": "GNC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:9700",
+    "name": "Oort Dev",
+    "evmMeta": {
+      "chain": "MainnetDev",
+      "chainId": 9700,
+      "networkId": 9700,
+      "nativeCurrency": {
+        "name": "Oort",
+        "symbol": "CCN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:10024",
+    "name": "Gon Chain",
+    "evmMeta": {
+      "chain": "GonChain",
+      "chainId": 10024,
+      "networkId": 10024,
+      "nativeCurrency": {
+        "name": "Gon Token",
+        "symbol": "GT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:10086",
+    "name": "SJATSH",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 10086,
+      "networkId": 10086,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:10101",
+    "name": "Blockchain Genesis",
+    "evmMeta": {
+      "chain": "GEN",
+      "chainId": 10101,
+      "networkId": 10101,
+      "nativeCurrency": {
+        "name": "GEN",
+        "symbol": "GEN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://eu.mainnet.xixoio.com",
+        "https://us.mainnet.xixoio.com",
+        "https://asia.mainnet.xixoio.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:10248",
+    "name": "0XTade",
+    "evmMeta": {
+      "chain": "0XTade Chain",
+      "chainId": 10248,
+      "networkId": 10248,
+      "nativeCurrency": {
+        "name": "0XT",
+        "symbol": "0XT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:10507",
+    "name": "Numbers",
+    "evmMeta": {
+      "chain": "NUM",
+      "chainId": 10507,
+      "networkId": 10507,
+      "nativeCurrency": {
+        "name": "NUM Token",
+        "symbol": "NUM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnetrpc.num.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:10823",
+    "name": "CryptoCoinPay",
+    "evmMeta": {
+      "chain": "CCP",
+      "chainId": 10823,
+      "networkId": 10823,
+      "nativeCurrency": {
+        "name": "CryptoCoinPay",
+        "symbol": "CCP",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:10946",
+    "name": "Quadrans Blockchain",
+    "evmMeta": {
+      "chain": "QDC",
+      "chainId": 10946,
+      "networkId": 10946,
+      "nativeCurrency": {
+        "name": "Quadrans Coin",
+        "symbol": "QDC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.quadrans.io",
+        "https://rpcna.quadrans.io",
+        "https://rpceu.quadrans.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:11110",
+    "name": "Astra",
+    "evmMeta": {
+      "chain": "Astra",
+      "chainId": 11110,
+      "networkId": 11110,
+      "nativeCurrency": {
+        "name": "Astra",
+        "symbol": "ASA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.astranaut.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:11111",
+    "name": "WAGMI",
+    "evmMeta": {
+      "chain": "WAGMI",
+      "chainId": 11111,
+      "networkId": 11111,
+      "nativeCurrency": {
+        "name": "WAGMI",
+        "symbol": "WGM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.trywagmi.xyz/rpc",
+        "https://subnets.avax.network/wagmi/wagmi-chain-testnet/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:11235",
+    "name": "Haqq Network",
+    "evmMeta": {
+      "chain": "Haqq",
+      "chainId": 11235,
+      "networkId": 11235,
+      "nativeCurrency": {
+        "name": "Islamic Coin",
+        "symbol": "ISLM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.eth.haqq.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:11888",
+    "name": "SanR Chain",
+    "evmMeta": {
+      "chain": "SanRChain",
+      "chainId": 11888,
+      "networkId": 11888,
+      "nativeCurrency": {
+        "name": "nSAN",
+        "symbol": "nSAN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:12052",
+    "name": "Singularity ZERO",
+    "evmMeta": {
+      "chain": "ZERO",
+      "chainId": 12052,
+      "networkId": 12052,
+      "nativeCurrency": {
+        "name": "ZERO",
+        "symbol": "ZERO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://zerorpc.singularity.gold"
+      ]
+    }
+  },
+  {
+    "id": "evm:13000",
+    "name": "SPS",
+    "evmMeta": {
+      "chain": "SPS",
+      "chainId": 13000,
+      "networkId": 13000,
+      "nativeCurrency": {
+        "name": "ECG",
+        "symbol": "ECG",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ssquad.games"
+      ]
+    }
+  },
+  {
+    "id": "evm:13381",
+    "name": "Phoenix",
+    "evmMeta": {
+      "chain": "Phoenix",
+      "chainId": 13381,
+      "networkId": 13381,
+      "nativeCurrency": {
+        "name": "Phoenix",
+        "symbol": "PHX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.phoenixplorer.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:13812",
+    "name": "Susono",
+    "evmMeta": {
+      "chain": "SUS",
+      "chainId": 13812,
+      "networkId": 13812,
+      "nativeCurrency": {
+        "name": "Susono",
+        "symbol": "OPN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:16000",
+    "name": "MetaDot",
+    "evmMeta": {
+      "chain": "MTT",
+      "chainId": 16000,
+      "networkId": 16000,
+      "nativeCurrency": {
+        "name": "MetaDot Token",
+        "symbol": "MTT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.metadot.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:18159",
+    "name": "Proof Of Memes",
+    "evmMeta": {
+      "chain": "POM",
+      "chainId": 18159,
+      "networkId": 18159,
+      "nativeCurrency": {
+        "name": "Proof Of Memes",
+        "symbol": "POM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:19845",
+    "name": "BTCIX Network",
+    "evmMeta": {
+      "chain": "BTCIX",
+      "chainId": 19845,
+      "networkId": 19845,
+      "nativeCurrency": {
+        "name": "BTCIX Network",
+        "symbol": "BTCIX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://seed.btcix.org/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:20736",
+    "name": "P12 Chain",
+    "evmMeta": {
+      "chain": "P12",
+      "chainId": 20736,
+      "networkId": 20736,
+      "nativeCurrency": {
+        "name": "Hooked P2",
+        "symbol": "hP2",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:21337",
+    "name": "CENNZnet Azalea",
+    "evmMeta": {
+      "chain": "CENNZnet",
+      "chainId": 21337,
+      "networkId": 21337,
+      "nativeCurrency": {
+        "name": "CPAY",
+        "symbol": "CPAY",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://cennznet.unfrastructure.io/public"
+      ]
+    }
+  },
+  {
+    "id": "evm:21816",
+    "name": "omChain",
+    "evmMeta": {
+      "chain": "OML",
+      "chainId": 21816,
+      "networkId": 21816,
+      "nativeCurrency": {
+        "name": "omChain",
+        "symbol": "OMC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://seed.omlira.com",
+        "https://seed.omchain.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:22023",
+    "name": "Taycan",
+    "evmMeta": {
+      "chain": "Taycan",
+      "chainId": 22023,
+      "networkId": 22023,
+      "nativeCurrency": {
+        "name": "shuffle",
+        "symbol": "SFL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:22776",
+    "name": "MAP",
+    "evmMeta": {
+      "chain": "MAP",
+      "chainId": 22776,
+      "networkId": 22776,
+      "nativeCurrency": {
+        "name": "MAP",
+        "symbol": "MAP",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.maplabs.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:23294",
+    "name": "Oasis Sapphire",
+    "evmMeta": {
+      "chain": "Sapphire",
+      "chainId": 23294,
+      "networkId": 23294,
+      "nativeCurrency": {
+        "name": "Sapphire Rose",
+        "symbol": "ROSE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://sapphire.oasis.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:24484",
+    "name": "Webchain",
+    "evmMeta": {
+      "chain": "WEB",
+      "chainId": 24484,
+      "networkId": 37129,
+      "nativeCurrency": {
+        "name": "Webchain Ether",
+        "symbol": "WEB",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:24734",
+    "name": "MintMe.com Coin",
+    "evmMeta": {
+      "chain": "MINTME",
+      "chainId": 24734,
+      "networkId": 37480,
+      "nativeCurrency": {
+        "name": "MintMe.com Coin",
+        "symbol": "MINTME",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:25888",
+    "name": "Hammer Chain",
+    "evmMeta": {
+      "chain": "HammerChain",
+      "chainId": 25888,
+      "networkId": 25888,
+      "nativeCurrency": {
+        "name": "GOLDT",
+        "symbol": "GOLDT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://www.hammerchain.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:26600",
+    "name": "Hertz Network",
+    "evmMeta": {
+      "chain": "HTZ",
+      "chainId": 26600,
+      "networkId": 26600,
+      "nativeCurrency": {
+        "name": "Hertz",
+        "symbol": "HTZ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:26863",
+    "name": "OasisChain",
+    "evmMeta": {
+      "chain": "OasisChain",
+      "chainId": 26863,
+      "networkId": 26863,
+      "nativeCurrency": {
+        "name": "OAC",
+        "symbol": "OAC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:31102",
+    "name": "Ethersocial Network",
+    "evmMeta": {
+      "chain": "ESN",
+      "chainId": 31102,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "Ethersocial Network Ether",
+        "symbol": "ESN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.esn.gonspool.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:31223",
+    "name": "CloudTx",
+    "evmMeta": {
+      "chain": "CLD",
+      "chainId": 31223,
+      "networkId": 31223,
+      "nativeCurrency": {
+        "name": "CloudTx",
+        "symbol": "CLD",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:33333",
+    "name": "Aves",
+    "evmMeta": {
+      "chain": "AVS",
+      "chainId": 33333,
+      "networkId": 33333,
+      "nativeCurrency": {
+        "name": "Aves",
+        "symbol": "AVS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.avescoin.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:35011",
+    "name": "J2O Taro",
+    "evmMeta": {
+      "chain": "TARO",
+      "chainId": 35011,
+      "networkId": 35011,
+      "nativeCurrency": {
+        "name": "TARO Coin",
+        "symbol": "taro",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:35441",
+    "name": "Q",
+    "evmMeta": {
+      "chain": "Q",
+      "chainId": 35441,
+      "networkId": 35441,
+      "nativeCurrency": {
+        "name": "Q token",
+        "symbol": "Q",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.q.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:39797",
+    "name": "Energi",
+    "evmMeta": {
+      "chain": "NRG",
+      "chainId": 39797,
+      "networkId": 39797,
+      "nativeCurrency": {
+        "name": "Energi",
+        "symbol": "NRG",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://nodeapi.energi.network",
+        "https://explorer.energi.network/api/eth-rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:39815",
+    "name": "OHO",
+    "evmMeta": {
+      "chain": "OHO",
+      "chainId": 39815,
+      "networkId": 39815,
+      "nativeCurrency": {
+        "name": "OHO",
+        "symbol": "OHO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.oho.ai"
+      ]
+    }
+  },
+  {
+    "id": "evm:41500",
+    "name": "Opulent-X BETA",
+    "evmMeta": {
+      "chain": "Opulent-X",
+      "chainId": 41500,
+      "networkId": 41500,
+      "nativeCurrency": {
+        "name": "Oxyn Gas",
+        "symbol": "OXYN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:42069",
+    "name": "pegglecoin",
+    "evmMeta": {
+      "chain": "42069",
+      "chainId": 42069,
+      "networkId": 42069,
+      "nativeCurrency": {
+        "name": "pegglecoin",
+        "symbol": "peggle",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:42170",
+    "name": "Arbitrum Nova",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 42170,
+      "networkId": 42170,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://nova.arbitrum.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:43110",
+    "name": "Athereum",
+    "evmMeta": {
+      "chain": "ATH",
+      "chainId": 43110,
+      "networkId": 43110,
+      "nativeCurrency": {
+        "name": "Athereum Ether",
+        "symbol": "ATH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:43288",
+    "name": "Boba Avax",
+    "evmMeta": {
+      "chain": "Boba Avax",
+      "chainId": 43288,
+      "networkId": 43288,
+      "nativeCurrency": {
+        "name": "Boba Token",
+        "symbol": "BOBA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://avax.boba.network",
+        "https://replica.avax.boba.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:45000",
+    "name": "Autobahn Network",
+    "evmMeta": {
+      "chain": "TXL",
+      "chainId": 45000,
+      "networkId": 45000,
+      "nativeCurrency": {
+        "name": "TXL",
+        "symbol": "TXL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.autobahn.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:51712",
+    "name": "Sardis",
+    "evmMeta": {
+      "chain": "SRDX",
+      "chainId": 51712,
+      "networkId": 51712,
+      "nativeCurrency": {
+        "name": "Sardis",
+        "symbol": "SRDX",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:53935",
+    "name": "DFK Chain",
+    "evmMeta": {
+      "chain": "DFK",
+      "chainId": 53935,
+      "networkId": 53935,
+      "nativeCurrency": {
+        "name": "Jewel",
+        "symbol": "JEWEL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:56288",
+    "name": "Boba BNB",
+    "evmMeta": {
+      "chain": "Boba BNB Mainnet",
+      "chainId": 56288,
+      "networkId": 56288,
+      "nativeCurrency": {
+        "name": "Boba Token",
+        "symbol": "BOBA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://bnb.boba.network",
+        "https://replica.bnb.boba.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:61803",
+    "name": "Etica",
+    "evmMeta": {
+      "chain": "Etica Protocol (ETI/EGAZ)",
+      "chainId": 61803,
+      "networkId": 61803,
+      "nativeCurrency": {
+        "name": "EGAZ",
+        "symbol": "EGAZ",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://eticamainnet.eticascan.org",
+        "https://eticamainnet.eticaprotocol.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:61916",
+    "name": "DoKEN Super Chain",
+    "evmMeta": {
+      "chain": "DoKEN Super Chain",
+      "chainId": 61916,
+      "networkId": 61916,
+      "nativeCurrency": {
+        "name": "DoKEN",
+        "symbol": "DKN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://sgrpc.doken.dev",
+        "https://nyrpc.doken.dev",
+        "https://ukrpc.doken.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:62621",
+    "name": "MultiVAC",
+    "evmMeta": {
+      "chain": "MultiVAC",
+      "chainId": 62621,
+      "networkId": 62621,
+      "nativeCurrency": {
+        "name": "MultiVAC",
+        "symbol": "MTV",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.mtv.ac"
+      ]
+    }
+  },
+  {
+    "id": "evm:63000",
+    "name": "eCredits",
+    "evmMeta": {
+      "chain": "ECS",
+      "chainId": 63000,
+      "networkId": 63000,
+      "nativeCurrency": {
+        "name": "eCredits",
+        "symbol": "ECS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ecredits.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:67390",
+    "name": "SiriusNet",
+    "evmMeta": {
+      "chain": "SIN",
+      "chainId": 67390,
+      "networkId": 67390,
+      "nativeCurrency": {
+        "name": "MCD",
+        "symbol": "MCD",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:69420",
+    "name": "Condrieu",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 69420,
+      "networkId": 69420,
+      "nativeCurrency": {
+        "name": "Condrieu Testnet Ether",
+        "symbol": "CTE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:70000",
+    "name": "Thinkium Chain 0",
+    "evmMeta": {
+      "chain": "Thinkium",
+      "chainId": 70000,
+      "networkId": 70000,
+      "nativeCurrency": {
+        "name": "TKM",
+        "symbol": "TKM",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://proxy.thinkiumrpc.net"
+      ]
+    }
+  },
+  {
+    "id": "evm:70001",
+    "name": "Thinkium Chain 1",
+    "evmMeta": {
+      "chain": "Thinkium",
+      "chainId": 70001,
+      "networkId": 70001,
+      "nativeCurrency": {
+        "name": "TKM",
+        "symbol": "TKM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:70002",
+    "name": "Thinkium Chain 2",
+    "evmMeta": {
+      "chain": "Thinkium",
+      "chainId": 70002,
+      "networkId": 70002,
+      "nativeCurrency": {
+        "name": "TKM",
+        "symbol": "TKM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:70103",
+    "name": "Thinkium Chain 103",
+    "evmMeta": {
+      "chain": "Thinkium",
+      "chainId": 70103,
+      "networkId": 70103,
+      "nativeCurrency": {
+        "name": "TKM",
+        "symbol": "TKM",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:73927",
+    "name": "Mixin Virtual Machine",
+    "evmMeta": {
+      "chain": "MVM",
+      "chainId": 73927,
+      "networkId": 73927,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://geth.mvm.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:75000",
+    "name": "ResinCoin",
+    "evmMeta": {
+      "chain": "RESIN",
+      "chainId": 75000,
+      "networkId": 75000,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "RESIN",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.resincoin.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:77612",
+    "name": "Vention Smart Chain",
+    "evmMeta": {
+      "chain": "VSC",
+      "chainId": 77612,
+      "networkId": 77612,
+      "nativeCurrency": {
+        "name": "VNT",
+        "symbol": "VNT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:80001",
+    "name": "Mumbai",
+    "evmMeta": {
+      "chain": "Polygon",
+      "chainId": 80001,
+      "networkId": 80001,
+      "nativeCurrency": {
+        "name": "MATIC",
+        "symbol": "MATIC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://polygontestapi.terminet.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:88888",
+    "name": "IVAR Chain",
+    "evmMeta": {
+      "chain": "IVAR",
+      "chainId": 88888,
+      "networkId": 88888,
+      "nativeCurrency": {
+        "name": "Ivar",
+        "symbol": "IVAR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:90210",
+    "name": "Beverly Hills",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 90210,
+      "networkId": 90210,
+      "nativeCurrency": {
+        "name": "Beverly Hills Testnet Ether",
+        "symbol": "BVE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:97288",
+    "name": "Boba BNB  Old",
+    "evmMeta": {
+      "chain": "Boba BNB Mainnet",
+      "chainId": 97288,
+      "networkId": 97288,
+      "nativeCurrency": {
+        "name": "Boba Token",
+        "symbol": "BOBA",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:99999",
+    "name": "UB Smart Chain",
+    "evmMeta": {
+      "chain": "USC",
+      "chainId": 99999,
+      "networkId": 99999,
+      "nativeCurrency": {
+        "name": "UBC",
+        "symbol": "UBC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.uschain.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:100000",
+    "name": "QuarkChain Root",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100000,
+      "networkId": 100000,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100001",
+    "name": "QuarkChain Shard 0",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100001,
+      "networkId": 100001,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100002",
+    "name": "QuarkChain Shard 1",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100002,
+      "networkId": 100002,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100003",
+    "name": "QuarkChain Shard 2",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100003,
+      "networkId": 100003,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100004",
+    "name": "QuarkChain Shard 3",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100004,
+      "networkId": 100004,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100005",
+    "name": "QuarkChain Shard 4",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100005,
+      "networkId": 100005,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100006",
+    "name": "QuarkChain Shard 5",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100006,
+      "networkId": 100006,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100007",
+    "name": "QuarkChain Shard 6",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100007,
+      "networkId": 100007,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:100008",
+    "name": "QuarkChain Shard 7",
+    "evmMeta": {
+      "chain": "QuarkChain",
+      "chainId": 100008,
+      "networkId": 100008,
+      "nativeCurrency": {
+        "name": "QKC",
+        "symbol": "QKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:103090",
+    "name": "Crystaleum",
+    "evmMeta": {
+      "chain": "crystal",
+      "chainId": 103090,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "CRFI",
+        "symbol": "◈",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://evm.cryptocurrencydevs.org",
+        "https://rpc.crystaleum.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:108801",
+    "name": "BROChain",
+    "evmMeta": {
+      "chain": "BRO",
+      "chainId": 108801,
+      "networkId": 108801,
+      "nativeCurrency": {
+        "name": "Brother",
+        "symbol": "BRO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.brochain.org",
+        "https://rpc.brochain.org/mainnet"
+      ]
+    }
+  },
+  {
+    "id": "evm:131419",
+    "name": "ETND Chain s",
+    "evmMeta": {
+      "chain": "ETND",
+      "chainId": 131419,
+      "networkId": 131419,
+      "nativeCurrency": {
+        "name": "ETND",
+        "symbol": "ETND",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:200625",
+    "name": "Akroma",
+    "evmMeta": {
+      "chain": "AKA",
+      "chainId": 200625,
+      "networkId": 200625,
+      "nativeCurrency": {
+        "name": "Akroma Ether",
+        "symbol": "AKA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://remote.akroma.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:201018",
+    "name": "Alaya",
+    "evmMeta": {
+      "chain": "Alaya",
+      "chainId": 201018,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "ATP",
+        "symbol": "atp",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://openapi.alaya.network/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:201804",
+    "name": "Mythical Chain",
+    "evmMeta": {
+      "chain": "MYTH",
+      "chainId": 201804,
+      "networkId": 201804,
+      "nativeCurrency": {
+        "name": "Mythos",
+        "symbol": "MYTH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:202624",
+    "name": "Jellie",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 202624,
+      "networkId": 202624,
+      "nativeCurrency": {
+        "name": "Twala Coin",
+        "symbol": "TWL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:210425",
+    "name": "PlatON",
+    "evmMeta": {
+      "chain": "PlatON",
+      "chainId": 210425,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "LAT",
+        "symbol": "lat",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:220315",
+    "name": "Mas",
+    "evmMeta": {
+      "chain": "MAS",
+      "chainId": 220315,
+      "networkId": 220315,
+      "nativeCurrency": {
+        "name": "Master Bank",
+        "symbol": "MAS",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:246529",
+    "name": "ARTIS sigma1",
+    "evmMeta": {
+      "chain": "ARTIS",
+      "chainId": 246529,
+      "networkId": 246529,
+      "nativeCurrency": {
+        "name": "ARTIS sigma1 Ether",
+        "symbol": "ATS",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:256256",
+    "name": "CMP-",
+    "evmMeta": {
+      "chain": "CMP",
+      "chainId": 256256,
+      "networkId": 256256,
+      "nativeCurrency": {
+        "name": "Caduceus Token",
+        "symbol": "CMP",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.block.caduceus.foundation"
+      ]
+    }
+  },
+  {
+    "id": "evm:281121",
+    "name": "Social Smart Chain",
+    "evmMeta": {
+      "chain": "SoChain",
+      "chainId": 281121,
+      "networkId": 281121,
+      "nativeCurrency": {
+        "name": "SoChain",
+        "symbol": "$OC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://socialsmartchain.digitalnext.business"
+      ]
+    }
+  },
+  {
+    "id": "evm:381931",
+    "name": "Metal C-Chain",
+    "evmMeta": {
+      "chain": "Metal",
+      "chainId": 381931,
+      "networkId": 381931,
+      "nativeCurrency": {
+        "name": "Metal",
+        "symbol": "METAL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:381932",
+    "name": "Metal Tahoe C-Chain",
+    "evmMeta": {
+      "chain": "Metal",
+      "chainId": 381932,
+      "networkId": 381932,
+      "nativeCurrency": {
+        "name": "Metal",
+        "symbol": "METAL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:421611",
+    "name": "Arbitrum Rinkeby",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 421611,
+      "networkId": 421611,
+      "nativeCurrency": {
+        "name": "Arbitrum Rinkeby Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rinkeby.arbitrum.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:421613",
+    "name": "Arbitrum Goerli",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 421613,
+      "networkId": 421613,
+      "nativeCurrency": {
+        "name": "Arbitrum Goerli Ether",
+        "symbol": "AGOR",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:432204",
+    "name": "Dexalot Subnet",
+    "evmMeta": {
+      "chain": "DEXALOT",
+      "chainId": 432204,
+      "networkId": 432204,
+      "nativeCurrency": {
+        "name": "Dexalot",
+        "symbol": "ALOT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://subnets.avax.network/dexalot/mainnet/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:474142",
+    "name": "OpenChain",
+    "evmMeta": {
+      "chain": "OpenChain",
+      "chainId": 474142,
+      "networkId": 474142,
+      "nativeCurrency": {
+        "name": "OpenCoin",
+        "symbol": "OPC",
+        "decimals": 10
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:513100",
+    "name": "ethereum Fair",
+    "evmMeta": {
+      "chain": "ETF",
+      "chainId": 513100,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.etherfair.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:534352",
+    "name": "Scroll",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 534352,
+      "networkId": 534352,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:641230",
+    "name": "Bear Network Chain",
+    "evmMeta": {
+      "chain": "BRNKC",
+      "chainId": 641230,
+      "networkId": 641230,
+      "nativeCurrency": {
+        "name": "Bear Network Chain Native Token",
+        "symbol": "BRNKC",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:800001",
+    "name": "OctaSpace",
+    "evmMeta": {
+      "chain": "OCTA",
+      "chainId": 800001,
+      "networkId": 800001,
+      "nativeCurrency": {
+        "name": "OctaSpace",
+        "symbol": "OCTA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.octa.space"
+      ]
+    }
+  },
+  {
+    "id": "evm:846000",
+    "name": "4GoodNetwork",
+    "evmMeta": {
+      "chain": "4GN",
+      "chainId": 846000,
+      "networkId": 846000,
+      "nativeCurrency": {
+        "name": "APTA",
+        "symbol": "APTA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://chain.deptofgood.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:900000",
+    "name": "Posichain Shard 0",
+    "evmMeta": {
+      "chain": "PSC",
+      "chainId": 900000,
+      "networkId": 900000,
+      "nativeCurrency": {
+        "name": "Posichain Native Token",
+        "symbol": "POSI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://api.posichain.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:955305",
+    "name": "Eluvio Content Fabric",
+    "evmMeta": {
+      "chain": "Eluvio",
+      "chainId": 955305,
+      "networkId": 955305,
+      "nativeCurrency": {
+        "name": "ELV",
+        "symbol": "ELV",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1313114",
+    "name": "Etho Protocol",
+    "evmMeta": {
+      "chain": "ETHO",
+      "chainId": 1313114,
+      "networkId": 1313114,
+      "nativeCurrency": {
+        "name": "Etho Protocol",
+        "symbol": "ETHO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ethoprotocol.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1313500",
+    "name": "Xerom",
+    "evmMeta": {
+      "chain": "XERO",
+      "chainId": 1313500,
+      "networkId": 1313500,
+      "nativeCurrency": {
+        "name": "Xerom Ether",
+        "symbol": "XERO",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.xerom.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:1337702",
+    "name": "Kintsugi",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 1337702,
+      "networkId": 1337702,
+      "nativeCurrency": {
+        "name": "kintsugi Ethere",
+        "symbol": "kiETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.kintsugi.themerge.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:1337802",
+    "name": "Kiln",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 1337802,
+      "networkId": 1337802,
+      "nativeCurrency": {
+        "name": "Testnet ETH",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.kiln.themerge.dev"
+      ]
+    }
+  },
+  {
+    "id": "evm:2099156",
+    "name": "Plian Main",
+    "evmMeta": {
+      "chain": "Plian",
+      "chainId": 2099156,
+      "networkId": 2099156,
+      "nativeCurrency": {
+        "name": "Plian Token",
+        "symbol": "PI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.plian.io/pchain"
+      ]
+    }
+  },
+  {
+    "id": "evm:5555555",
+    "name": "Imversed",
+    "evmMeta": {
+      "chain": "Imversed",
+      "chainId": 5555555,
+      "networkId": 5555555,
+      "nativeCurrency": {
+        "name": "Imversed Token",
+        "symbol": "IMV",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://jsonrpc.imversed.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:7355310",
+    "name": "OpenVessel",
+    "evmMeta": {
+      "chain": "VSL",
+      "chainId": 7355310,
+      "networkId": 7355310,
+      "nativeCurrency": {
+        "name": "Vessel ETH",
+        "symbol": "VETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:7762959",
+    "name": "Musicoin",
+    "evmMeta": {
+      "chain": "MUSIC",
+      "chainId": 7762959,
+      "networkId": 7762959,
+      "nativeCurrency": {
+        "name": "Musicoin",
+        "symbol": "MUSIC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mewapi.musicoin.tw"
+      ]
+    }
+  },
+  {
+    "id": "evm:8007736",
+    "name": "Plian Subchain 1",
+    "evmMeta": {
+      "chain": "Plian",
+      "chainId": 8007736,
+      "networkId": 8007736,
+      "nativeCurrency": {
+        "name": "Plian Token",
+        "symbol": "PI",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:10101010",
+    "name": "Soverun",
+    "evmMeta": {
+      "chain": "SVRN",
+      "chainId": 10101010,
+      "networkId": 10101010,
+      "nativeCurrency": {
+        "name": "Soverun",
+        "symbol": "SVRN",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:11155111",
+    "name": "Sepolia",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 11155111,
+      "networkId": 11155111,
+      "nativeCurrency": {
+        "name": "Sepolia Ether",
+        "symbol": "SEP",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.sepolia.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:13371337",
+    "name": "PepChain Churchill",
+    "evmMeta": {
+      "chain": "PEP",
+      "chainId": 13371337,
+      "networkId": 13371337,
+      "nativeCurrency": {
+        "name": "PepChain Churchill Ether",
+        "symbol": "TPEP",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:14288640",
+    "name": "Anduschain",
+    "evmMeta": {
+      "chain": "anduschain",
+      "chainId": 14288640,
+      "networkId": 14288640,
+      "nativeCurrency": {
+        "name": "DAON",
+        "symbol": "DEB",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.anduschain.io/rpc"
+      ]
+    }
+  },
+  {
+    "id": "evm:18289463",
+    "name": "IOLite",
+    "evmMeta": {
+      "chain": "ILT",
+      "chainId": 18289463,
+      "networkId": 18289463,
+      "nativeCurrency": {
+        "name": "IOLite Ether",
+        "symbol": "ILT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://net.iolite.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:20180430",
+    "name": "SmartMesh",
+    "evmMeta": {
+      "chain": "Spectrum",
+      "chainId": 20180430,
+      "networkId": 1,
+      "nativeCurrency": {
+        "name": "SmartMesh Native Token",
+        "symbol": "SMT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:20181205",
+    "name": "quarkblockchain",
+    "evmMeta": {
+      "chain": "QKI",
+      "chainId": 20181205,
+      "networkId": 20181205,
+      "nativeCurrency": {
+        "name": "quarkblockchain Native Token",
+        "symbol": "QKI",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://hz.rpc.qkiscan.cn",
+        "https://jp.rpc.qkiscan.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:22052002",
+    "name": "Excelon",
+    "evmMeta": {
+      "chain": "XLON",
+      "chainId": 22052002,
+      "networkId": 22052002,
+      "nativeCurrency": {
+        "name": "Excelon",
+        "symbol": "xlon",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:27082022",
+    "name": "Excoincial Chain",
+    "evmMeta": {
+      "chain": "EXL",
+      "chainId": 27082022,
+      "networkId": 27082022,
+      "nativeCurrency": {
+        "name": "Exlcoin",
+        "symbol": "EXL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.exlscan.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:28945486",
+    "name": "Auxilium Network",
+    "evmMeta": {
+      "chain": "AUX",
+      "chainId": 28945486,
+      "networkId": 28945486,
+      "nativeCurrency": {
+        "name": "Auxilium coin",
+        "symbol": "AUX",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.auxilium.global"
+      ]
+    }
+  },
+  {
+    "id": "evm:35855456",
+    "name": "Joys Digital",
+    "evmMeta": {
+      "chain": "JOYS",
+      "chainId": 35855456,
+      "networkId": 35855456,
+      "nativeCurrency": {
+        "name": "JOYS",
+        "symbol": "JOYS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://node.joys.digital"
+      ]
+    }
+  },
+  {
+    "id": "evm:61717561",
+    "name": "Aquachain",
+    "evmMeta": {
+      "chain": "AQUA",
+      "chainId": 61717561,
+      "networkId": 61717561,
+      "nativeCurrency": {
+        "name": "Aquachain Ether",
+        "symbol": "AQUA",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://c.onical.org",
+        "https://tx.aquacha.in/api"
+      ]
+    }
+  },
+  {
+    "id": "evm:192837465",
+    "name": "Gather Network",
+    "evmMeta": {
+      "chain": "GTH",
+      "chainId": 192837465,
+      "networkId": 192837465,
+      "nativeCurrency": {
+        "name": "Gather",
+        "symbol": "GTH",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.gather.network"
+      ]
+    }
+  },
+  {
+    "id": "evm:245022934",
+    "name": "Neon EVM",
+    "evmMeta": {
+      "chain": "Solana",
+      "chainId": 245022934,
+      "networkId": 245022934,
+      "nativeCurrency": {
+        "name": "Neon",
+        "symbol": "NEON",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.neonevm.org"
+      ]
+    }
+  },
+  {
+    "id": "evm:311752642",
+    "name": "OneLedger",
+    "evmMeta": {
+      "chain": "OLT",
+      "chainId": 311752642,
+      "networkId": 311752642,
+      "nativeCurrency": {
+        "name": "OLT",
+        "symbol": "OLT",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:503129905",
+    "name": "Nebula Staging",
+    "evmMeta": {
+      "chain": "staging-faint-slimy-achird",
+      "chainId": 503129905,
+      "networkId": 503129905,
+      "nativeCurrency": {
+        "name": "sFUEL",
+        "symbol": "sFUEL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1122334455",
+    "name": "IPOS Network",
+    "evmMeta": {
+      "chain": "IPOS",
+      "chainId": 1122334455,
+      "networkId": 1122334455,
+      "nativeCurrency": {
+        "name": "IPOS Network Ether",
+        "symbol": "IPOS",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.iposlab.com"
+      ]
+    }
+  },
+  {
+    "id": "evm:1313161556",
+    "name": "Aurora Betanet",
+    "evmMeta": {
+      "chain": "NEAR",
+      "chainId": 1313161556,
+      "networkId": 1313161556,
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1482601649",
+    "name": "Nebula",
+    "evmMeta": {
+      "chain": "green-giddy-denebola",
+      "chainId": 1482601649,
+      "networkId": 1482601649,
+      "nativeCurrency": {
+        "name": "sFUEL",
+        "symbol": "sFUEL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1564830818",
+    "name": "Calypso NFT Hub (SKALE)",
+    "evmMeta": {
+      "chain": "honorable-steel-rasalhague",
+      "chainId": 1564830818,
+      "networkId": 1564830818,
+      "nativeCurrency": {
+        "name": "sFUEL",
+        "symbol": "sFUEL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1666600001",
+    "name": "Harmony Shard 1",
+    "evmMeta": {
+      "chain": "Harmony",
+      "chainId": 1666600001,
+      "networkId": 1666600001,
+      "nativeCurrency": {
+        "name": "ONE",
+        "symbol": "ONE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1666600002",
+    "name": "Harmony Shard 2",
+    "evmMeta": {
+      "chain": "Harmony",
+      "chainId": 1666600002,
+      "networkId": 1666600002,
+      "nativeCurrency": {
+        "name": "ONE",
+        "symbol": "ONE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:1666600003",
+    "name": "Harmony Shard 3",
+    "evmMeta": {
+      "chain": "Harmony",
+      "chainId": 1666600003,
+      "networkId": 1666600003,
+      "nativeCurrency": {
+        "name": "ONE",
+        "symbol": "ONE",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2021121117",
+    "name": "DataHopper",
+    "evmMeta": {
+      "chain": "HOP",
+      "chainId": 2021121117,
+      "networkId": 2021121117,
+      "nativeCurrency": {
+        "name": "DataHoppers",
+        "symbol": "HOP",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:2046399126",
+    "name": "Europa SKALE Chain",
+    "evmMeta": {
+      "chain": "europa",
+      "chainId": 2046399126,
+      "networkId": 2046399126,
+      "nativeCurrency": {
+        "name": "sFUEL",
+        "symbol": "sFUEL",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:3125659152",
+    "name": "Pirl",
+    "evmMeta": {
+      "chain": "PIRL",
+      "chainId": 3125659152,
+      "networkId": 3125659152,
+      "nativeCurrency": {
+        "name": "Pirl Ether",
+        "symbol": "PIRL",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://wallrpc.pirl.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:197710212030",
+    "name": "Ntity",
+    "evmMeta": {
+      "chain": "Ntity",
+      "chainId": 197710212030,
+      "networkId": 197710212030,
+      "nativeCurrency": {
+        "name": "Ntity",
+        "symbol": "NTT",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://rpc.ntity.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:383414847825",
+    "name": "Zeniq",
+    "evmMeta": {
+      "chain": "ZENIQ",
+      "chainId": 383414847825,
+      "networkId": 383414847825,
+      "nativeCurrency": {
+        "name": "Zeniq",
+        "symbol": "ZENIQ",
+        "decimals": 18
+      },
+      "rpc": []
+    }
+  },
+  {
+    "id": "evm:666301171999",
+    "name": "PDC",
+    "evmMeta": {
+      "chain": "IPDC",
+      "chainId": 666301171999,
+      "networkId": 666301171999,
+      "nativeCurrency": {
+        "name": "PDC",
+        "symbol": "PDC",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://mainnet.ipdc.io"
+      ]
+    }
+  },
+  {
+    "id": "evm:6022140761023",
+    "name": "Molereum Network",
+    "evmMeta": {
+      "chain": "ETH",
+      "chainId": 6022140761023,
+      "networkId": 6022140761023,
+      "nativeCurrency": {
+        "name": "Molereum Ether",
+        "symbol": "MOLE",
+        "decimals": 18
+      },
+      "rpc": [
+        "https://molereum.jdubedition.com"
+      ]
+    }
+  }
+]
