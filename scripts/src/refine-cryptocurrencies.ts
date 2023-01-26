@@ -119,10 +119,7 @@ async function main() {
     }
   }
 
-  await writeFile(
-    'coinmarketcap/cryptocurrencies.json',
-    JSON.stringify(refinedCryptocurrencies, null, 2)
-  )
+  await writeFile('coinmarketcap/cryptocurrencies.json', JSON.stringify(refinedCryptocurrencies))
   await writeFile('chains.json', JSON.stringify(allChains, null, 2))
 }
 
