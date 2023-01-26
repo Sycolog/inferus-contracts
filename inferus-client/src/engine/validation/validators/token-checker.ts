@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { NameMetadata } from '../../types'
 import { ValidationResult } from '../types'
 import chains from '../../chains.json'
@@ -6,9 +7,7 @@ import { ethers } from 'ethers'
 export default async function validate(metadata: NameMetadata, result: ValidationResult) {
   for (const chainCode of Object.keys(metadata.paymentLink.chains)) {
     const chainData = metadata.paymentLink.chains[chainCode]
-    const indexInChains = chains.findIndex((c) =>
-      chainData.isEVM ? chainCode === `evm:${c.chainId}` : chainCode === `otc:${c.coingeckoId}`
-    )
+    const indexInChains = chains.findIndex((c) => c.id === chainCode)
 
     if (indexInChains < 0) {
       const path = `paymentLink.chains.${chainCode}`
@@ -23,10 +22,11 @@ export default async function validate(metadata: NameMetadata, result: Validatio
     }
 
     if (!chainData.isEVM) {
-      // todo: Implement token validation for non-EVM chains
+      // todo: Implement token validation for some non-EVM chains
       continue
     }
 
+    // token code is the token address on the chain
     // Special token codes: `coin` for coins, `*` for wildcard
     const specialTokenCodes = ['coin', '*']
     for (const tokenCode of Object.keys(chainData.tokens)) {
@@ -46,15 +46,15 @@ async function validateERC20Token(
   result: ValidationResult
 ) {
   const chain = chains[indexInChains]
-  if (chain.rpc) {
+  if (chain.evmMeta?.rpc) {
     let logs = []
     try {
-      const provider = new ethers.providers.JsonRpcProvider(chain.rpc)
+      const provider = new ethers.providers.JsonRpcProvider(chain.evmMeta?.rpc[0])
       const blockNumber = await provider.getBlockNumber()
       logs = await provider.getLogs({
         address: tokenCode,
         topics: [ethers.utils.id('Transfer(address,address,uint256)')], // Transfer (indexed address from, indexed address to, uint256 value)
-        fromBlock: blockNumber - 1000,
+        fromBlock: blockNumber - 1000000,
       })
     } catch (e) {}
 
