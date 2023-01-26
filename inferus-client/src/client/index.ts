@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access */
 import { BigNumber, Contract, Signer } from 'ethers'
-import { arrayify, formatBytes32String, hexlify, toUtf8Bytes } from 'ethers/lib/utils'
+import { arrayify, formatBytes32String, hexlify } from 'ethers/lib/utils'
 import { GraphQLClient } from 'graphql-request'
 import { InferusNames } from '../types/InferusNames'
 import { InferusConfig, loadConfig } from '../config'
@@ -70,7 +70,7 @@ export class InferusClient {
     }
 
     await this.verifyChainId()
-    const tx = await this.namesContract.register(name, toUtf8Bytes(metadataUri), {
+    const tx = await this.namesContract.register(name, metadataUri, {
       value: linkingPrice,
     })
     await tx.wait()
