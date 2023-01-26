@@ -2,7 +2,7 @@
 import { providers, Wallet } from 'ethers'
 import { formatEther, parseUnits } from 'ethers/lib/utils'
 import dotenv from 'dotenv'
-import { InferusClient } from '../client'
+import { InferusClient } from '../'
 import axios from 'axios'
 
 dotenv.config()
@@ -93,7 +93,8 @@ async function main() {
             ],
           },
         },
-        'otc:bitcoin': {
+        'otc:cmc-1': {
+          // bitcoin
           isEVM: false,
           fallbackAddress: '1KFzzGtDdnq5hrwxXGjwVnKzRbvf8WVxck',
           tokens: {
@@ -127,7 +128,8 @@ async function main() {
             ],
           },
         },
-        'otc:bitcoin': {
+        'otc:cmc-1': {
+          // bitcoin
           isEVM: false,
           fallbackAddress: '1KFzzGtDdnq5hrwxXGjwVnKzRbvf8WVxck',
           tokens: {
@@ -165,7 +167,7 @@ async function main() {
   )
   // wait 1 minute for the name to get indexed
   await new Promise((resolve) => setTimeout(resolve, 60000))
-  const bitcoinAddress = await resolverClient.resolveName(`@${name1}`, 'otc:bitcoin')
+  const bitcoinAddress = await resolverClient.resolveName(`@${name1}`, 'otc:cmc-1')
   console.log(`@${name1}'s bitcoin address is:`, bitcoinAddress)
 
   try {
