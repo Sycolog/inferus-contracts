@@ -45,7 +45,7 @@ export function handleNameRegistered(event: NameRegistered): void {
   const metadataURI = String.UTF8.decode(event.params.metadataURI.buffer, true)
   if (!isValidIpfsUri(metadataURI))
   {
-    log.error('Skipping - Invalid metadata: {}', [event.params.metadataURI.toHex()])
+    log.warning('Skipping - Invalid metadata: {}', [metadataURI])
     return
   }
 
