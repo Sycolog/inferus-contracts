@@ -54,6 +54,12 @@ function getRefinedCryptocurrencies(
   }
 
   for (const crypto of cryptocurrencies) {
+    if (crypto.category === 'token' && !crypto.contract_address?.length) {
+      // it's a token but we don't have the address on any platform
+      // so we'll skip
+      continue
+    }
+
     refinedCryptocurrencies.push({
       id: crypto.id,
       internalId:
