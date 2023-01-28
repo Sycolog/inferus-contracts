@@ -1,3 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+import { BigNumberish, providers, utils } from 'ethers'
+const { hexConcat, hexDataSlice, defaultAbiCoder, id, FunctionFragment, arrayify } = utils
+
+export type TransactionDataPrimitive = string | boolean | BigNumberish
+
+export interface TransactionDataCallSpec {
+  signature: string
+  arguments: TransactionDataPrimitive[]
+}
+
+export type TransactionDataSpec = string | TransactionDataCallSpec | undefined
+
 /**
  * Converts a valid name to a standard form including only lowercase letters, numbers and underscore.
  * @param name
@@ -18,6 +31,48 @@ export function normalizeName(name: string): string {
 
 export function isNormalized(name: string): boolean {
   return /^[a-z0-9_]{2,32}$/.test(name)
+}
+
+export async function ethCall(
+  provider: providers.Provider,
+  to: string,
+  callSpec: TransactionDataCallSpec,
+  from?: string
+): Promise<any | null> {
+  try {
+    const data = parseTransactionData(callSpec)
+    const callResult = await provider.call({ from, to, data })
+    return decodeFunctionResult(callSpec.signature, callResult)
+  } catch (e) {
+    console.error('CALL_FAILED. Signature:', callSpec.signature, 'Args:', callSpec.arguments)
+    console.error(e)
+  }
+}
+
+export function parseTransactionData(data: TransactionDataSpec): string | undefined {
+  if (!data || typeof data === 'string') {
+    return data
+  }
+
+  const fn = FunctionFragment.fromString(data.signature)
+  return hexConcat([
+    hexDataSlice(id(fn.format()), 0, 4),
+    defaultAbiCoder.encode(fn.inputs, data.arguments),
+  ])
+}
+
+export function decodeFunctionResult(signature: string, data: string): any | null {
+  const functionFragment = FunctionFragment.fromString(signature)
+  const bytes = arrayify(data)
+  switch (bytes.length % defaultAbiCoder._getWordSize()) {
+    case 0:
+      try {
+        return defaultAbiCoder.decode(functionFragment.outputs!, bytes)
+      } catch (error) {}
+      break
+  }
+
+  return null
 }
 
 export function convertToPresentationForm(name: string): string {

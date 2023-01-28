@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
 import { NameMetadata } from '../../types'
 import { ValidationResult } from '../types'
 import chains from '../../chains.json'
 import { ethers } from 'ethers'
+import { ethCall } from '../../utils'
 
 export default async function validate(metadata: NameMetadata, result: ValidationResult) {
   for (const chainCode of Object.keys(metadata.paymentLink.chains)) {
@@ -47,19 +48,26 @@ async function validateERC20Token(
 ) {
   const chain = chains[indexInChains]
   if (chain.evmMeta?.rpc) {
-    let logs = []
+    const props = []
     try {
       const provider = new ethers.providers.JsonRpcProvider(chain.evmMeta?.rpc[0])
-      const blockNumber = await provider.getBlockNumber()
-      logs = await provider.getLogs({
-        address: tokenCode,
-        topics: [ethers.utils.id('Transfer(address,address,uint256)')], // Transfer (indexed address from, indexed address to, uint256 value)
-        fromBlock: blockNumber - 1000000,
+      const [symbol] = await ethCall(provider, tokenCode, {
+        signature: 'symbol() returns (string)',
+        arguments: [],
       })
+      const [name] = await ethCall(provider, tokenCode, {
+        signature: 'name() returns (string)',
+        arguments: [],
+      })
+      const [decimals] = await ethCall(provider, tokenCode, {
+        signature: 'decimals() returns (uint256)',
+        arguments: [],
+      })
+      props.push(symbol, name, decimals)
     } catch (e) {}
 
-    if (!logs?.length) {
-      const path = `paymentLink.chains.${chainCode}.tokens.${tokenCode}`
+    if (!props.length || props.findIndex((p) => !p) >= 0) {
+      const path = `paymentLink.chains:${chainCode}.tokens:${tokenCode}`
       if (!result.records[path]) {
         result.records[path] = []
       }
