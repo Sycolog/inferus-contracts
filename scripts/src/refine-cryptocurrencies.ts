@@ -58,7 +58,8 @@ function getRefinedCryptocurrencies(
       id: crypto.id,
       internalId:
         idMap.get(crypto.symbol.toLowerCase()) ||
-        slugMappedChains.get(slugMappings.get(crypto.slug)!)?.id,
+        slugMappedChains.get(slugMappings.get(crypto.slug)!)?.id ||
+        `otc:cmc-${crypto.id}`,
       name: crypto.name,
       symbol: crypto.symbol,
       category: crypto.category,
@@ -70,7 +71,8 @@ function getRefinedCryptocurrencies(
           ...addrInfo.platform,
           internalId:
             idMap.get(addrInfo.platform.coin.symbol.toLowerCase()) ||
-            slugMappedChains.get(slugMappings.get(addrInfo.platform.coin.slug)!)?.id,
+            slugMappedChains.get(slugMappings.get(addrInfo.platform.coin.slug)!)?.id ||
+            `otc:cmc-${addrInfo.platform.coin.id}`,
         },
       })),
     })
@@ -104,10 +106,6 @@ async function main() {
   const allChains = []
 
   for (const crypto of refinedCryptocurrencies) {
-    if (!crypto.internalId) {
-      crypto.internalId = `otc:cmc-${crypto.id}`
-    }
-
     if (crypto.category === 'coin' && crypto.internalId.startsWith('otc:cmc-')) {
       allChains.push({
         id: crypto.internalId,
