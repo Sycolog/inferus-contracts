@@ -11,15 +11,17 @@ export default function validate(metadata: NameMetadata, result: ValidationResul
       const tokenData = chainData.tokens[tokenCode]
       for (const mapping of tokenData) {
         const hash = `${mapping.address}@${mapping.tag}`
-        const path = `paymentLink.chains.${chainCode}.tokens.${tokenCode}:${mapping.address}@${mapping.tag}`
-        if (mappings.has(hash)) {
+        const path = `paymentLink.chains:${chainCode}.tokens:${tokenCode}.${mapping.address}@${mapping.tag}`
+        if (!mapping.tag || mappings.has(hash)) {
           if (!result.records[path]) {
             result.records[path] = []
           }
           result.records[path].push({
             validator: 'duplicate-checker',
             type: 'error',
-            message: `A mapping matching ${hash} was found`,
+            message: mapping.tag
+              ? `A mapping matching ${hash} was found`
+              : "All tags must be specified. Use '*' for wildcards (default).",
           })
         }
       }
