@@ -1284,26 +1284,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9258.png"
   },
   {
-    "id": "evm:1285",
-    "name": "Moonriver",
-    "evmMeta": {
-      "chain": "MOON",
-      "chainId": 1285,
-      "networkId": 1285,
-      "chainSlug": "moonriver",
-      "nativeCurrency": {
-        "name": "Moonriver",
-        "symbol": "MOVR",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://moonriver.api.onfinality.io/public",
-        "https://moonriver.public.blastapi.io",
-        "https://rpc.api.moonriver.moonbeam.network"
-      ]
-    }
-  },
-  {
     "id": "evm:1088",
     "name": "Metis Andromeda",
     "evmMeta": {
@@ -1447,25 +1427,6 @@
         "decimals": 18
       },
       "rpc": []
-    }
-  },
-  {
-    "id": "evm:592",
-    "name": "Astar",
-    "evmMeta": {
-      "chain": "ASTR",
-      "chainId": 592,
-      "networkId": 592,
-      "chainSlug": "astar",
-      "nativeCurrency": {
-        "name": "Astar",
-        "symbol": "ASTR",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://astar.public.blastapi.io",
-        "https://evm.astar.network"
-      ]
     }
   },
   {
@@ -2336,23 +2297,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9523.png"
   },
   {
-    "id": "evm:686",
-    "name": "Karura Network",
-    "evmMeta": {
-      "chain": "KAR",
-      "chainId": 686,
-      "networkId": 686,
-      "nativeCurrency": {
-        "name": "Karura Token",
-        "symbol": "KAR",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://rpc.evm.karura.network"
-      ]
-    }
-  },
-  {
     "id": "otc:cmc-10776",
     "name": "Signum",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10776.png"
@@ -2391,25 +2335,6 @@
       },
       "rpc": [
         "https://api.posichain.org"
-      ]
-    }
-  },
-  {
-    "id": "evm:336",
-    "name": "Shiden",
-    "evmMeta": {
-      "chain": "SDN",
-      "chainId": 336,
-      "networkId": 336,
-      "chainSlug": "shiden",
-      "nativeCurrency": {
-        "name": "Shiden",
-        "symbol": "SDN",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://shiden.public.blastapi.io",
-        "https://shiden.api.onfinality.io/public"
       ]
     }
   },
@@ -2505,23 +2430,6 @@
       },
       "rpc": [
         "https://rpc.rei.network"
-      ]
-    }
-  },
-  {
-    "id": "evm:256256",
-    "name": "CMP-",
-    "evmMeta": {
-      "chain": "CMP",
-      "chainId": 256256,
-      "networkId": 256256,
-      "nativeCurrency": {
-        "name": "Caduceus Token",
-        "symbol": "CMP",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://mainnet.block.caduceus.foundation"
       ]
     }
   },
@@ -2944,21 +2852,6 @@
     "id": "otc:cmc-2912",
     "name": "TENT",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2912.png"
-  },
-  {
-    "id": "evm:311752642",
-    "name": "OneLedger",
-    "evmMeta": {
-      "chain": "OLT",
-      "chainId": 311752642,
-      "networkId": 311752642,
-      "nativeCurrency": {
-        "name": "OLT",
-        "symbol": "OLT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-2998",
@@ -3906,21 +3799,6 @@
     "id": "otc:cmc-10566",
     "name": "BlackHat",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10566.png"
-  },
-  {
-    "id": "evm:1022",
-    "name": "Sakura",
-    "evmMeta": {
-      "chain": "Sakura",
-      "chainId": 1022,
-      "networkId": 1022,
-      "nativeCurrency": {
-        "name": "Sakura",
-        "symbol": "SKU",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:1994",
@@ -5495,24 +5373,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7980.png"
   },
   {
-    "id": "evm:66",
-    "name": "OKXChain",
-    "evmMeta": {
-      "chain": "okxchain",
-      "chainId": 66,
-      "networkId": 66,
-      "chainSlug": "okexchain",
-      "nativeCurrency": {
-        "name": "OKXChain Global Utility Token",
-        "symbol": "OKT",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://exchainrpc.okex.org"
-      ]
-    }
-  },
-  {
     "id": "otc:cmc-8738",
     "name": "Pastel",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8738.png"
@@ -5550,45 +5410,9 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11976.png"
   },
   {
-    "id": "evm:19",
-    "name": "Songbird Canary-Network",
-    "evmMeta": {
-      "chain": "SGB",
-      "chainId": 19,
-      "networkId": 19,
-      "chainSlug": "songbird",
-      "nativeCurrency": {
-        "name": "Songbird",
-        "symbol": "SGB",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://songbird.towolabs.com/rpc",
-        "https://sgb.lightft.so/rpc"
-      ]
-    }
-  },
-  {
     "id": "otc:cmc-12661",
     "name": "HashBit BlockChain",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/12661.png"
-  },
-  {
-    "id": "evm:8880",
-    "name": "Unique",
-    "evmMeta": {
-      "chain": "UNQ",
-      "chainId": 8880,
-      "networkId": 8880,
-      "nativeCurrency": {
-        "name": "Unique",
-        "symbol": "UNQ",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://rpc.unique.network"
-      ]
-    }
   },
   {
     "id": "otc:cmc-13916",
@@ -5668,23 +5492,6 @@
     "id": "otc:cmc-18094",
     "name": "Parex",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/18094.png"
-  },
-  {
-    "id": "evm:3400",
-    "name": "Paribu Net",
-    "evmMeta": {
-      "chain": "PRB",
-      "chainId": 3400,
-      "networkId": 3400,
-      "nativeCurrency": {
-        "name": "PRB",
-        "symbol": "PRB",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://rpc.paribu.network"
-      ]
-    }
   },
   {
     "id": "otc:cmc-19525",
@@ -5767,24 +5574,6 @@
       },
       "rpc": [
         "https://www.dracscan.com/rpc"
-      ]
-    }
-  },
-  {
-    "id": "evm:7700",
-    "name": "Canto",
-    "evmMeta": {
-      "chain": "Canto",
-      "chainId": 7700,
-      "networkId": 7700,
-      "chainSlug": "canto",
-      "nativeCurrency": {
-        "name": "Canto",
-        "symbol": "CANTO",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://canto.slingshot.finance"
       ]
     }
   },
@@ -6029,23 +5818,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/17444.png"
   },
   {
-    "id": "evm:5869",
-    "name": "Wegochain Rubidium",
-    "evmMeta": {
-      "chain": "RBD",
-      "chainId": 5869,
-      "networkId": 5869,
-      "nativeCurrency": {
-        "name": "Rubid",
-        "symbol": "RBD",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://proxy.wegochain.io"
-      ]
-    }
-  },
-  {
     "id": "otc:cmc-18761",
     "name": "LoopNetwork",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/18761.png"
@@ -6054,23 +5826,6 @@
     "id": "otc:cmc-19081",
     "name": "Wrapped IoTeX",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/19081.png"
-  },
-  {
-    "id": "evm:369",
-    "name": "PulseChain",
-    "evmMeta": {
-      "chain": "PLS",
-      "chainId": 369,
-      "networkId": 369,
-      "nativeCurrency": {
-        "name": "Pulse",
-        "symbol": "PLS",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://rpc.mainnet.pulsechain.com"
-      ]
-    }
   },
   {
     "id": "evm:558",
@@ -6167,21 +5922,6 @@
       "nativeCurrency": {
         "name": "MOAC",
         "symbol": "mc",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:6626",
-    "name": "Pixie Chain",
-    "evmMeta": {
-      "chain": "PixieChain",
-      "chainId": 6626,
-      "networkId": 6626,
-      "nativeCurrency": {
-        "name": "Pixie Chain Native Token",
-        "symbol": "PIX",
         "decimals": 18
       },
       "rpc": []
@@ -6477,23 +6217,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/21208.png"
   },
   {
-    "id": "evm:1353",
-    "name": "CIC Chain",
-    "evmMeta": {
-      "chain": "CIC",
-      "chainId": 1353,
-      "networkId": 1353,
-      "nativeCurrency": {
-        "name": "Crazy Internet Coin",
-        "symbol": "CIC",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://xapi.cicscan.com"
-      ]
-    }
-  },
-  {
     "id": "evm:420420",
     "name": "Kekchain",
     "evmMeta": {
@@ -6685,23 +6408,6 @@
     }
   },
   {
-    "id": "evm:14288640",
-    "name": "Anduschain",
-    "evmMeta": {
-      "chain": "anduschain",
-      "chainId": 14288640,
-      "networkId": 14288640,
-      "nativeCurrency": {
-        "name": "DAON",
-        "symbol": "DEB",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://rpc.anduschain.io/rpc"
-      ]
-    }
-  },
-  {
     "id": "evm:8738",
     "name": "Alph Network",
     "evmMeta": {
@@ -6744,21 +6450,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/19100.png"
   },
   {
-    "id": "evm:3601",
-    "name": "PandoProject",
-    "evmMeta": {
-      "chain": "PandoProject",
-      "chainId": 3601,
-      "networkId": 3601,
-      "nativeCurrency": {
-        "name": "pando-token",
-        "symbol": "PTX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:22023",
     "name": "Taycan",
     "evmMeta": {
@@ -6771,23 +6462,6 @@
         "decimals": 18
       },
       "rpc": []
-    }
-  },
-  {
-    "id": "evm:8898",
-    "name": "Mammoth",
-    "evmMeta": {
-      "chain": "MMT",
-      "chainId": 8898,
-      "networkId": 8898,
-      "nativeCurrency": {
-        "name": "Mammoth Token",
-        "symbol": "MMT",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://dataseed.mmtscan.io"
-      ]
     }
   },
   {
@@ -6922,23 +6596,6 @@
     "id": "otc:cmc-7628",
     "name": "Coral Swap",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7628.png"
-  },
-  {
-    "id": "evm:201018",
-    "name": "Alaya",
-    "evmMeta": {
-      "chain": "Alaya",
-      "chainId": 201018,
-      "networkId": 1,
-      "nativeCurrency": {
-        "name": "ATP",
-        "symbol": "atp",
-        "decimals": 18
-      },
-      "rpc": [
-        "https://openapi.alaya.network/rpc"
-      ]
-    }
   },
   {
     "id": "otc:cmc-9270",
