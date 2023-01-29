@@ -90,6 +90,22 @@ async function main() {
                 address: wallet2.address,
                 tag: '*',
               },
+              {
+                address: wallet1.address,
+                tag: 'whatever',
+              },
+            ],
+            '0xdac17f958d2ee523a2206206994597c13d831ec7': [
+              {
+                address: wallet2.address,
+                tag: '*',
+              },
+            ],
+            coin: [
+              {
+                address: wallet2.address,
+                tag: '*',
+              },
             ],
           },
         },
