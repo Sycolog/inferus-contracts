@@ -71,16 +71,22 @@ function getRefinedCryptocurrencies(
       category: crypto.category,
       slug: crypto.slug,
       logo: crypto.logo,
-      contractAddress: crypto.contract_address?.map((addrInfo) => ({
-        address: addrInfo.contract_address,
-        platform: {
-          ...addrInfo.platform,
-          internalId:
-            idMap.get(addrInfo.platform.coin.symbol.toLowerCase()) ||
-            slugMappedChains.get(slugMappings.get(addrInfo.platform.coin.slug)!)?.id ||
-            `otc:cmc-${addrInfo.platform.coin.id}`,
-        },
-      })),
+      contractAddress:
+        crypto.contract_address
+          ?.filter(
+            (addrInfo) =>
+              crypto.category !== 'coin' || crypto.symbol !== addrInfo.platform.coin.symbol
+          )
+          .map((addrInfo) => ({
+            address: addrInfo.contract_address,
+            platform: {
+              ...addrInfo.platform,
+              internalId:
+                idMap.get(addrInfo.platform.coin.symbol.toLowerCase()) ||
+                slugMappedChains.get(slugMappings.get(addrInfo.platform.coin.slug)!)?.id ||
+                `otc:cmc-${addrInfo.platform.coin.id}`,
+            },
+          })) || [],
     })
   }
   return refinedCryptocurrencies
