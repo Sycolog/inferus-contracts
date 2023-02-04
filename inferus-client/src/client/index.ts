@@ -176,16 +176,7 @@ export class InferusClient {
     return response.nameOwnerEntity.names.map((n) => n.name)
   }
 
-  private async getAddress(addressOrName: string) {
-    if (addressOrName[0] === '@') {
-      return this.nameResolver.resolve(addressOrName)
-    }
-
-    // fallback to ethers default handling (with ENS support)
-    return addressOrName
-  }
-
-  private async validateMetadata(metadata: NameMetadata) {
+  async validateMetadata(metadata: NameMetadata) {
     const validationResult = await validateNameMetadata(metadata)
     const keys = Object.keys(validationResult.records)
     const errors = []
@@ -206,6 +197,15 @@ export class InferusClient {
     if (errors.length) {
       throw Error(errors.join('\n'))
     }
+  }
+
+  private async getAddress(addressOrName: string) {
+    if (addressOrName[0] === '@') {
+      return this.nameResolver.resolve(addressOrName)
+    }
+
+    // fallback to ethers default handling (with ENS support)
+    return addressOrName
   }
 
   private async getMetadataUri(metadata: NameMetadata) {
