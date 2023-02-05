@@ -12,6 +12,7 @@ import { validateNameMetadata } from '../engine/validation'
 import { GaslessTransactionExecutor, RecaptchaHandler } from '../engine/gasless'
 import { NameResolver } from '../engine/resolution'
 import { normalizeName } from '../engine/utils'
+import { pay } from '../payment'
 
 export class InferusClient {
   signer: Signer
@@ -98,6 +99,24 @@ export class InferusClient {
    */
   async resolveName(name: string, chain?: string, token?: string, tag?: string): Promise<string> {
     return await this.nameResolver.resolve(name, chain, token, tag)
+  }
+
+  /**
+   * Quick3Pay - pay with a single button click. Currently only supports tokens on EVM chains
+   * @param amount
+   * @param name
+   * @param chain
+   * @param token
+   * @param tag
+   */
+  async pay(
+    amount: string,
+    name: string,
+    chain: string,
+    token: string,
+    tag?: string
+  ): Promise<void> {
+    await pay(this.signer, amount, name, chain, token, tag)
   }
 
   async getMetadata(name: string): Promise<NameMetadata> {
