@@ -13,8 +13,8 @@ export async function pay(
   token: string,
   tag?: string
 ) {
-  const rpcUrl = getChainRPCUrlForPayment(chain)
-  const resolver = new NameResolver(signer.connect(new providers.JsonRpcProvider(rpcUrl)))
+  await ensureValidChainConnected(chain, signer)
+  const resolver = new NameResolver(signer)
   const address = await resolver.resolve(name, chain, token, tag)
   const parsedAmount = await getAmount(amount, token, resolver.signer.provider!)
 
@@ -41,13 +41,17 @@ async function getAmount(amount: string, token: string, provider: providers.Prov
   return parseUnits(amount, decimals)
 }
 
-function getChainRPCUrlForPayment(chainCode: string) {
+async function ensureValidChainConnected(chainCode: string, signer: Signer) {
   const chainsMap = getChainsMap()
   const chain = chainsMap.get(chainCode)
   if (!chain?.evmMeta?.rpc) {
     throw Error('Quick3Pay is not supported for the selected blockchain')
   }
-  return chain.evmMeta.rpc[0]
+
+  const chainId = await signer.getChainId()
+  if (chainId !== chain.evmMeta.chainId) {
+    throw Error('The wrong chain is currently selected')
+  }
 }
 
 async function payCoin(address: string, amount: BigNumber, signer: Signer) {
