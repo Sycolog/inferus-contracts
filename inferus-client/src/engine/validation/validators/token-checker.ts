@@ -5,7 +5,11 @@ import chains from '../../chains.json'
 import { ethers } from 'ethers'
 import { ethCall } from '../../utils'
 
-export default async function validate(metadata: NameMetadata, result: ValidationResult) {
+export default async function validate(
+  metadata: NameMetadata,
+  result: ValidationResult
+): Promise<void> {
+  const promises = []
   for (const chainCode of Object.keys(metadata.paymentLink.chains)) {
     const chainData = metadata.paymentLink.chains[chainCode]
     const indexInChains = chains.findIndex((c) => c.id === chainCode)
@@ -35,9 +39,11 @@ export default async function validate(metadata: NameMetadata, result: Validatio
         continue
       }
 
-      await validateERC20Token(indexInChains, chainCode, tokenCode, result)
+      promises.push(validateERC20Token(indexInChains, chainCode, tokenCode, result))
     }
   }
+
+  await Promise.all(promises)
 }
 
 async function validateERC20Token(
@@ -51,18 +57,20 @@ async function validateERC20Token(
     const props = []
     try {
       const provider = new ethers.providers.JsonRpcProvider(chain.evmMeta?.rpc[0])
-      const [symbol] = await ethCall(provider, tokenCode, {
-        signature: 'symbol() returns (string)',
-        arguments: [],
-      })
-      const [name] = await ethCall(provider, tokenCode, {
-        signature: 'name() returns (string)',
-        arguments: [],
-      })
-      const [decimals] = await ethCall(provider, tokenCode, {
-        signature: 'decimals() returns (uint256)',
-        arguments: [],
-      })
+      const [[symbol], [name], [decimals]] = await Promise.all([
+        ethCall(provider, tokenCode, {
+          signature: 'symbol() returns (string)',
+          arguments: [],
+        }),
+        ethCall(provider, tokenCode, {
+          signature: 'name() returns (string)',
+          arguments: [],
+        }),
+        ethCall(provider, tokenCode, {
+          signature: 'decimals() returns (uint256)',
+          arguments: [],
+        }),
+      ])
       props.push(symbol, name, decimals)
     } catch (e) {}
 
