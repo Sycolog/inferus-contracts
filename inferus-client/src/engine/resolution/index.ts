@@ -113,7 +113,7 @@ export class NameResolver {
       throw Error(`Invalid name: ${inferusName}\n${e}`)
     }
 
-    if (!!metadataUri && metadataUri !== ethersConstants.AddressZero) {
+    if (metadataUri) {
       return metadataUri
     }
     throw Error(`Invalid name: ${inferusName}\nName not linked with an address`)
