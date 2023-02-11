@@ -63,12 +63,18 @@ async function payCoin(address: string, amount: BigNumber, signer: Signer) {
 }
 
 async function payToken(address: string, tokenAddress: string, amount: BigNumber, signer: Signer) {
-  const tx = await signer.sendTransaction({
+  const txBasic = {
     to: tokenAddress,
     data: parseTransactionData({
       signature: 'transfer(address,uint256)',
       arguments: [address, amount],
     }),
+    gasLimit: 200_000, // gwei
+  }
+  const gasLimit = await signer.estimateGas(txBasic)
+  const tx = await signer.sendTransaction({
+    ...txBasic,
+    gasLimit: gasLimit,
   })
   await tx.wait()
 }
