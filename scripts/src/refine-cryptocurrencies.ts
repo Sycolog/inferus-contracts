@@ -114,18 +114,20 @@ async function main() {
   const slugMappings = getSlugMappings()
   const conflictCurrencies = getConflictCurrencies()
   const refinedCryptocurrencies = getRefinedCryptocurrencies(conflictCurrencies, slugMappings)
-  const evmChainIdMap = new Map(evmChains.map((c) => [c.id, c]))
+  const evmChainIdMap = new Map(
+    evmChains.filter((c) => c.evmMeta?.rpc?.length).map((c) => [c.id, c])
+  )
   const allChains = []
 
   for (const crypto of refinedCryptocurrencies) {
-    if (crypto.category === 'coin' && crypto.internalId.startsWith('otc:cmc-')) {
+    if (evmChainIdMap.has(crypto.internalId)) {
+      allChains.push(evmChainIdMap.get(crypto.internalId))
+    } else if (crypto.category === 'coin' && crypto.internalId.startsWith('otc:cmc-')) {
       allChains.push({
         id: crypto.internalId,
         name: crypto.name,
         logo: crypto.logo,
       })
-    } else if (evmChainIdMap.has(crypto.internalId)) {
-      allChains.push(evmChainIdMap.get(crypto.internalId))
     }
   }
 
