@@ -6,18 +6,15 @@ import { GraphQLClient } from 'graphql-request'
 import abi from '../../abis/InferusNames.json'
 import { resolveNameQuery, ResolveNameQueryResult } from '../../graphql'
 import { formatBytes32String, toUtf8String } from 'ethers/lib/utils'
-import { constants as ethersConstants } from 'ethers/lib/ethers'
 import { normalizeName, validateIpfsUri } from '../utils'
-import axios, { AxiosInstance } from 'axios'
 import { NameMetadata } from '../types'
 import { validateNameMetadata } from '../validation'
+import { loadFromIPFS } from '../../ipfs'
 
 export class NameResolver {
   signer: Signer
   namesContract: InferusNames
   graphClient: GraphQLClient
-  ipfsGatewayClient: AxiosInstance
-  ipfsGatewayUrlTemplate: string
 
   static readonly CHAIN_ID = 137
 
@@ -30,8 +27,6 @@ export class NameResolver {
     const strictCfg = loadConfig(config)
     this.namesContract = new Contract(strictCfg.namesContractAddress, abi, signer) as InferusNames
     this.graphClient = new GraphQLClient(strictCfg.subgraphUrl)
-    this.ipfsGatewayUrlTemplate = strictCfg.ipfsGateway
-    this.ipfsGatewayClient = axios.create()
   }
 
   async getMetadata(name: string): Promise<NameMetadata> {
@@ -42,10 +37,7 @@ export class NameResolver {
     }
 
     const cid = metadataUri.substring(7) // remove the leading ipfs://
-    const response = await this.ipfsGatewayClient.get(
-      this.ipfsGatewayUrlTemplate.replace('{{cid}}', cid)
-    )
-    return response.data
+    return await loadFromIPFS(cid)
   }
 
   async resolve(name: string, chain?: string, token?: string, tag?: string): Promise<string> {

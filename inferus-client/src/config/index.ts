@@ -8,7 +8,6 @@ export interface InferusConfig {
   gaslessTransactionsUrl?: string
   defaultNFTStorageKey?: string
   recaptchaKey?: string
-  ipfsGateway?: string
 }
 
 interface StrictInferusConfig extends InferusConfig {
@@ -18,7 +17,6 @@ interface StrictInferusConfig extends InferusConfig {
   gaslessTransactionsUrl: string
   defaultNFTStorageKey: string
   recaptchaKey: string
-  ipfsGateway: string
 }
 
 export function loadConfig(cfg?: InferusConfig): StrictInferusConfig {
@@ -30,6 +28,5 @@ export function loadConfig(cfg?: InferusConfig): StrictInferusConfig {
     gaslessTransactionsUrl: cfg?.gaslessTransactionsUrl || defaultConfigs.GASLESS_TRANSACTIONS_URL,
     defaultNFTStorageKey: cfg?.defaultNFTStorageKey || defaultConfigs['DEFAULT_NFT.STORAGE_KEY'],
     recaptchaKey: cfg?.recaptchaKey || defaultConfigs.RECAPTCHA_KEY,
-    ipfsGateway: cfg?.ipfsGateway || defaultConfigs.IPFS_GATEWAY,
   }
 }

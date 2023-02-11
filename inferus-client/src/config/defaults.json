@@ -4,6 +4,5 @@
   "SUBGRAPH_URL": "https://api.thegraph.com/subgraphs/name/staa99/inferus",
   "GASLESS_TRANSACTIONS_URL": "https://ylciuz5gxyyixvp6kwbiowddye0vmgal.lambda-url.us-east-1.on.aws",
   "DEFAULT_NFT.STORAGE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJDODU4YzY4MWJkNkFEZkZEZDc3MTVERTBjMjJhMjI1RTIwNzhjQ2MiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY0NjcxNzk2MzM4MiwibmFtZSI6ImNoYWlud2FsbGV0LWRldiJ9.O4mii7yVpdMWumt19uJTwzg2ccTOwrwCFuuhl0Ge8Gk",
-  "RECAPTCHA_KEY": "abcd",
-  "IPFS_GATEWAY": "https://{{cid}}.ipfs.dweb.link"
+  "RECAPTCHA_KEY": "abcd"
 }
