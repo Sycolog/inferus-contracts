@@ -493,22 +493,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2577.png"
   },
   {
-    "id": "evm:888",
-    "name": "Wanchain",
-    "evmMeta": {
-      "chain": "WAN",
-      "chainId": 888,
-      "networkId": 888,
-      "chainSlug": "wanchain",
-      "nativeCurrency": {
-        "name": "Wancoin",
-        "symbol": "WAN",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:50",
     "name": "XinFin XDC Network",
     "evmMeta": {
@@ -593,21 +577,6 @@
     "id": "otc:cmc-3077",
     "name": "VeChain",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3077.png"
-  },
-  {
-    "id": "evm:58",
-    "name": "Ontology",
-    "evmMeta": {
-      "chain": "Ontology",
-      "chainId": 58,
-      "networkId": 58,
-      "nativeCurrency": {
-        "name": "ONG",
-        "symbol": "ONG",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:11",
@@ -716,37 +685,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3794.png"
   },
   {
-    "id": "evm:361",
-    "name": "Theta",
-    "evmMeta": {
-      "chain": "Theta",
-      "chainId": 361,
-      "networkId": 361,
-      "chainSlug": "theta",
-      "nativeCurrency": {
-        "name": "Theta Fuel",
-        "symbol": "TFUEL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:530",
-    "name": "F(x)Core Network",
-    "evmMeta": {
-      "chain": "Fxcore",
-      "chainId": 530,
-      "networkId": 530,
-      "nativeCurrency": {
-        "name": "Function X",
-        "symbol": "FX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:137",
     "name": "Polygon",
     "evmMeta": {
@@ -764,22 +702,6 @@
         "https://rpc.ankr.com/polygon",
         "https://polygonapi.terminet.io/rpc"
       ]
-    }
-  },
-  {
-    "id": "evm:108",
-    "name": "ThunderCore",
-    "evmMeta": {
-      "chain": "TT",
-      "chainId": 108,
-      "networkId": 108,
-      "chainSlug": "thundercore",
-      "nativeCurrency": {
-        "name": "ThunderCore Token",
-        "symbol": "TT",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -1046,21 +968,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5665.png"
   },
   {
-    "id": "evm:1130",
-    "name": "DeFiChain EVM Network",
-    "evmMeta": {
-      "chain": "defichain-evm",
-      "chainId": 1130,
-      "networkId": 1130,
-      "nativeCurrency": {
-        "name": "DeFiChain",
-        "symbol": "DFI",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:43114",
     "name": "Avalanche C-Chain",
     "evmMeta": {
@@ -1254,21 +1161,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7878.png"
   },
   {
-    "id": "evm:1024",
-    "name": "CLV Parachain",
-    "evmMeta": {
-      "chain": "CLV",
-      "chainId": 1024,
-      "networkId": 1024,
-      "nativeCurrency": {
-        "name": "CLV",
-        "symbol": "CLV",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-8646",
     "name": "Mina",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8646.png"
@@ -1282,37 +1174,6 @@
     "id": "otc:cmc-9258",
     "name": "Chia",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9258.png"
-  },
-  {
-    "id": "evm:1088",
-    "name": "Metis Andromeda",
-    "evmMeta": {
-      "chain": "ETH",
-      "chainId": 1088,
-      "networkId": 1088,
-      "chainSlug": "metis",
-      "nativeCurrency": {
-        "name": "Metis",
-        "symbol": "METIS",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:210425",
-    "name": "PlatON",
-    "evmMeta": {
-      "chain": "PlatON",
-      "chainId": 210425,
-      "networkId": 1,
-      "nativeCurrency": {
-        "name": "LAT",
-        "symbol": "lat",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-10442",
@@ -1413,36 +1274,6 @@
     "id": "otc:cmc-12220",
     "name": "Osmosis",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/12220.png"
-  },
-  {
-    "id": "evm:75",
-    "name": "Decimal Smart Chain",
-    "evmMeta": {
-      "chain": "DSC",
-      "chainId": 75,
-      "networkId": 75,
-      "nativeCurrency": {
-        "name": "Decimal",
-        "symbol": "DEL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:1099",
-    "name": "MOAC",
-    "evmMeta": {
-      "chain": "MOAC",
-      "chainId": 1099,
-      "networkId": 1099,
-      "nativeCurrency": {
-        "name": "MOAC",
-        "symbol": "mc",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-13969",
@@ -1602,21 +1433,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1087.png"
   },
   {
-    "id": "evm:38",
-    "name": "Valorbit",
-    "evmMeta": {
-      "chain": "VAL",
-      "chainId": 38,
-      "networkId": 38,
-      "nativeCurrency": {
-        "name": "Valorbit",
-        "symbol": "VAL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-1169",
     "name": "PIVX",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1169.png"
@@ -1680,21 +1496,6 @@
     "id": "otc:cmc-2081",
     "name": "AirDAO",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2081.png"
-  },
-  {
-    "id": "evm:225",
-    "name": "LACHAIN",
-    "evmMeta": {
-      "chain": "LA",
-      "chainId": 225,
-      "networkId": 225,
-      "nativeCurrency": {
-        "name": "LA",
-        "symbol": "LA",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-2092",
@@ -1911,21 +1712,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3260.png"
   },
   {
-    "id": "evm:24734",
-    "name": "MintMe.com Coin",
-    "evmMeta": {
-      "chain": "MINTME",
-      "chainId": 24734,
-      "networkId": 37480,
-      "nativeCurrency": {
-        "name": "MintMe.com Coin",
-        "symbol": "MINTME",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-3617",
     "name": "ILCOIN",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3617.png"
@@ -2021,21 +1807,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4268.png"
   },
   {
-    "id": "evm:76",
-    "name": "Mix",
-    "evmMeta": {
-      "chain": "MIX",
-      "chainId": 76,
-      "networkId": 76,
-      "nativeCurrency": {
-        "name": "Mix Ether",
-        "symbol": "MIX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-4691",
     "name": "Zano",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4691.png"
@@ -2091,36 +1862,6 @@
     "id": "otc:cmc-5221",
     "name": "Handshake",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5221.png"
-  },
-  {
-    "id": "evm:2021",
-    "name": "Edgeware",
-    "evmMeta": {
-      "chain": "EDG",
-      "chainId": 2021,
-      "networkId": 2021,
-      "nativeCurrency": {
-        "name": "Edge",
-        "symbol": "EDG",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:1818",
-    "name": "Cube Chain",
-    "evmMeta": {
-      "chain": "Cube",
-      "chainId": 1818,
-      "networkId": 1818,
-      "nativeCurrency": {
-        "name": "Cube Chain Native Token",
-        "symbol": "CUBE",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-5435",
@@ -2202,21 +1943,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6520.png"
   },
   {
-    "id": "evm:1246",
-    "name": "OM Platform",
-    "evmMeta": {
-      "chain": "omplatform",
-      "chainId": 1246,
-      "networkId": 1246,
-      "nativeCurrency": {
-        "name": "OMCOIN",
-        "symbol": "OM",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-6641",
     "name": "AhaToken",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6641.png"
@@ -2225,21 +1951,6 @@
     "id": "otc:cmc-6865",
     "name": "Crypton",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6865.png"
-  },
-  {
-    "id": "evm:222",
-    "name": "Permission",
-    "evmMeta": {
-      "chain": "ASK",
-      "chainId": 222,
-      "networkId": 2221,
-      "nativeCurrency": {
-        "name": "ASK",
-        "symbol": "ASK",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-7270",
@@ -2277,21 +1988,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8917.png"
   },
   {
-    "id": "evm:168",
-    "name": "AIOZ Network",
-    "evmMeta": {
-      "chain": "AIOZ",
-      "chainId": 168,
-      "networkId": 168,
-      "nativeCurrency": {
-        "name": "AIOZ",
-        "symbol": "AIOZ",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-9523",
     "name": "PKT",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9523.png"
@@ -2300,21 +1996,6 @@
     "id": "otc:cmc-10776",
     "name": "Signum",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10776.png"
-  },
-  {
-    "id": "evm:2330",
-    "name": "Altcoinchain",
-    "evmMeta": {
-      "chain": "mainnet",
-      "chainId": 2330,
-      "networkId": 2330,
-      "nativeCurrency": {
-        "name": "Altcoin",
-        "symbol": "ALT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-11202",
@@ -2594,21 +2275,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1297.png"
   },
   {
-    "id": "evm:2021",
-    "name": "Edgeware",
-    "evmMeta": {
-      "chain": "EDG",
-      "chainId": 2021,
-      "networkId": 2021,
-      "nativeCurrency": {
-        "name": "Edge",
-        "symbol": "EDG",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-1619",
     "name": "Skycoin",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1619.png"
@@ -2617,21 +2283,6 @@
     "id": "otc:cmc-1636",
     "name": "XTRABYTES",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1636.png"
-  },
-  {
-    "id": "evm:3690",
-    "name": "Bittex",
-    "evmMeta": {
-      "chain": "BTX",
-      "chainId": 3690,
-      "networkId": 3690,
-      "nativeCurrency": {
-        "name": "Bittex",
-        "symbol": "BTX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-1694",
@@ -2692,21 +2343,6 @@
     "id": "otc:cmc-2246",
     "name": "CyberMiles",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2246.png"
-  },
-  {
-    "id": "evm:20180430",
-    "name": "SmartMesh",
-    "evmMeta": {
-      "chain": "Spectrum",
-      "chainId": 20180430,
-      "networkId": 1,
-      "nativeCurrency": {
-        "name": "SmartMesh Native Token",
-        "symbol": "SMT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:262",
@@ -2924,21 +2560,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3799.png"
   },
   {
-    "id": "evm:989",
-    "name": "TOP",
-    "evmMeta": {
-      "chain": "TOP",
-      "chainId": 989,
-      "networkId": 0,
-      "nativeCurrency": {
-        "name": "TOP",
-        "symbol": "TOP",
-        "decimals": 6
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-3850",
     "name": "OTOCASH",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3850.png"
@@ -3146,21 +2767,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7622.png"
   },
   {
-    "id": "evm:180",
-    "name": "AME Chain",
-    "evmMeta": {
-      "chain": "AME",
-      "chainId": 180,
-      "networkId": 180,
-      "nativeCurrency": {
-        "name": "AME",
-        "symbol": "AME",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-8541",
     "name": "SifChain",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8541.png"
@@ -3338,21 +2944,6 @@
     "id": "otc:cmc-859",
     "name": "Woodcoin",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/859.png"
-  },
-  {
-    "id": "evm:1657",
-    "name": "Btachain",
-    "evmMeta": {
-      "chain": "btachain",
-      "chainId": 1657,
-      "networkId": 1657,
-      "nativeCurrency": {
-        "name": "Bitcoin Asset",
-        "symbol": "BTA",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-948",
@@ -3815,21 +3406,6 @@
       "rpc": [
         "https://main.ekta.io"
       ]
-    }
-  },
-  {
-    "id": "evm:20180430",
-    "name": "SmartMesh",
-    "evmMeta": {
-      "chain": "Spectrum",
-      "chainId": 20180430,
-      "networkId": 1,
-      "nativeCurrency": {
-        "name": "SmartMesh Native Token",
-        "symbol": "SMT",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -4610,21 +4186,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3332.png"
   },
   {
-    "id": "evm:220315",
-    "name": "Mas",
-    "evmMeta": {
-      "chain": "MAS",
-      "chainId": 220315,
-      "networkId": 220315,
-      "nativeCurrency": {
-        "name": "Master Bank",
-        "symbol": "MAS",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:28945486",
     "name": "Auxilium Network",
     "evmMeta": {
@@ -4946,21 +4507,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6609.png"
   },
   {
-    "id": "evm:38",
-    "name": "Valorbit",
-    "evmMeta": {
-      "chain": "VAL",
-      "chainId": 38,
-      "networkId": 38,
-      "nativeCurrency": {
-        "name": "Valorbit",
-        "symbol": "VAL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-8177",
     "name": "KnoxFS",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8177.png"
@@ -4969,21 +4515,6 @@
     "id": "otc:cmc-8837",
     "name": "Scholarship Coin",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8837.png"
-  },
-  {
-    "id": "evm:26600",
-    "name": "Hertz Network",
-    "evmMeta": {
-      "chain": "HTZ",
-      "chainId": 26600,
-      "networkId": 26600,
-      "nativeCurrency": {
-        "name": "Hertz",
-        "symbol": "HTZ",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:13381",
@@ -5288,21 +4819,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5925.png"
   },
   {
-    "id": "evm:520",
-    "name": "XT Smart Chain",
-    "evmMeta": {
-      "chain": "XSC",
-      "chainId": 520,
-      "networkId": 1024,
-      "nativeCurrency": {
-        "name": "XT Smart Chain Native Token",
-        "symbol": "XT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-6257",
     "name": "Berry",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6257.png"
@@ -5351,21 +4867,6 @@
     "id": "otc:cmc-7665",
     "name": "NestEGG Coin",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7665.png"
-  },
-  {
-    "id": "evm:14",
-    "name": "Flare",
-    "evmMeta": {
-      "chain": "FLR",
-      "chainId": 14,
-      "networkId": 14,
-      "nativeCurrency": {
-        "name": "Flare",
-        "symbol": "FLR",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-7980",
@@ -5540,22 +5041,6 @@
     }
   },
   {
-    "id": "evm:9001",
-    "name": "Evmos",
-    "evmMeta": {
-      "chain": "Evmos",
-      "chainId": 9001,
-      "networkId": 9001,
-      "chainSlug": "evmos",
-      "nativeCurrency": {
-        "name": "Evmos",
-        "symbol": "EVMOS",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-20875",
     "name": "Gold Guaranteed Coin Mining",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/20875.png"
@@ -5575,67 +5060,6 @@
       "rpc": [
         "https://www.dracscan.com/rpc"
       ]
-    }
-  },
-  {
-    "id": "evm:1231",
-    "name": "Ultron",
-    "evmMeta": {
-      "chain": "Ultron",
-      "chainId": 1231,
-      "networkId": 1231,
-      "chainSlug": "ultron",
-      "nativeCurrency": {
-        "name": "Ultron",
-        "symbol": "ULX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:2330",
-    "name": "Altcoinchain",
-    "evmMeta": {
-      "chain": "mainnet",
-      "chainId": 2330,
-      "networkId": 2330,
-      "nativeCurrency": {
-        "name": "Altcoin",
-        "symbol": "ALT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:18159",
-    "name": "Proof Of Memes",
-    "evmMeta": {
-      "chain": "POM",
-      "chainId": 18159,
-      "networkId": 18159,
-      "nativeCurrency": {
-        "name": "Proof Of Memes",
-        "symbol": "POM",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:2330",
-    "name": "Altcoinchain",
-    "evmMeta": {
-      "chain": "mainnet",
-      "chainId": 2330,
-      "networkId": 2330,
-      "nativeCurrency": {
-        "name": "Altcoin",
-        "symbol": "ALT",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -5763,21 +5187,6 @@
     }
   },
   {
-    "id": "evm:79",
-    "name": "Zenith",
-    "evmMeta": {
-      "chain": "Zenith",
-      "chainId": 79,
-      "networkId": 79,
-      "nativeCurrency": {
-        "name": "ZENITH",
-        "symbol": "ZENITH",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-12329",
     "name": "DBX",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/12329.png"
@@ -5791,21 +5200,6 @@
     "id": "otc:cmc-14339",
     "name": "Cypherium",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/14339.png"
-  },
-  {
-    "id": "evm:813",
-    "name": "Qitmeer",
-    "evmMeta": {
-      "chain": "MEER",
-      "chainId": 813,
-      "networkId": 813,
-      "nativeCurrency": {
-        "name": "Qitmeer",
-        "symbol": "MEER",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-16929",
@@ -5863,85 +5257,9 @@
     }
   },
   {
-    "id": "evm:2021121117",
-    "name": "DataHopper",
-    "evmMeta": {
-      "chain": "HOP",
-      "chainId": 2021121117,
-      "networkId": 2021121117,
-      "nativeCurrency": {
-        "name": "DataHoppers",
-        "symbol": "HOP",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-21045",
     "name": "Neoxa",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/21045.png"
-  },
-  {
-    "id": "evm:2611",
-    "name": "Redlight Chain",
-    "evmMeta": {
-      "chain": "REDLC",
-      "chainId": 2611,
-      "networkId": 2611,
-      "nativeCurrency": {
-        "name": "Redlight Coin",
-        "symbol": "REDLC",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:88888",
-    "name": "IVAR Chain",
-    "evmMeta": {
-      "chain": "IVAR",
-      "chainId": 88888,
-      "networkId": 88888,
-      "nativeCurrency": {
-        "name": "Ivar",
-        "symbol": "IVAR",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:1099",
-    "name": "MOAC",
-    "evmMeta": {
-      "chain": "MOAC",
-      "chainId": 1099,
-      "networkId": 1099,
-      "nativeCurrency": {
-        "name": "MOAC",
-        "symbol": "mc",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:11297108109",
-    "name": "Palm",
-    "evmMeta": {
-      "chain": "Palm",
-      "chainId": 11297108109,
-      "networkId": 11297108109,
-      "chainSlug": "palm",
-      "nativeCurrency": {
-        "name": "PALM",
-        "symbol": "PALM",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:39815",
@@ -5981,21 +5299,6 @@
     "id": "otc:cmc-22858",
     "name": "Dynex",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/22858.png"
-  },
-  {
-    "id": "evm:383414847825",
-    "name": "Zeniq",
-    "evmMeta": {
-      "chain": "ZENIQ",
-      "chainId": 383414847825,
-      "networkId": 383414847825,
-      "nativeCurrency": {
-        "name": "Zeniq",
-        "symbol": "ZENIQ",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-4388",
@@ -6049,21 +5352,6 @@
     "id": "otc:cmc-7635",
     "name": "UniWorld",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7635.png"
-  },
-  {
-    "id": "evm:2213",
-    "name": "Evanesco",
-    "evmMeta": {
-      "chain": "EVA",
-      "chainId": 2213,
-      "networkId": 2213,
-      "nativeCurrency": {
-        "name": "EVA",
-        "symbol": "EVA",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-11181",
@@ -6150,21 +5438,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/17061.png"
   },
   {
-    "id": "evm:246529",
-    "name": "ARTIS sigma1",
-    "evmMeta": {
-      "chain": "ARTIS",
-      "chainId": 246529,
-      "networkId": 246529,
-      "nativeCurrency": {
-        "name": "ARTIS sigma1 Ether",
-        "symbol": "ATS",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:19845",
     "name": "BTCIX Network",
     "evmMeta": {
@@ -6179,21 +5452,6 @@
       "rpc": [
         "https://seed.btcix.org/rpc"
       ]
-    }
-  },
-  {
-    "id": "evm:3601",
-    "name": "PandoProject",
-    "evmMeta": {
-      "chain": "PandoProject",
-      "chainId": 3601,
-      "networkId": 3601,
-      "nativeCurrency": {
-        "name": "pando-token",
-        "symbol": "PTX",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -6259,21 +5517,6 @@
     }
   },
   {
-    "id": "evm:73",
-    "name": "FNCY",
-    "evmMeta": {
-      "chain": "FNCY",
-      "chainId": 73,
-      "networkId": 73,
-      "nativeCurrency": {
-        "name": "FNCY",
-        "symbol": "FNCY",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:78",
     "name": "PrimusChain",
     "evmMeta": {
@@ -6288,21 +5531,6 @@
       "rpc": [
         "https://ethnode.primusmoney.com/mainnet"
       ]
-    }
-  },
-  {
-    "id": "evm:1455",
-    "name": "Ctex Scan Blockchain",
-    "evmMeta": {
-      "chain": "Ctex Scan Blockchain",
-      "chainId": 1455,
-      "networkId": 1455,
-      "nativeCurrency": {
-        "name": "CTEX",
-        "symbol": "CTEX",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -6375,21 +5603,6 @@
     }
   },
   {
-    "id": "evm:1130",
-    "name": "DeFiChain EVM Network",
-    "evmMeta": {
-      "chain": "defichain-evm",
-      "chainId": 1130,
-      "networkId": 1130,
-      "nativeCurrency": {
-        "name": "DeFiChain",
-        "symbol": "DFI",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:61717561",
     "name": "Aquachain",
     "evmMeta": {
@@ -6450,21 +5663,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/19100.png"
   },
   {
-    "id": "evm:22023",
-    "name": "Taycan",
-    "evmMeta": {
-      "chain": "Taycan",
-      "chainId": 22023,
-      "networkId": 22023,
-      "nativeCurrency": {
-        "name": "shuffle",
-        "symbol": "SFL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-20792",
     "name": "Ramestta",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/20792.png"
@@ -6490,21 +5688,6 @@
     "id": "otc:cmc-21649",
     "name": "HyperonChain",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/21649.png"
-  },
-  {
-    "id": "evm:22023",
-    "name": "Taycan",
-    "evmMeta": {
-      "chain": "Taycan",
-      "chainId": 22023,
-      "networkId": 22023,
-      "nativeCurrency": {
-        "name": "shuffle",
-        "symbol": "SFL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-22359",
@@ -6555,22 +5738,6 @@
     "id": "otc:cmc-4424",
     "name": "XDAG",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4424.png"
-  },
-  {
-    "id": "evm:5551",
-    "name": "Nahmii",
-    "evmMeta": {
-      "chain": "Nahmii",
-      "chainId": 5551,
-      "networkId": 5551,
-      "chainSlug": "nahmii",
-      "nativeCurrency": {
-        "name": "Ether",
-        "symbol": "ETH",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-4955",
@@ -6673,52 +5840,6 @@
         "https://api.metadium.com/dev",
         "https://api.metadium.com/prod"
       ]
-    }
-  },
-  {
-    "id": "evm:201804",
-    "name": "Mythical Chain",
-    "evmMeta": {
-      "chain": "MYTH",
-      "chainId": 201804,
-      "networkId": 201804,
-      "nativeCurrency": {
-        "name": "Mythos",
-        "symbol": "MYTH",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:11297108109",
-    "name": "Palm",
-    "evmMeta": {
-      "chain": "Palm",
-      "chainId": 11297108109,
-      "networkId": 11297108109,
-      "chainSlug": "palm",
-      "nativeCurrency": {
-        "name": "PALM",
-        "symbol": "PALM",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:18159",
-    "name": "Proof Of Memes",
-    "evmMeta": {
-      "chain": "POM",
-      "chainId": 18159,
-      "networkId": 18159,
-      "nativeCurrency": {
-        "name": "Proof Of Memes",
-        "symbol": "POM",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -6866,36 +5987,6 @@
     }
   },
   {
-    "id": "evm:10823",
-    "name": "CryptoCoinPay",
-    "evmMeta": {
-      "chain": "CCP",
-      "chainId": 10823,
-      "networkId": 10823,
-      "nativeCurrency": {
-        "name": "CryptoCoinPay",
-        "symbol": "CCP",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:76",
-    "name": "Mix",
-    "evmMeta": {
-      "chain": "MIX",
-      "chainId": 76,
-      "networkId": 76,
-      "nativeCurrency": {
-        "name": "Mix Ether",
-        "symbol": "MIX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-21944",
     "name": "Wrapped EthereumPoW",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/21944.png"
@@ -7034,21 +6125,6 @@
     "id": "otc:cmc-11569",
     "name": "Ovato",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11569.png"
-  },
-  {
-    "id": "evm:2559",
-    "name": "Kortho",
-    "evmMeta": {
-      "chain": "Kortho Chain",
-      "chainId": 2559,
-      "networkId": 2559,
-      "nativeCurrency": {
-        "name": "KorthoChain",
-        "symbol": "KTO",
-        "decimals": 11
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:12052",
@@ -7329,36 +6405,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/16350.png"
   },
   {
-    "id": "evm:20180430",
-    "name": "SmartMesh",
-    "evmMeta": {
-      "chain": "Spectrum",
-      "chainId": 20180430,
-      "networkId": 1,
-      "nativeCurrency": {
-        "name": "SmartMesh Native Token",
-        "symbol": "SMT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
-    "id": "evm:35011",
-    "name": "J2O Taro",
-    "evmMeta": {
-      "chain": "TARO",
-      "chainId": 35011,
-      "networkId": 35011,
-      "nativeCurrency": {
-        "name": "TARO Coin",
-        "symbol": "taro",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:2569",
     "name": "TechPay",
     "evmMeta": {
@@ -7451,22 +6497,6 @@
     "id": "otc:cmc-5900",
     "name": "DigiDinar",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5900.png"
-  },
-  {
-    "id": "evm:55",
-    "name": "Zyx",
-    "evmMeta": {
-      "chain": "ZYX",
-      "chainId": 55,
-      "networkId": 55,
-      "chainSlug": "zyx",
-      "nativeCurrency": {
-        "name": "Zyx",
-        "symbol": "ZYX",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-6490",
@@ -7647,21 +6677,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9632.png"
   },
   {
-    "id": "evm:989",
-    "name": "TOP",
-    "evmMeta": {
-      "chain": "TOP",
-      "chainId": 989,
-      "networkId": 0,
-      "nativeCurrency": {
-        "name": "TOP",
-        "symbol": "TOP",
-        "decimals": 6
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:877",
     "name": "Dexit Network",
     "evmMeta": {
@@ -7731,21 +6746,6 @@
         "https://api.metadium.com/dev",
         "https://api.metadium.com/prod"
       ]
-    }
-  },
-  {
-    "id": "evm:1818",
-    "name": "Cube Chain",
-    "evmMeta": {
-      "chain": "Cube",
-      "chainId": 1818,
-      "networkId": 1818,
-      "nativeCurrency": {
-        "name": "Cube Chain Native Token",
-        "symbol": "CUBE",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -8165,22 +7165,6 @@
     }
   },
   {
-    "id": "evm:108",
-    "name": "ThunderCore",
-    "evmMeta": {
-      "chain": "TT",
-      "chainId": 108,
-      "networkId": 108,
-      "chainSlug": "thundercore",
-      "nativeCurrency": {
-        "name": "ThunderCore Token",
-        "symbol": "TT",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:10101",
     "name": "Blockchain Genesis",
     "evmMeta": {
@@ -8197,21 +7181,6 @@
         "https://us.mainnet.xixoio.com",
         "https://asia.mainnet.xixoio.com"
       ]
-    }
-  },
-  {
-    "id": "evm:3601",
-    "name": "PandoProject",
-    "evmMeta": {
-      "chain": "PandoProject",
-      "chainId": 3601,
-      "networkId": 3601,
-      "nativeCurrency": {
-        "name": "pando-token",
-        "symbol": "PTX",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -8238,21 +7207,6 @@
     "id": "otc:cmc-9330",
     "name": "BIXBCOIN",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9330.png"
-  },
-  {
-    "id": "evm:2021121117",
-    "name": "DataHopper",
-    "evmMeta": {
-      "chain": "HOP",
-      "chainId": 2021121117,
-      "networkId": 2021121117,
-      "nativeCurrency": {
-        "name": "DataHoppers",
-        "symbol": "HOP",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "evm:998",
@@ -8287,21 +7241,6 @@
       "rpc": [
         "https://rpc.paribu.network"
       ]
-    }
-  },
-  {
-    "id": "evm:2213",
-    "name": "Evanesco",
-    "evmMeta": {
-      "chain": "EVA",
-      "chainId": 2213,
-      "networkId": 2213,
-      "nativeCurrency": {
-        "name": "EVA",
-        "symbol": "EVA",
-        "decimals": 18
-      },
-      "rpc": []
     }
   },
   {
@@ -8373,21 +7312,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/16576.png"
   },
   {
-    "id": "evm:955305",
-    "name": "Eluvio Content Fabric",
-    "evmMeta": {
-      "chain": "Eluvio",
-      "chainId": 955305,
-      "networkId": 955305,
-      "nativeCurrency": {
-        "name": "ELV",
-        "symbol": "ELV",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:534",
     "name": "Candle",
     "evmMeta": {
@@ -8446,21 +7370,6 @@
     }
   },
   {
-    "id": "evm:1657",
-    "name": "Btachain",
-    "evmMeta": {
-      "chain": "btachain",
-      "chainId": 1657,
-      "networkId": 1657,
-      "nativeCurrency": {
-        "name": "Bitcoin Asset",
-        "symbol": "BTA",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "otc:cmc-19417",
     "name": "Metasphere",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/19417.png"
@@ -8510,21 +7419,6 @@
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/21304.png"
   },
   {
-    "id": "evm:3031",
-    "name": "Orlando Chain",
-    "evmMeta": {
-      "chain": "ORL",
-      "chainId": 3031,
-      "networkId": 3031,
-      "nativeCurrency": {
-        "name": "Orlando",
-        "symbol": "ORL",
-        "decimals": 18
-      },
-      "rpc": []
-    }
-  },
-  {
     "id": "evm:63000",
     "name": "eCredits",
     "evmMeta": {
@@ -8545,21 +7439,6 @@
     "id": "otc:cmc-22257",
     "name": "Wrapped Stacks",
     "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/22257.png"
-  },
-  {
-    "id": "evm:5177",
-    "name": "TLChain Network",
-    "evmMeta": {
-      "chain": "TLC",
-      "chainId": 5177,
-      "networkId": 5177,
-      "nativeCurrency": {
-        "name": "TLChain Network",
-        "symbol": "TLC",
-        "decimals": 18
-      },
-      "rpc": []
-    }
   },
   {
     "id": "otc:cmc-22781",
