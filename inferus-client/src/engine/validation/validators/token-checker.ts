@@ -81,7 +81,7 @@ async function validateERC20Token(
       }
       result.records[path].push({
         validator: 'token-checker',
-        type: 'warning',
+        type: 'error',
         message: `The token might not be valid. Please re-check the token address`,
       })
     }
