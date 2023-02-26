@@ -194,7 +194,9 @@ export async function executeGaslessTransaction(
   const { gasEstimate, transaction } = await estimateGas(executor, spec, context)
   context.logger.info(`executeGaslessTransaction:spec validated successfully`)
 
-  const { maxFeePerGas, maxPriorityFeePerGas } = await loadGasPrice(context)
+  let { maxFeePerGas, maxPriorityFeePerGas } = await loadGasPrice(context)
+  maxFeePerGas = maxFeePerGas.mul(2)
+  maxPriorityFeePerGas = maxPriorityFeePerGas.mul(2)
   for (let i = 0; i < 30; i++) {
     const nonce = await executor.getTransactionCount('pending')
     context.logger.info({
