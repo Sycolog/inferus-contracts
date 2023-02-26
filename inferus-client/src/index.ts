@@ -1,4 +1,5 @@
 import chainsList from './engine/chains.json'
-import * as utils from './engine/utils'
+import * as engine from './engine'
 export { InferusClient } from './client'
-export { chainsList, utils }
+const utils = engine.utils
+export { chainsList, engine, utils }
