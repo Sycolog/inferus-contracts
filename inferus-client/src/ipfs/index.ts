@@ -34,6 +34,7 @@ const ipfsGateways = [
 ]
 
 let clients: AxiosInstance[]
+let count = 0
 
 function getClients(): AxiosInstance[] {
   if (!clients) {
@@ -48,20 +49,20 @@ function getClients(): AxiosInstance[] {
 }
 
 async function loadFromSingleClient(client: AxiosInstance, cid: string): Promise<any> {
-  try {
-    return await client.get(`/ipfs/${cid}`)
-  } catch {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    return await loadFromSingleClient(client, cid)
-  }
+  return await Promise.race([
+    client.get(`/ipfs/${cid}`),
+    new Promise((resolve, reject) => setTimeout(reject, 1000)),
+  ])
 }
 
 export async function loadFromIPFS(cid: string): Promise<any> {
-  const promises = getClients().map((c) => loadFromSingleClient(c, cid))
+  count++
+  const i = count % getClients().length
 
-  // timeout in 15 seconds - (internet may be bad)
-  const timeoutSeconds = 15
-  promises.push(new Promise((resolve) => setTimeout(resolve, timeoutSeconds * 1000)))
-  const result = await Promise.race(promises)
-  return result?.data
+  try {
+    const result = await loadFromSingleClient(getClients()[i], cid)
+    return result?.data
+  } catch (e) {
+    return await loadFromIPFS(cid)
+  }
 }
