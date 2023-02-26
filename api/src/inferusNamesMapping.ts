@@ -6,8 +6,8 @@ import {
   NameTransferCompleted,
   NameTransferInitiated,
 } from "../generated/InferusNames/InferusNames"
-import { NameEntity, NameOwnerEntity, NameTransferEntity } from "../generated/schema"
-import {concatenateBytes} from "./utils";
+import {NameEntity, NameTransferEntity} from "../generated/schema"
+import {concatenateBytes, getAggregates} from "./utils";
 
 const validNameChars = 'abcdefghijklmnopqrstuvwxyz0123456789_'
 function getTransferId(name: Bytes, from: Address, to: Address): Bytes {
@@ -50,26 +50,21 @@ export function handleNameRegistered(event: NameRegistered): void {
   }
 
   let nameEntity = NameEntity.load(event.params.name.toHex())
-  let nameOwnerEntity = NameOwnerEntity.load(event.params.registrant.toHex())
-
-  if (!nameOwnerEntity) {
-    // this is their first name
-    nameOwnerEntity = new NameOwnerEntity(event.params.registrant.toHex())
-    nameOwnerEntity.address = event.params.registrant
-    log.info('Creating name owner: {}', [event.params.registrant.toHex()])
-    nameOwnerEntity.save()
-  }
-
   // if the name has not previously been registered
   if (!nameEntity) {
     nameEntity = new NameEntity(event.params.name.toHex())
   }
 
   nameEntity.name = name
-  nameEntity.owner = nameOwnerEntity.id
+  nameEntity.owner = event.params.registrant
   nameEntity.metadataUri = metadataURI
   log.info('Creating name: {}', [name])
+
+  const aggregates = getAggregates()
+  aggregates.namesRegistered += 1
+
   nameEntity.save()
+  aggregates.save()
 }
 
 export function handleNameReleased(event: NameReleased): void {
@@ -79,8 +74,13 @@ export function handleNameReleased(event: NameReleased): void {
   }
 
   let nameEntity = NameEntity.load(event.params.name.toHex())!
+  const aggregates = getAggregates()
+
   nameEntity.owner = null
+  aggregates.namesRegistered -= 1
+
   nameEntity.save()
+  aggregates.save()
 }
 
 export function handleMetadataUpdated(event: MetadataUpdated): void {
@@ -108,25 +108,16 @@ export function handleNameTransferCompleted(
     return
   }
 
-  const newOwnerAddress = event.params.to
   let transferEntity = NameTransferEntity.load(getTransferId(event.params.name, event.params.from, event.params.to).toHex())!
   let nameEntity = NameEntity.load(event.params.name.toHex())
-  let newOwnerEntity = NameOwnerEntity.load(newOwnerAddress.toHex())
 
   if (!nameEntity) {
     log.error('Name entity not found for transfer entity for name {}', [name])
     return;
   }
 
-  if (!newOwnerEntity) {
-    // this is their first name
-    newOwnerEntity = new NameOwnerEntity(newOwnerAddress.toHex())
-    newOwnerEntity.address = newOwnerAddress
-    log.info('Creating name owner: {}', [newOwnerAddress.toHex()])
-    newOwnerEntity.save()
-  }
 
-  nameEntity.owner = newOwnerAddress.toHex()
+  nameEntity.owner = event.params.to
   transferEntity.isCompleted = true
   log.info('Transfer of name \'@{}\' from {} to {} is completed', [name, event.params.from.toHex(), event.params.to.toHex()])
 

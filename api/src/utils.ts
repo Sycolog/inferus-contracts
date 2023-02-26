@@ -1,4 +1,5 @@
 import {ByteArray, Bytes} from "@graphprotocol/graph-ts";
+import {Aggregates} from "../generated/schema";
 
 export function concatenateBytes(bytes: ByteArray[]): Bytes {
     let totalLength = 0
@@ -12,4 +13,16 @@ export function concatenateBytes(bytes: ByteArray[]): Bytes {
         position += bytes[i].length
     }
     return result
+}
+
+export function getAggregates(): Aggregates {
+    let aggregates = Aggregates.load('aggregates')
+    if (aggregates) {
+        return aggregates
+    }
+
+    aggregates = new Aggregates('aggregates')
+    aggregates.namesRegistered = 0
+    aggregates.save()
+    return aggregates
 }

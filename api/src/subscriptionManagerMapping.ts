@@ -1,6 +1,6 @@
 import {Address, BigInt, Bytes, log} from "@graphprotocol/graph-ts"
 import {
-  SubscriberEntity, SubscriptionEntity,
+  SubscriptionEntity,
   SubscriptionPlanEntity, WithdrawalEntity
 } from "../generated/schema"
 import {
@@ -21,6 +21,7 @@ export function handleCreatePlan(event: CreatePlan): void {
   plan.price = event.params.tokenAmount
   plan.duration = event.params.duration
   plan.active = event.params.status === 0
+  plan.totalSubscriptions = 0
   plan.save()
 }
 
@@ -53,19 +54,14 @@ export function handleCreateSubscription(event: CreateSubscription): void {
     return
   }
 
-  let subscriber = SubscriberEntity.load(event.params.subscriber.toHex())
-  if (!subscriber) {
-    subscriber = new SubscriberEntity(event.params.subscriber.toHex())
-    subscriber.address = event.params.subscriber
-    subscriber.save()
-  }
-
   const subscriptionId = getSubscriptionId(event.params.subscriber, event.params.planId)
   const subscription = new SubscriptionEntity(subscriptionId.toHex())
   subscription.plan = plan.id
-  subscription.subscriber = subscriber.id
+  subscription.subscriber = event.params.subscriber
   subscription.expiry = event.params.expiry
+  plan.totalSubscriptions++
   subscription.save()
+  plan.save()
 }
 
 export function handleWithdraw(event: Withdraw): void {

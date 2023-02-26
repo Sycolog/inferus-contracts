@@ -2,13 +2,12 @@ type NameEntity @entity {
   id: ID!
   name: String!
   metadataUri: String!
-  owner: NameOwnerEntity
+  owner: Bytes
 }
 
-type NameOwnerEntity @entity {
+type Aggregates @entity {
   id: ID!
-  address: Bytes!
-  names: [NameEntity!]! @derivedFrom(field: "owner")
+  namesRegistered: Int!
 }
 
 type NameTransferEntity @entity {
@@ -29,6 +28,7 @@ type SubscriptionPlanEntity @entity {
   price: BigInt!
   duration: BigInt!
   active: Boolean!
+  totalSubscriptions: Int!
   subscriptions: [SubscriptionEntity!]! @derivedFrom(field: "plan")
   withdrawals: [WithdrawalEntity!]! @derivedFrom(field: "plan")
 }
@@ -36,14 +36,8 @@ type SubscriptionPlanEntity @entity {
 type SubscriptionEntity @entity {
   id: ID!
   expiry: BigInt!
-  subscriber: SubscriberEntity!
+  subscriber: Bytes!
   plan: SubscriptionPlanEntity!
-}
-
-type SubscriberEntity @entity {
-  id: ID!
-  address: Bytes!
-  subscriptions: [SubscriptionEntity!]! @derivedFrom(field: "subscriber")
 }
 
 type WithdrawalEntity @entity {
