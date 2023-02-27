@@ -1,17 +1,11 @@
-export interface ResolveNameQueryResult {
+/* eslint-disable @typescript-eslint/no-empty-interface */
+interface NameEntitiesResult {
   nameEntities: Array<{
     name: string
     metadataUri: string
-    owner: {
-      address: string
-    }
+    owner: string
   }>
 }
-export interface LinkedNamesQueryResult {
-  nameOwnerEntity: {
-    address: string
-    names: Array<{
-      name: string
-    }>
-  } | null
-}
+
+export interface ResolveNameQueryResult extends NameEntitiesResult {}
+export interface LinkedNamesQueryResult extends NameEntitiesResult {}

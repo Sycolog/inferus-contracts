@@ -5,20 +5,17 @@ export const resolveNameQuery = gql`
     nameEntities(where: { name: $name }) {
       name
       metadataUri
-      owner {
-        address
-      }
+      owner
     }
   }
 `
 
 export const getLinkedNamesQuery = gql`
   query getLinkedNames($address: ID!) {
-    nameOwnerEntity(id: $address) {
-      address
-      names {
-        name
-      }
+    nameEntities(where: { owner: $address }) {
+      name
+      metadataUri
+      owner
     }
   }
 `

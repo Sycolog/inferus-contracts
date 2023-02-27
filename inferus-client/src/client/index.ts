@@ -189,10 +189,10 @@ export class InferusClient {
       address: address.toLowerCase(), // The subgraph always indexes lower case addresses
     })
 
-    if (!response.nameOwnerEntity) {
+    if (!response.nameEntities.length) {
       return []
     }
-    return response.nameOwnerEntity.names.map((n) => n.name)
+    return response.nameEntities.map((n) => n.name)
   }
 
   async validateMetadata(metadata: NameMetadata) {
